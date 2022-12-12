@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+//
+use App\Http\Controllers\ChuyenNganhController;
+use App\Http\Controllers\DanQuanController;
+use App\Http\Controllers\ThanhPhanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +21,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-
+//admin
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
+Route::resource('chuyennganh',ChuyenNganhController::class);
+Route::resource('danquan',DanQuanController::class);
+Route::resource('thanhphan',ThanhPhanController::class);
 
