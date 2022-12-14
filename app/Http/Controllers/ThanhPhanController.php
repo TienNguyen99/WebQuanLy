@@ -23,7 +23,9 @@ class ThanhPhanController extends Controller
      */
     public function create()
     {
-        return view('admincp.thanhphan.thanhphan_them');
+        $list = ThanhPhan::all();
+
+        return view('admincp.thanhphan.thanhphan_them',compact('list'));
     }
 
     /**
@@ -62,7 +64,10 @@ class ThanhPhanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $thanhphan = ThanhPhan::find($id);
+        $list = ThanhPhan::all();
+
+        return view('admincp.thanhphan.thanhphan_them',compact('list','thanhphan'));
     }
 
     /**
@@ -85,6 +90,7 @@ class ThanhPhanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ThanhPhan::find($id)->delete();
+        return redirect()->back();
     }
 }
