@@ -79,7 +79,13 @@ class ThanhPhanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $thanhphan =  ThanhPhan::find($id);
+        $thanhphan->title = $data['title'];
+        $thanhphan->description = $data['description'];
+        $thanhphan->status = $data['status'];
+        $thanhphan->save();
+        return redirect()->back();
     }
 
     /**
