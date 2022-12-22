@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DanQuan;
+use App\Models\ThanhPhan;
+
 
 class DanQuanController extends Controller
 {
@@ -13,7 +16,10 @@ class DanQuanController extends Controller
      */
     public function index()
     {
-        echo 'hello';
+        $list = DanQuan::all();
+        $thanhphan = ThanhPhan::pluck('title','id');
+        
+        return view('admincp.tongdanquan.tongdanquan_them',compact('list','thanhphan'));
     }
 
     /**
@@ -23,7 +29,8 @@ class DanQuanController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('admincp.tongdanquan.tongdanquan_them');
     }
 
     /**

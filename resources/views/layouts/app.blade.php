@@ -14,6 +14,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('public/backend/vendors/fontawesome/all.min.css')}}">
 
     <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -29,8 +30,8 @@
 
     <link rel="stylesheet" href="{{asset('public/backend/vendors/bootstrap-icons/bootstrap-icons.css')}}">
     <link rel="stylesheet" href="{{asset('public/backend/css/app.css')}}">
-    <!-- css js DataTables -->
-    
+    <!-- css DataTables -->
+    <link rel="stylesheet" href="{{asset('public/backend/vendors/simple-datatables/style.css')}}">
     <!-- End Css Datatables -->
 </head>
 
@@ -72,6 +73,7 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
+
                                     <a href="{{route('danquan.index')}}">Tổng dân quân</a>
                                 </li>
                                 <li class="submenu-item ">
@@ -155,9 +157,9 @@
 
 
 
-
+    @include('admincp.tongdanquan.tongdanquan_modal')
         <footer>
-    <div class="footer clearfix mb-0 text-muted">
+    <div class="footer clearfix mb-0 text-muted" align="right">
         <div class="float-start">
             <p>2022 &copy; Ban chỉ huy quân sự phường Bình An</p>
         </div>
@@ -191,8 +193,16 @@
     <script src="{{asset('public/backend/vendors/apexcharts/apexcharts.js')}}"></script>
     <script src="{{asset('public/backend/js/pages/dashboard.js')}}"></script>
 
+
     <script src="{{asset('public/backend/js/main.js')}}"></script>
     <!-- Script Datatables -->
+    <script src="{{asset('public/backend/vendors/simple-datatables/simple-datatables.js')}}"></script>
+    <script>
+        // Simple Datatable
+        let table1 = document.querySelector('#table1');
+        let dataTable = new simpleDatatables.DataTable(table1);
+    </script>
+
     
     <!-- End script datatables -->
     <!--Script thêm -->

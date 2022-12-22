@@ -24,7 +24,7 @@ class ThanhPhanController extends Controller
     public function create()
     {
         $list = ThanhPhan::all();
-
+        
         return view('admincp.thanhphan.thanhphan_them',compact('list'));
     }
 

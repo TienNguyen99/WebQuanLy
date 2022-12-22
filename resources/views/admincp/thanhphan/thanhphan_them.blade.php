@@ -1,5 +1,5 @@
 			@extends('layouts.app')
-			@include('sweetalert::alert')
+			
 
 			@section('content')
 			<section id="multiple-column-form">
@@ -13,12 +13,11 @@
 								<div class="card-body">
 
 
-									<!-- Form mở -->
-									<?php if (!isset($thanhphan)): ?>
+									
+                                    
+									
 										{!! Form::open(['route'=>'thanhphan.store','method'=>'POST']) !!}	
-									<?php else: ?>
-										{!! Form::open(['route'=>['thanhphan.update',$thanhphan->id],'method'=>'PUT']) !!}	
-									<?php endif ?>
+									
 									
 									<div class="row">
 			<!-- <div class="col-md-6 col-12">
@@ -32,24 +31,22 @@
 		<div class="col-12">
 			<div class="form-group">
 				{!! Form::label('title', 'Tiêu đề', []) !!}
-				{!! Form::text('title', isset($thanhphan) ? $thanhphan-> title: '', ['class'=>'form-control','placeholder'=>'Nhập tiêu đề','id'=>'title','required']) !!}
+				{!! Form::text('title', null, ['class'=>'form-control','placeholder'=>'Nhập tiêu đề','id'=>'title','required']) !!}
 			</div>
 			<div class="form-group">
 				{!! Form::label('description', 'Mô tả', []) !!}
-				{!! Form::textarea('description', isset($thanhphan) ? $thanhphan-> description: '', ['class'=>'form-control','placeholder'=>'Nhập nội dung mô tả','id'=>'description']) !!}
+				{!! Form::textarea('description', null, ['class'=>'form-control','placeholder'=>'Nhập nội dung mô tả','id'=>'description']) !!}
 			</div>
 			<div class="form-group">
 				{!! Form::label('Hoạt động', 'Hoạt động', []) !!}
-				{!! Form::select('status', ['1'=>'Hiển thị','0'=>'Ẩn'], $thanhphan -> status, ['class'=>'form-control']) !!}
+				{!! Form::select('status', ['1'=>'Hiển thị','0'=>'Ẩn'], null, ['class'=>'form-control']) !!}
 			</div>
 		</div>
 		<div class="col-12 d-flex justify-content-end">
 			
-            <?php if (!isset($thanhphan)): ?>
+                                        
                                         {!! Form::submit('Thêm', ['class'=>'btn btn-primary me-1 mb-1']) !!}  
-                                    <?php else: ?>
-                                        {!! Form::submit('Cập nhật', ['class'=>'btn btn-primary me-1 mb-1']) !!} 
-                                    <?php endif ?>
+                                        
 			<!-- <button type="reset"
 				class="btn btn-light-secondary me-1 mb-1">Reset</button> -->
 			</div>

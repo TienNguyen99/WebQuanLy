@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class DanQuan extends Model
 {
+    public $table = "danquans";
     use HasFactory;
 }
