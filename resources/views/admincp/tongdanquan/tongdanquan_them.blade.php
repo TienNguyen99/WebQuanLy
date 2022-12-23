@@ -37,7 +37,7 @@
                                         <td>
                                         	<button type="button" data-bs-toggle="modal"
                                                 data-bs-target="#full-scrn" class="btn btn-default" >
-                    	<i class="bi bi-clipboard-check"></i>
+                    	<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 
                     </button>
 
@@ -45,7 +45,7 @@
                                         
                                     </tr>	
                                     <?php endforeach ?>
-                                    
+                                    @include('admincp.tongdanquan.tongdanquan_modal')
                                     
                                 </tbody>
                             </table>

@@ -23,11 +23,12 @@
                                                 <div class="col-sm-12"><img src="..." class="rounded float-left" alt="..."></div>
                                                 <div class="col-sm-2">
                                                     <div class="form-group">
+                                                        
                                                         <label for="first-name-column">First Name</label>
                                                         <input type="text" id="first-name-column" class="form-control"
                                                             placeholder="First Name" name="fname-column">
                                                     </div>
-                                                    
+
                                                 </div>
                                                 
 
