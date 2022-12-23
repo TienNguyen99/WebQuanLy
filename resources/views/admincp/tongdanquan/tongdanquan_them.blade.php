@@ -14,7 +14,8 @@
                                         <th>Giới tính</th>
                                         <th>Số điện thoại</th>
                                         <th>Nơi sinh</th>
-                                        <th>Status</th>
+                                        <th>Đơn vị</th>
+                                        <th>Thành phần</th>
                                         <th>Chức năng</th>
                                         
 
@@ -28,12 +29,14 @@
                                         <td>{{$show_tongdanquan->gioitinh}}</td>
                                         <td>{{$show_tongdanquan->sdt}}</td>
                                         <td>{{$show_tongdanquan->quequan}}</td>
+                                        <td>{{$show_tongdanquan->status}}</td>
                                         <td>
-                                            <span class="badge bg-success">Active</span>
+                                            
+                                            {!! Form::select('status', ['1'=>'Hiển thị','0'=>'Ẩn'], null, ['class'=>'badge bg-success']) !!}
                                         </td>
                                         <td>
                                         	<button type="button" data-bs-toggle="modal"
-                    data-bs-target="#inlineForm" class="btn btn-default" >
+                                                data-bs-target="#full-scrn" class="btn btn-default" >
                     	<i class="bi bi-clipboard-check"></i>
 
                     </button>
