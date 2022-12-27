@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DanQuan;
+use App\Models\ThanhPhan;
 use DB;
 
 class HomeController extends Controller
@@ -24,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $danquan = DanQuan::all();
          $count = DB::table('danquans')->count();
         return view('home',compact('count'));
     }

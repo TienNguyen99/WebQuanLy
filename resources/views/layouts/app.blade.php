@@ -44,7 +44,7 @@
 
 
 <body>
-    <div id="app" style="background-color: #f2f7ff;">
+    <div id="app">
 
         <!-- navbar start -->
         
