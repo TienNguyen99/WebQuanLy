@@ -13,6 +13,7 @@
                                         <th>Tên</th>
                                         <th>Giới tính</th>
                                         <th>Số điện thoại</th>
+                                        <th>Năm sinh</th>
                                         <th>Nơi sinh</th>
                                         <th>Đơn vị</th>
                                         <th>Thành phần</th>
@@ -26,8 +27,14 @@
                                     <?php foreach ($list as $key => $show_tongdanquan): ?>
                                     <tr>
                                         <td>{{$show_tongdanquan->tenkhaisinh}}</td>
-                                        <td>{{$show_tongdanquan->gioitinh}}</td>
+                                        <?php if ($show_tongdanquan->gioitinh == 1): ?>
+                                            <td>Nam</td>
+                                        <?php else: ?>
+                                            <td>Nữ</td>
+                                        <?php endif ?>
+                                        
                                         <td>{{$show_tongdanquan->sdt}}</td>
+                                        <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->format('d/m/y')}}</td>
                                         <td>{{$show_tongdanquan->quequan}}</td>
                                         <td>{{$show_tongdanquan->status}}</td>
                                         <td>
@@ -36,7 +43,7 @@
                                         </td>
                                         <td>
                                         	<button type="button" data-bs-toggle="modal"
-                                                data-bs-target="#full-scrn" class="btn btn-default" >
+                                                data-bs-target="#danquanmodal{{$show_tongdanquan->id}}" class="btn btn-default" >
                     	<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 
                     </button>
@@ -44,8 +51,9 @@
                                         </td>
                                         
                                     </tr>	
-                                    <?php endforeach ?>
                                     @include('admincp.tongdanquan.tongdanquan_modal')
+                                    <?php endforeach ?>
+                                    
                                     
                                 </tbody>
                             </table>

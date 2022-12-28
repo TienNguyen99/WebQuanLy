@@ -1,4 +1,4 @@
-        <div class="modal fade text-left w-100" id="full-scrn" tabindex="-1"
+        <div class="modal fade text-left w-100" id="danquanmodal{{$show_tongdanquan->id}}" tabindex="-1"
         role="dialog" aria-labelledby="myModalLabel20" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-full"
         role="document">
@@ -19,21 +19,72 @@
                                 <div class="card-content">
                                     <div class="card-body">
                                         {!! Form::open(['route'=>'danquan.store','method'=>'POST','class'=>'form']) !!}
-                                            <div class="row">
-                                                <div class="col-sm-12"><img src="..." class="rounded float-left" alt="..."></div>
-                                                <div class="col-sm-2">
-                                                    <div class="form-group">
-                                                        
-                                                        <label for="first-name-column">First Name</label>
-                                                        <input type="text" id="first-name-column" class="form-control"
-                                                            placeholder="First Name" name="fname-column">
-                                                    </div>
+        <div class="row">
+        <div class="col-12"><img src="{{asset('public/backend/images/faces/2.jpg')}}" width="100px" height="100%" alt="..."></div>
+        <div class="col-sm-2">
+           <div class="form-group">
+               {!! Form::label('tenkhaisinh', 'Tên khai sinh', []) !!}
+               {!! Form::text('tenkhaisinh',null, ['class'=>'form-control','placeholder'=>'Nhập tên khai sinh','id'=>'tenkhaisinh','required']) !!}
+           </div>
+        </div>
+        <div class="col-sm-2">
+           <div class="form-group">
+               {!! Form::label('tenkhac', 'Tên khác', []) !!}
+               {!! Form::text('tenkhac',null, ['class'=>'form-control','placeholder'=>'Nhập tên khác','id'=>'tenkhac','required']) !!}
+           </div>
+        </div>
+        <div class="col-sm-2">
+           <div class="form-group">
+               {!! Form::label('sdt', 'Số điện thoại', []) !!}
+               {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt','required']) !!}
+           </div>
+        </div>
+        <div class="col-sm-2">
+           <div class="form-group">
+               {!! Form::label('gioitinh', 'Giới tính', []) !!}
+               {!! Form::select('gioitinh', ['1'=>'Nam','0'=>'Nữ'],null, ['class'=>'form-control']) !!}
+           </div>
+        </div>
+        <div class="col-sm-2">
+           <div class="form-group">
+               
+                  {!! Form::label('namsinh', 'Năm sinh ' ) !!}
 
-                                                </div>
+    {!! Form::text('namsinh', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
+    'namsinh']) !!}
+    
+        
+    
+
+               
+           </div>
+        </div>
+        
+
+        <div class="col-sm-2">
+           <div class="form-group">
+               {!! Form::label('sdt', 'Số điện thoại', []) !!}
+               {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt','required']) !!}
+           </div>
+        </div>
+        <div class="col-sm-2">
+           <div class="form-group">
+               {!! Form::label('sdt', 'Số điện thoại', []) !!}
+               {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt','required']) !!}
+           </div>
+        </div>
+        <div class="col-sm-2">
+           <div class="form-group">
+               {!! Form::label('sdt', 'Số điện thoại', []) !!}
+               {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt','required']) !!}
+           </div>
+        </div>
+        
+
                                                 
 
                                                
-                                                <div class="col-md-6 col-12">
+                                                <div class=" col-12">
                                                     <div class="form-group">
                                                         <label for="email-id-column">Email</label>
                                                         <input type="email" id="email-id-column" class="form-control"

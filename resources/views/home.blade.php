@@ -222,16 +222,27 @@
                         <h4>Mới truy cập</h4>
                     </div>
                     <div class="card-content pb-4">
+                        <?php foreach ($users as $key => $value): ?>
                         <div class="recent-message d-flex px-4 py-3">
                             <div class="avatar avatar-lg">
                                 <img src="{{asset('public/backend/images/faces/4.jpg')}}">
                             </div>
-                            <div class="name ms-4">
-                                <h5 class="mb-1">Hank Schrader</h5>
-                                <h6 class="text-muted mb-0">@johnducky</h6>
+                            
+                                <div class="name ms-4">
+                                <h5 class="mb-1">{{$value->name}}</h5>
+                                
+                                <h6 class="text-muted mb-0">
+                                    @if(Cache::has('user-is-online-' . $value->id))
+                            <span class="text-success">Online</span>
+                        @else
+                            <span class="text-secondary">Offline</span>
+                        @endif</h6>
+                        <h8 class="mb-1">{{ Carbon\Carbon::parse($value->last_seen)->diffForHumans() }}</h8>
                             </div>
+                            
+                            
                         </div>
-                        
+                        <?php endforeach ?>
                         <!-- <div class="px-4">
                             <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
                             Conversation</button>

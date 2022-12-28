@@ -43,7 +43,7 @@
 			</div>
 			<div class="form-group">
 				{!! Form::label('Hoạt động', 'Hoạt động', []) !!}
-				{!! Form::select('status', ['1'=>'Hiển thị','0'=>'Ẩn'], isset($thanhphan) ? $thanhphan->status: '', ['class'=>'form-control']) !!}
+				{!! Form::select('status', ['1'=>'Hiển thị','0'=>'Không hiển thị'], isset($thanhphan) ? $thanhphan->status: '', ['class'=>'form-control']) !!}
 			</div>
 		</div>
 		<div class="col-12 d-flex justify-content-end">

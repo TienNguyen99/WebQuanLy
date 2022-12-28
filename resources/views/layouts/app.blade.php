@@ -22,7 +22,9 @@
     </style>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
+    <!--Datetimepicker css  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <!-- End Datetimepicker css -->
     <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- End Script -->
@@ -205,6 +207,25 @@
     <script src="{{asset('public/backend/js/main.js')}}"></script>
     <!-- Script Datatables -->
     <script src="{{asset('public/backend/vendors/simple-datatables/simple-datatables.js')}}"></script>
+    <!-- Datepicker -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.vi.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+      var date_input=$('input[name="namsinh"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'dd/mm/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+        language: 'vi'
+      };
+      date_input.datepicker(options);
+    })
+    </script>
+    <!-- End Datepicker -->
     <script>
         // Simple Datatable
         let table1 = document.querySelector('#table1');
