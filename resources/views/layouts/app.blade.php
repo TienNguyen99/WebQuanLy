@@ -25,6 +25,11 @@
     <!--Datetimepicker css  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
     <!-- End Datetimepicker css -->
+    <!-- Image Upload -->
+<link rel="stylesheet" href="{{asset('public/backend/vendors/toastify/toastify.css')}}">
+<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+<link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <!--  -->
     <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- End Script -->
@@ -161,7 +166,7 @@
 <main>
     <div style="padding: 2rem;">
         <div class="page-content" id="content">
-
+            <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Ẩn/Hiện</small></button>
             @yield('content')
 
 
@@ -174,8 +179,8 @@
             <p>2022 &copy; Ban chỉ huy quân sự phường Bình An</p>
         </div>
         <div class="float-end">
-            <p>Được tạo <span class="text-danger"><i class="bi bi-heart"></i></span> bởi <a
-                href="#">Tiến Nguyễn</a></p>
+            <p>Được tạo bởi <a
+                href="#">Tiến Nguyễn<span class="text-danger"><i class="bi bi-heart"></i></span></a></p>
             </div>
         </div>
     </footer>
@@ -207,6 +212,16 @@
     <script src="{{asset('public/backend/js/main.js')}}"></script>
     <!-- Script Datatables -->
     <script src="{{asset('public/backend/vendors/simple-datatables/simple-datatables.js')}}"></script>
+    <!-- CKeditor  -->
+    <script src="{{asset('public/backend/vendors/ckeditor/ckeditor.js')}}"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+    <!-- End CKeditor -->
     <!-- Datepicker -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.vi.min.js"></script>
@@ -253,7 +268,46 @@
 } );
 </script>
     <!-- script  -->
+<!-- filepond validation -->
+<script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+<script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
 
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+
+<!-- toastify -->
+<script src="{{asset('public/backend/vendors/toastify/toastify.js')}}"></script>
+
+<!-- filepond -->
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<!-- image editor -->
+<script type="text/javascript">
+    FilePond.registerPlugin(
+        // calculates & adds resize information...
+        FilePondPluginImageResize,
+        // preview the image file type...
+        FilePondPluginImagePreview,
+    );
+
+    // Filepond: Image Resize
+    FilePond.create( document.querySelector('.image-resize-filepond'), {
+        allowImagePreview: true, 
+        allowImageFilter: false,
+        allowImageExifOrientation: false,
+        allowImageCrop: false,
+        allowImageResize: true,
+        imageResizeTargetWidth: 100,
+        imageResizeTargetHeight: 100,
+        imageResizeMode: 'cover',
+        imageResizeUpscale: true,
+        acceptedFileTypes: ['image/png','image/jpg','image/jpeg'],
+        fileValidateTypeDetectType: (source, type) => new Promise((resolve, reject) => {
+            // Do custom type detection here and return with promise
+            resolve(type);
+        })
+    });
+</script>
+<!-- end image editor -->
 </body>
 
 </html>

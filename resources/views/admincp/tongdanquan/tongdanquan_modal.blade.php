@@ -63,8 +63,8 @@
 
         <div class="col-sm-2">
            <div class="form-group">
-               {!! Form::label('sdt', 'Số điện thoại', []) !!}
-               {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt','required']) !!}
+               {!! Form::label('thanhphan_id', 'Thành phần', []) !!}
+               {!! Form::select('thanhphan_id', $thanhphan,null, ['class'=>'form-control']) !!}
            </div>
         </div>
         <div class="col-sm-2">

@@ -2,8 +2,7 @@
             @include('sweetalert::alert')
 
             @section('content')
-            <!-- Toggle button -->
-            <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Ẩn/Hiện</small></button>
+            
             <section class="row">
                 <div class="col-12 col-lg-9">
                     <div class="row">
