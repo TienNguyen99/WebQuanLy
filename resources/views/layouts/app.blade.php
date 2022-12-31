@@ -166,6 +166,7 @@
 
     <!-- start main -->
     <main>
+        
         <div style="padding: 2rem;">
             <div class="page-content" id="content">
                 <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Ẩn/Hiện</small></button>
@@ -215,14 +216,14 @@
     <!-- Script Datatables -->
     <script src="{{asset('public/backend/vendors/simple-datatables/simple-datatables.js')}}"></script>
     <!-- CKeditor  -->
-    <script src="{{asset('public/backend/vendors/ckeditor/ckeditor.js')}}"></script>
+    <!-- <script src="{{asset('public/backend/vendors/ckeditor/ckeditor.js')}}"></script>
     <script>
         ClassicEditor
         .create(document.querySelector('#editor'))
         .catch(error => {
             console.error(error);
         });
-    </script>
+    </script> -->
     <!-- End CKeditor -->
     <!-- Datepicker -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
@@ -310,9 +311,13 @@
     });
 </script>
 <!-- end image editor -->
+
 <!-- Sweetalert -->
 <script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
     <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
+@include('sweetalert::alert')
+
+
 </body>
 
 </html>

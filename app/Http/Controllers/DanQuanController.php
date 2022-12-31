@@ -61,9 +61,9 @@ class DanQuanController extends Controller
         $danquan->thuongtru = $data['thuongtru'];
         $danquan->save();
         if ($data) {
-        alert()->success('Post Created', 'Successfully'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
+        alert()->success('Tạo hồ sơ', 'Thành công'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
     } else {
-        alert()->error('Post Created', 'Something went wrong!'); // hoặc có thể dùng alert('Post Created','Something went wrong!', 'error');
+        alert()->error('Lỗi', 'Vui lòng điền đúng thông tin.'); // hoặc có thể dùng alert('Post Created','Something went wrong!', 'error');
     }
 
         
@@ -135,6 +135,7 @@ class DanQuanController extends Controller
     public function destroy($id)
     {
         DanQuan::find($id)->delete();
+        alert()->success('Xóa thành công');
         return redirect()->back();
     }
 }

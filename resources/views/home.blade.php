@@ -1,8 +1,10 @@
             @extends('layouts.app')
-            @include('sweetalert::alert')
+            
 
             @section('content')
-            
+            <script type="text/javascript">
+                
+            </script>
             <section class="row">
                 <div class="col-12 col-lg-9">
                     <div class="row">
@@ -118,7 +120,7 @@
                                             <svg class="bi text-success" width="32" height="32" fill="blue"
                                             style="width:10px">
                                             <use
-                                            xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
+                                            xlink:href="{{asset('public/backend/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill')}}" />
                                         </svg>
                                         <h5 class="mb-0 ms-3">America</h5>
                                     </div>
