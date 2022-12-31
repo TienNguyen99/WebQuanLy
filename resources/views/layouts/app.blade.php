@@ -26,9 +26,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
     <!-- End Datetimepicker css -->
     <!-- Image Upload -->
-<link rel="stylesheet" href="{{asset('public/backend/vendors/toastify/toastify.css')}}">
-<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-<link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('public/backend/vendors/toastify/toastify.css')}}">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
     <!--  -->
     <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -148,55 +148,55 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                </li>
-                            </ul>
-                        </li>       
+                            </li>
+                        </ul>
+                    </li>       
                     @endguest 
-                    </ul>
-                </div> 
-                <!-- sidebar menu end -->
-         </div>
-     </div>
-
-<!-- <button class="sidebar-toggler btn x"><i data-feather="x"></i></button> -->
-
-<!-- navbar end  -->
-
-<!-- start main -->
-<main>
-    <div style="padding: 2rem;">
-        <div class="page-content" id="content">
-            <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Ẩn/Hiện</small></button>
-            @yield('content')
-
-
-
-    
-    
-        <footer>
-    <div class="footer clearfix mb-0 text-muted" align="right">
-        <div class="float-start">
-            <p>2022 &copy; Ban chỉ huy quân sự phường Bình An</p>
+                </ul>
+            </div> 
+            <!-- sidebar menu end -->
         </div>
-        <div class="float-end">
-            <p>Được tạo bởi <a
-                href="#">Tiến Nguyễn<span class="text-danger"><i class="bi bi-heart"></i></span></a></p>
-            </div>
-        </div>
-    </footer>
-<!-- end footer -->
-        </div>
-
     </div>
 
-</main>
-<!-- end main -->
+    <!-- <button class="sidebar-toggler btn x"><i data-feather="x"></i></button> -->
+
+    <!-- navbar end  -->
+
+    <!-- start main -->
+    <main>
+        <div style="padding: 2rem;">
+            <div class="page-content" id="content">
+                <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Ẩn/Hiện</small></button>
+                @yield('content')
 
 
 
-<!-- start footer -->
+                
+                
+                <footer>
+                    <div class="footer clearfix mb-0 text-muted" align="right">
+                        <div class="float-start">
+                            <p>2022 &copy; Ban chỉ huy quân sự phường Bình An</p>
+                        </div>
+                        <div class="float-end">
+                            <p>Được tạo bởi <a
+                                href="#">Tiến Nguyễn<span class="text-danger"><i class="bi bi-heart"></i></span></a></p>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- end footer -->
+                </div>
 
-</div>
+            </div>
+
+        </main>
+        <!-- end main -->
+
+
+
+        <!-- start footer -->
+
+    </div>
     <!-- Scripts -->
 
     
@@ -216,10 +216,10 @@
     <script src="{{asset('public/backend/vendors/ckeditor/ckeditor.js')}}"></script>
     <script>
         ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
     </script>
     <!-- End CKeditor -->
     <!-- Datepicker -->
@@ -227,7 +227,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.vi.min.js"></script>
     <script>
 
-    $(document).ready(function(){
+        $(document).ready(function(){
       var date_input=$('input[name="namsinh"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
       var options={
@@ -236,38 +236,38 @@
         todayHighlight: true,
         autoclose: true,
         language: 'vi'
-      };
-      date_input.datepicker(options);
-    })
-    </script>
-    <!-- End Datepicker -->
-    <script>
+    };
+    date_input.datepicker(options);
+})
+</script>
+<!-- End Datepicker -->
+<script>
         // Simple Datatable
-        let table1 = document.querySelector('#table1');
-        let dataTable = new simpleDatatables.DataTable(table1);
-    </script>
+    let table1 = document.querySelector('#table1');
+    let dataTable = new simpleDatatables.DataTable(table1);
+</script>
 
-    
-    <!-- End script datatables -->
-    <!--Script thêm -->
-    <script type="text/javascript">
-        $(function() {
+
+<!-- End script datatables -->
+<!--Script thêm -->
+<script type="text/javascript">
+    $(function() {
 // Sidebar ẩn hiện
-            $('#sidebarCollapse').on('click', function() {
-                $('#sidebar, #content').toggleClass('active');
-            });
+        $('#sidebarCollapse').on('click', function() {
+            $('#sidebar, #content').toggleClass('active');
         });
-    </script>
+    });
+</script>
 <!-- // Modal datatable -->
 <script type="text/javascript">
     $(document).ready(function() {
-    $('#datatable').dataTable();
-    
-     $("[data-toggle=tooltip]").tooltip();
-    
-} );
+        $('#datatable').dataTable();
+        
+        $("[data-toggle=tooltip]").tooltip();
+        
+    } );
 </script>
-    <!-- script  -->
+<!-- script  -->
 <!-- filepond validation -->
 <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
 <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
@@ -287,7 +287,7 @@
         FilePondPluginImageResize,
         // preview the image file type...
         FilePondPluginImagePreview,
-    );
+        );
 
     // Filepond: Image Resize
     FilePond.create( document.querySelector('.image-resize-filepond'), {

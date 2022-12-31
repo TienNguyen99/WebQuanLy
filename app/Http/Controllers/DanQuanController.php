@@ -43,7 +43,28 @@ class DanQuanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $danquan = new DanQuan();
+        $danquan->tenkhaisinh = $data['tenkhaisinh'];
+        $danquan->tenkhac = $data['tenkhac'];
+        $danquan->sdt = $data['sdt'];
+        $danquan->gioitinh = $data['gioitinh'];
+        
+        $danquan->namsinh  = Carbon::parse($data['namsinh'])->format('y/d/m');
+        
+        $danquan->thanhphan_id = $data['thanhphan_id'];
+        $danquan->cancuoc = $data['cancuoc'];
+        $danquan->noidkks = $data['noidkks'];
+        $danquan->quequan = $data['quequan'];
+        $danquan->dantoc = $data['dantoc'];
+        $danquan->tongiao = $data['tongiao'];
+        $danquan->thuongtru = $data['thuongtru'];
+        $danquan->save();
+        
+
+        
+        
+        return redirect()->back();
     }
 
     /**
@@ -77,7 +98,28 @@ class DanQuanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $danquan =  DanQuan::find($id);
+        $danquan->tenkhaisinh = $data['tenkhaisinh'];
+        $danquan->tenkhac = $data['tenkhac'];
+        $danquan->sdt = $data['sdt'];
+        $danquan->gioitinh = $data['gioitinh'];
+        
+        $danquan->namsinh  = Carbon::parse($data['namsinh'])->format('y/d/m');
+        
+        $danquan->thanhphan_id = $data['thanhphan_id'];
+        $danquan->cancuoc = $data['cancuoc'];
+        $danquan->noidkks = $data['noidkks'];
+        $danquan->quequan = $data['quequan'];
+        $danquan->dantoc = $data['dantoc'];
+        $danquan->tongiao = $data['tongiao'];
+        $danquan->thuongtru = $data['thuongtru'];
+        $danquan->save();
+        
+
+        
+        
+        return redirect()->back();
     }
 
     /**
@@ -88,6 +130,7 @@ class DanQuanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DanQuan::find($id)->delete();
+        return redirect()->back();
     }
 }
