@@ -47,6 +47,8 @@
     <!-- css DataTables -->
     <link rel="stylesheet" href="{{asset('public/backend/vendors/simple-datatables/style.css')}}">
     <!-- End Css Datatables -->
+    <!-- sweetalert -->
+    <link rel="stylesheet" href="{{asset('public/backend/vendors/sweetalert2/sweetalert2.min.css')}}">
 </head>
 
 
@@ -308,6 +310,9 @@
     });
 </script>
 <!-- end image editor -->
+<!-- Sweetalert -->
+<script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
+    <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
 </body>
 
 </html>

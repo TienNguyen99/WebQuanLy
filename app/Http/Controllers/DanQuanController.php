@@ -60,7 +60,11 @@ class DanQuanController extends Controller
         $danquan->tongiao = $data['tongiao'];
         $danquan->thuongtru = $data['thuongtru'];
         $danquan->save();
-        
+        if ($data) {
+        alert()->success('Post Created', 'Successfully'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
+    } else {
+        alert()->error('Post Created', 'Something went wrong!'); // hoặc có thể dùng alert('Post Created','Something went wrong!', 'error');
+    }
 
         
         

@@ -13,7 +13,6 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.3",
-        "realrashid/sweet-alert": "^5.1",
         "twbs/bootstrap": "^5.2"
     },
     "require-dev": {
