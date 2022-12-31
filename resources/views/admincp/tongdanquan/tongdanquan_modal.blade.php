@@ -115,18 +115,12 @@
                                      {!! Form::textarea('noio',null, ['class'=>'form-control','id'=>'noio']) !!}
                                  </div>
                              </div>
-                             <div class=" col-12">
-                                <div class="form-group">
-                                    {!! Form::label('mota', 'Mô tả', []) !!}
-                                    <div id="editor">
-
-                                    </div>
-                                </div>
-                            </div>
+                             
 
                             <div class="modal-footer">
                                 <div class="col-12" align="right">
                                     {!! Form::submit('Chỉnh sửa', ['class'=>'btn btn-primary me-1 mb-1']) !!} 
+                                    
                                 </div>
                             </div>
                         </div>

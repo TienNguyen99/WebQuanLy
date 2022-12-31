@@ -76,6 +76,9 @@
                           }
                       </script>
                   </td>
+                  <td>
+                      <a href="{{route('danquan.edit',$show_tongdanquan->id)}}" class="btn btn-outline-warning">In</a>
+                  </td>
               </tr>	
               @include('admincp.tongdanquan.tongdanquan_modal')
           <?php endforeach ?>

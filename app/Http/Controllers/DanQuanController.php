@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\DanQuan;
 use App\Models\ThanhPhan;
 use Carbon\Carbon;
-
+use PDF;
 
 
 class DanQuanController extends Controller
@@ -61,7 +61,7 @@ class DanQuanController extends Controller
         $danquan->thuongtru = $data['thuongtru'];
         $danquan->save();
         if ($data) {
-        alert()->success('Tạo hồ sơ', 'Thành công'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
+        alert()->success('Tạo hồ sơ thành công'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
     } else {
         alert()->error('Lỗi', 'Vui lòng điền đúng thông tin.'); // hoặc có thể dùng alert('Post Created','Something went wrong!', 'error');
     }
@@ -90,7 +90,9 @@ class DanQuanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pdf = DanQuan::where('id',$id)->first();
+        return view('admincp.myPDF',compact('pdf'));
+        // return redirect()->back();
     }
 
     /**
@@ -138,4 +140,5 @@ class DanQuanController extends Controller
         alert()->success('Xóa thành công');
         return redirect()->back();
     }
+   
 }
