@@ -88,9 +88,12 @@ class DanQuanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($pdfid)
     {
-        $pdf = DanQuan::where('id',$id)->first();
+        
+        $pdf = DanQuan::where('id',$pdfid)->first();
+        // print_r($pdf);
+
         return view('admincp.myPDF',compact('pdf'));
         // return redirect()->back();
     }
