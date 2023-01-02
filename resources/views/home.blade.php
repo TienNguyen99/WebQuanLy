@@ -172,7 +172,7 @@
                                         <td class="col-3">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar avatar-md">
-                                                    <img src="assets/images/faces/5.jpg">
+                                                    <img src="{{asset('public/backend/images/faces/5.jpg')}}">
                                                 </div>
                                                 <p class="font-bold ms-3 mb-0">Si Cantik</p>
                                             </div>

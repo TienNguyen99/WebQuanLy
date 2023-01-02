@@ -138,10 +138,10 @@
           </p>
           <p style="margin-left:14.25pt; text-align:center; font-size:13pt"><span style="font-weight:bold">Độc lập-Tự do-Hạnh phúc</span>
           </p>
-          <p style="margin-left:14.25pt; text-align:justify; font-size:12pt"><span style="height:0pt; text-align:left; display:block; position:absolute; z-index:0"><img src="images/Aspose.Words.d389d242-4b9f-48d3-b93c-da2b337f830a.001.png" width="184" height="1" alt="" style="margin-top:2.28pt; margin-left:182.02pt; -aw-left-pos:196.65pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:2.65pt; -aw-wrap-type:none; position:absolute" /></span><span style="-aw-import:ignore">&#xa0;</span>
+          <p style="margin-left:14.25pt; text-align:justify; font-size:12pt"><span style="height:0pt; text-align:left; display:block; position:absolute; z-index:0"><img src="{{asset('public/backend/images/Aspose.Words.d389d242-4b9f-48d3-b93c-da2b337f830a.001.png')}}" width="184" height="1" alt="" style="margin-top:2.28pt; margin-left:194.02pt; -aw-left-pos:196.65pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:2.65pt; -aw-wrap-type:none; position:absolute" /></span><span style="-aw-import:ignore">&#xa0;</span>
           </p>
           <p style="margin-left:14.25pt; text-align:center; font-size:12pt"><span style="height:0pt; text-align:left; display:block; position:absolute; z-index:1">
-            <img src="{{asset('public/backend/images/Aspose.Words.d389d242-4b9f-48d3-b93c-da2b337f830a.002.png')}}" width="96" height="121" alt="" style="margin-top:3.22pt; margin-left:11.17pt; -aw-left-pos:25.8pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:3.6pt; -aw-wrap-type:none; position:absolute" /></span><span style="width:243.15pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:257.4pt">&#xa0;</span><span style="width:115.95pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:373.35pt">&#xa0;</span><span>Biểu số 08/GCN-2016</span>
+            <img src="{{asset('public/backend/images/faces/5.jpg')}}" width="96" height="121" alt="" style="margin-top:3.22pt; margin-left:11.17pt; -aw-left-pos:25.8pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:3.6pt; -aw-wrap-type:none; position:absolute" /></span><span style="width:243.15pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:257.4pt">&#xa0;</span><span style="width:115.95pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:373.35pt">&#xa0;</span><span>Biểu số 08/GCN-2016</span>
           </p>
           <p style="margin-left:14.25pt; text-align:center; font-size:12pt"><span style="width:253.8pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:268.05pt">&#xa0;</span><span style="width:108.55pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:376.6pt">&#xa0;</span><span>Khổ biểu: 29 x 42</span>
           </p>
@@ -151,7 +151,7 @@
           </p>
           <p style="margin-left:14.25pt; text-align:center; font-size:16pt"><span style="font-weight:bold; -aw-import:spaces">&#xa0;</span><span style="font-weight:bold">DÂN QUÂN TỰ VỆ</span>
           </p>
-          <p style="margin-left:14.25pt; text-align:center; font-size:12pt"><span style="height:0pt; text-align:left; display:block; position:absolute; z-index:2"><img src="{{asset('public/backend/images/Aspose.Words.d389d242-4b9f-48d3-b93c-da2b337f830a.003.png')}}" width="120" height="2" alt="" style="margin-top:0.3pt; margin-left:202.4pt; -aw-left-pos:217.4pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:1.05pt; -aw-wrap-type:none; position:absolute" /></span><span style="-aw-import:ignore">&#xa0;</span>
+          <p style="margin-left:14.25pt; text-align:center; font-size:12pt"><span style="height:0pt; text-align:left; display:block; position:absolute; z-index:2"><img src="{{asset('public/backend/images/Aspose.Words.d389d242-4b9f-48d3-b93c-da2b337f830a.003.png')}}" width="120" height="2" alt="" style="margin-top:0.3pt; margin-left:220.4pt; -aw-left-pos:217.4pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:1.05pt; -aw-wrap-type:none; position:absolute" /></span><span style="-aw-import:ignore">&#xa0;</span>
           </p>
           <p style="margin-left:14.25pt; text-align:center; font-size:14pt"><span style="font-weight:bold">I. SƠ YẾU LÝ LỊCH</span>
           </p>
@@ -204,7 +204,8 @@
           <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Khen thưởng: </span><span style="width:169.76pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:271pt">....................</span><span>Kỷ luật: </span>
             <span style="width:200.01pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:542pt">..........................</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Nghề nghiệp:</span><span style="width:175.03pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Lương: Nghạch:…….. Bậc: </span><span style="width:108.63pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:539.65pt">............</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Nghề nghiệp:</span><span style="width:175.03pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Lương: Nghạch:…….. Bậc: </span>
+            <!-- <span style="width:108.63pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:539.65pt">............</span> -->
           </p>
           <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi làm việc, (học tập): </span>
           </p>
