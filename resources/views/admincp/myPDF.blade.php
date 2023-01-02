@@ -163,7 +163,14 @@
           </p>
           <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ, chữ đệm và tên thường dùng: {{$pdf->tenkhac}}</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày 26 tháng 8 năm 1994</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:55.25pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Giới tính (nam, nữ): Nam</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày {{Carbon\Carbon::parse($pdf->namsinh)->format('d')}} tháng {{Carbon\Carbon::parse($pdf->namsinh)->format('m')}} năm {{Carbon\Carbon::parse($pdf->namsinh)->format('y')}}</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:55.25pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Giới tính (nam, nữ): 
+            
+            <?php if ($pdf->gioitinh == 1): ?>
+              Nam
+            <?php else: ?>
+              Nữ
+            <?php endif ?>
+          </span>
           </p>
           <p style="margin-top:6pt; margin-left:20.15pt; font-size:14pt"><span>Số CMND/CCCD:{{$pdf->cancuoc}}</span><span style="width:108.82pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:256.15pt">&#xa0;</span><span>Công an Bình Dương cấp ngày 20/8/2011</span>
           </p>
@@ -171,27 +178,33 @@
           </p>
           <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Quê quán: Bình An – Dĩ An – Bình Dương</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Dân tộc: Kinh</span><span style="width:102.18pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:201.65pt">&#xa0;</span><span>Tôn giáo: Không </span><span style="width:70.94pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:371.75pt">&#xa0;</span><span>Quốc tịch: Việt Nam</span><span style="width:53.23pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:542pt">&#xa0;</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Dân tộc: Kinh</span><span style="width:102.18pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:201.65pt">&#xa0;</span><span>Tôn giáo: Không </span><span style="width:70.94pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:371.75pt">&#xa0;</span><span>Quốc tịch: Việt Nam</span>
+            <!-- <span style="width:53.23pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:542pt">&#xa0;</span> -->
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi thường trú của gia đình: 303B/4 khu 8 </span><span style="-aw-import:spaces">&#xa0;</span><span>khu phố Bình Thung 2,</span><span style="-aw-import:spaces">&#xa0; </span><span>phường Bình An, thị xã Dĩ An, tỉnh Bình Dương.</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi thường trú của gia đình:  </span><span style="-aw-import:spaces">&#xa0;</span><span>khu phố Bình Thung 2,</span><span style="-aw-import:spaces">&#xa0; </span><span>phường Bình An, thị xã Dĩ An, tỉnh Bình Dương.</span>
           </p>
           <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi ở hiện tại của bản thân: 303B/4 khu 8</span><span style="-aw-import:spaces">&#xa0; </span><span>khu phố Bình Thung 2,</span><span style="-aw-import:spaces">&#xa0; </span><span>phường Bình An, thị xã Dĩ An, tỉnh Bình Dương. </span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Thành phần gia đình: Trung nông</span><span style="width:62.27pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Bản thân: Phụ thuộc</span><span style="width:157.07pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:542pt">&#xa0;</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Thành phần gia đình: Trung nông</span><span style="width:62.27pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Bản thân: Phụ thuộc</span>
+            <!-- <span style="width:157.07pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:542pt">&#xa0;</span> -->
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Trình độ văn hóa: 12/12</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Trình độ văn hóa: 12/12</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Trình độ chuyên môn: </span><span style="width:101.09pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:249.55pt">...........</span><span>Chuyên ngành đào tạo:</span><span style="width:161.33pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:540.35pt">...................</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Trình độ chuyên môn: </span>
+            <span style="width:101.09pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:249.55pt">...........</span><span>Chuyên ngành đào tạo:</span>
+            <!-- <span style="width:161.33pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:540.35pt">...................</span> -->
           </p>
           <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Ngoại ngữ: </span><span style="width:447.86pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:534.7pt">.....................................................</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Ngày vào Đảng CSVN:</span><span style="width:96.8pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:249.55pt">...........</span><span>Chính thức: </span><span style="width:220.99pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:540.35pt">..........................</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Ngày vào Đảng CSVN:</span><span style="width:96.8pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:249.55pt">...........</span><span>Chính thức: </span><span style="width:210pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:540.35pt">..............</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Ngày vào Đoàn TNCS Hồ Chí Minh:</span><span style="width:312.64pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:542pt">.....................................</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Ngày vào Đoàn TNCS Hồ Chí Minh:</span>
+            <!-- <span style="width:312.64pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:542pt">.....................................</span> -->
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Khen thưởng: </span><span style="width:169.76pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:271pt">....................</span><span>Kỷ luật: </span><span style="width:222.01pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:542pt">..........................</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Khen thưởng: </span><span style="width:169.76pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:271pt">....................</span><span>Kỷ luật: </span>
+            <span style="width:200.01pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:542pt">..........................</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nghề nghiệp:</span><span style="width:175.03pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Lương: Nghạch:…….. Bậc: </span><span style="width:108.63pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:539.65pt">............</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Nghề nghiệp:</span><span style="width:175.03pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Lương: Nghạch:…….. Bậc: </span><span style="width:108.63pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:539.65pt">............</span>
           </p>
           <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi làm việc, (học tập): </span>
           </p>

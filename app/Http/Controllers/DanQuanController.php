@@ -50,7 +50,7 @@ class DanQuanController extends Controller
         $danquan->sdt = $data['sdt'];
         $danquan->gioitinh = $data['gioitinh'];
         
-        $danquan->namsinh  = Carbon::parse($data['namsinh'])->format('y/d/m');
+        $danquan->namsinh  = Carbon::parse($data['namsinh'])->format('y/m/d');
         
         $danquan->thanhphan_id = $data['thanhphan_id'];
         $danquan->cancuoc = $data['cancuoc'];

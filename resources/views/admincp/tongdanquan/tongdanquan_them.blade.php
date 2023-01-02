@@ -20,7 +20,9 @@
                         <th>Quê quán</th>
                         <th>Đơn vị</th>
                         <th>Thành phần</th>
-                        <th>Chức năng</th>
+                        <th>Chỉnh sửa</th>
+                        <th>Xóa</th>
+                        <th>In hồ sơ</th>
                         
 
                     </tr>
@@ -53,8 +55,8 @@
                      <td>
                         {!! Form::open(['method'=>'DELETE','route' => ['danquan.destroy',$show_tongdanquan->id],'onsubmit'=>'return submitForm(this)']) !!}
 
-                        <button type="submit" class="btn-default">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        <button type="submit" class="btn btn-default">
+                            <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
                         </button>
                         {!! Form::close() !!}
                         <script type="text/javascript">
@@ -77,7 +79,7 @@
                       </script>
                   </td>
                   <td>
-                      <a href="{{route('danquan.edit',$show_tongdanquan->id)}}" class="btn btn-outline-warning">In</a>
+                      <a href="{{route('danquan.edit',$show_tongdanquan->id)}}" class="btn btn-default"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
                   </td>
               </tr>	
               @include('admincp.tongdanquan.tongdanquan_modal')
