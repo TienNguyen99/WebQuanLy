@@ -4,7 +4,7 @@
         role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel20">Chỉnh sửa hồ sơ dân quân</h4>
+            <h4 class="modal-title" id="myModalLabel20">Thêm hồ sơ dân quân</h4>
             <button type="button" class="close" data-bs-dismiss="modal"
             aria-label="Close">
             <i data-feather="x"></i>
@@ -18,15 +18,18 @@
 
                   <div class="card-content">
                     <div class="card-body">
-                      {!! Form::open(['route'=>'danquan.store','method'=>'POST','class'=>'form']) !!}
+                      {!! Form::open(['route'=>'danquan.store','method'=>'POST','enctype'=>'multipart/form-data']) !!}
                       <div class="row">
-                        <div class="col-12"><img src="{{asset('public/backend/images/faces/2.jpg')}}" width="100px" height="100%" alt="...">
+                        <div class="col-sm-6"><img src="{{asset('public/backend/images/faces/2.jpg')}}" width="100px" height="100%" alt="...">
 
                         </div>
+                        
                         <div class="col-12">
-                          <input type="file" class="image-resize-filepond">
-                        </div>
-
+                         <div class="form-group">
+                           {!! Form::label('Image', 'Thêm ảnh', []) !!}
+                           {!! Form::file('anh34', ['class'=>'form-control','id'=>'formFile' ]) !!}
+                         </div>
+                       </div>
                         <div class="col-12">
                           <div class="divider">
                             <div class="divider-text">Hồ sơ dân quân tự vệ</div>
@@ -105,19 +108,50 @@
                          {!! Form::text('tongiao','Không', ['class'=>'form-control','id'=>'tongiao']) !!}
                        </div>
                      </div>
+                     <div class="col-sm-2">
+                       <div class="form-group">
+                         {!! Form::label('quoctich', 'Quốc tịch', []) !!}
+                         {!! Form::text('quoctich','Việt Nam', ['class'=>'form-control','id'=>'quoctich','disabled']) !!}
+                       </div>
+                     </div>
+                     <div class="col-sm-6">
+                       <div class="form-group">
+                         {!! Form::label('noidkks', 'Nơi đăng ký khai sinh', []) !!}
+                         {!! Form::text('noidkks','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'noidkks']) !!}
+                       </div>
+                     </div>
+                     <div class="col-sm-6">
+                       <div class="form-group">
+                        {!! Form::label('quequan', 'Quê quán', []) !!}
+                         {!! Form::text('quequan','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'quequan']) !!}
+                       </div>
+                     </div>
+                     <div class="col-sm-6">
+                       <div class="form-group">
+                        {!! Form::label('thuongtru', 'Thường trú', []) !!}
+                         {!! Form::text('thuongtru','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'thuongtru']) !!}
+                       </div>
+                     </div>
+                     <div class="col-sm-6">
+                       <div class="form-group">
+                        {!! Form::label('noio', 'Nơi ở', []) !!}
+                         {!! Form::text('noio','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'noio']) !!}
+                       </div>
+                     </div>
+
                      
-                       <div class="col-sm-6">
-                         <div class="form-group">
-                           {!! Form::label('thuongtru', 'Thường trú', []) !!}
-                           {!! Form::textarea('thuongtru',null, ['class'=>'form-control','id'=>'thuongtru']) !!}
-                         </div>
+                     <div class="col-sm-6">
+                       <div class="form-group">
+                         {!! Form::label('tinhhinhgiadinh', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH', []) !!}
+                         {!! Form::textarea('tinhhinhgiadinh',null, ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
                        </div>
-                       <div class="col-sm-6">
-                         <div class="form-group">
-                           {!! Form::label('noio', 'Nơi ở ', []) !!}
-                           {!! Form::textarea('noio',null, ['class'=>'form-control','id'=>'noio']) !!}
-                         </div>
+                     </div>
+                     <div class="col-sm-6">
+                       <div class="form-group">
+                         {!! Form::label('tinhhinhbanthan', 'TÌNH HÌNH KINH TẾ,CHÍNH TRỊ, QUÁ TRÌNH CÔNG TÁC CỦA BẢN THÂN ', []) !!}
+                         {!! Form::textarea('tinhhinhbanthan',null, ['class'=>'form-control','id'=>'tinhhinhbanthan']) !!}
                        </div>
+                     </div>
                      
                      
 

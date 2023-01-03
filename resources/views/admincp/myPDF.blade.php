@@ -44,7 +44,7 @@
           </p>
           <p style="margin-right:44.9pt; margin-left:14.2pt; text-indent:1.45pt; text-align:center; line-height:150%; font-size:14pt"><span style="font-style:italic">(Về lai lịch chính trị gia đình, tiêu chuẩn của công dân đủ điều kiện nhập ngũ hay không)</span>
           </p>
-          <p style="text-indent:56.7pt; text-align:justify; font-size:14pt"><span>Lý lịch của gia đình và bản thân của thanh niên</span><span style="font-weight:bold"> {{$pdf->tenkhac}} </span><span>rõ ràng, chấp hành tốt các chủ trương của Đảng, Chính sách Pháp luật của Nhà nước, quy định của địa phương nơi cư trú. Đủ điều kiện</span><span style="-aw-import:spaces">&#xa0; </span><span>tham gia lực lượng dân quân</span><span style="font-size:12pt">.</span>
+          <p style="text-indent:56.7pt; text-align:justify; font-size:14pt"><span>Lý lịch của gia đình và bản thân của thanh niên</span><span style="font-weight:bold"> {{$pdf->tenkhaisinh}} </span><span>rõ ràng, chấp hành tốt các chủ trương của Đảng, Chính sách Pháp luật của Nhà nước, quy định của địa phương nơi cư trú. Đủ điều kiện</span><span style="-aw-import:spaces">&#xa0; </span><span>tham gia lực lượng dân quân</span><span style="font-size:12pt">.</span>
           </p>
           <p style="margin-right:44.9pt; margin-left:21.3pt; text-indent:-5.65pt; text-align:center; font-size:14pt"><span style="width:5.65pt; text-indent:0pt; display:inline-block">&#xa0;</span>
           </p>
@@ -76,7 +76,7 @@
           </p>
           <p style="margin-top:6pt; margin-right:44.9pt; margin-left:21.3pt; text-indent:-5.65pt; text-align:center; line-height:150%; font-size:14pt"><span style="font-weight:bold">VI. KẾT LUẬN CỦA CƠ QUAN QUÂN SỰ CẤP HUYỆN</span>
           </p>
-          <p style="margin-right:44.9pt; margin-left:21.3pt; text-indent:35.4pt; text-align:justify; font-size:14pt"><span>Lý lịch của gia đình và bản thân của công dân </span><span style="font-weight:bold">{{$pdf->tenkhac}} </span><span>rõ ràng, chấp hành tốt các chủ trương của Đảng, Chính sách Pháp luật của Nhà nước, quy định của địa phương nơi cư trú. Đủ điều kiện tham gia lực lượng dân quân.</span>
+          <p style="margin-right:44.9pt; margin-left:21.3pt; text-indent:35.4pt; text-align:justify; font-size:14pt"><span>Lý lịch của gia đình và bản thân của công dân </span><span style="font-weight:bold">{{$pdf->tenkhaisinh}} </span><span>rõ ràng, chấp hành tốt các chủ trương của Đảng, Chính sách Pháp luật của Nhà nước, quy định của địa phương nơi cư trú. Đủ điều kiện tham gia lực lượng dân quân.</span>
           </p>
           <table cellspacing="0" cellpadding="0" class="TableGrid" style="margin-left:297.45pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
             <tr>
@@ -112,7 +112,7 @@
           </p>
           <p style="margin-right:44.9pt; margin-left:21.3pt; text-indent:-5.65pt; text-align:center; line-height:150%; font-size:14pt"><span style="font-weight:bold; letter-spacing:-0.4pt">TRƯỚC KHI CÔNG DÂN NHẬP NGŨ</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-indent:36.55pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">Nhất trí với kết luật của HĐ NVQS phường Bình An và cơ quan quân sự thị xã về lý lịch gia đình và bản thân công dân </span><span style="font-weight:bold">{{$pdf->tenkhac}}</span><span style="letter-spacing:-0.4pt">. Chấp hành tốt chủ trương chính sách của Đảng, pháp luật Nhà nước và các quy định của địa phương nơi cư trú, bản thân đủ điều kiện </span><span>tham gia lực lượng dân quân</span><span style="letter-spacing:-0.4pt">.</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-indent:36.55pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">Nhất trí với kết luật của HĐ NVQS phường Bình An và cơ quan quân sự thị xã về lý lịch gia đình và bản thân công dân </span><span style="font-weight:bold">{{$pdf->tenkhaisinh}}</span><span style="letter-spacing:-0.4pt">. Chấp hành tốt chủ trương chính sách của Đảng, pháp luật Nhà nước và các quy định của địa phương nơi cư trú, bản thân đủ điều kiện </span><span>tham gia lực lượng dân quân</span><span style="letter-spacing:-0.4pt">.</span>
           </p>
           <table cellspacing="0" cellpadding="0" class="TableGrid" style="width:334.8pt; margin-left:255.15pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
             <tr style="height:87.95pt">
@@ -159,11 +159,11 @@
           </p>
           <p style="margin-left:14.25pt; text-align:justify; font-size:12pt"><span style="-aw-import:ignore">&#xa0;</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ, chữ đệm và tên khai sinh (viết chữ in hoa): </span><span style="font-weight:bold">{{$pdf->tenkhac}}</span>
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ, chữ đệm và tên khai sinh (viết chữ in hoa): </span><span style="font-weight:bold">{{$pdf->tenkhaisinh}}</span>
           </p>
           <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ, chữ đệm và tên thường dùng: {{$pdf->tenkhac}}</span>
           </p>
-          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày {{Carbon\Carbon::parse($pdf->namsinh)->format('d')}} tháng {{Carbon\Carbon::parse($pdf->namsinh)->format('m')}} năm {{Carbon\Carbon::parse($pdf->namsinh)->format('y')}}</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:55.25pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Giới tính (nam, nữ): 
+          <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày {{Carbon\Carbon::parse($pdf->namsinh)->format('d')}} tháng {{Carbon\Carbon::parse($pdf->namsinh)->format('m')}} năm 19{{Carbon\Carbon::parse($pdf->namsinh)->format('y')}}</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:55.25pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Giới tính (nam, nữ): 
             
             <?php if ($pdf->gioitinh == 1): ?>
               Nam
@@ -326,7 +326,7 @@
           </p>
           <p style="margin-left:20.25pt; font-size:14pt"><span style="font-weight:bold; -aw-import:ignore">&#xa0;</span>
           </p>
-          <p style="margin-left:35.5pt; text-indent:25.55pt; text-align:justify; font-size:14pt"><span>Bản khai lý lịch trên là đúng, bản thân và gia đình công dân </span><span style="font-weight:bold">{{$pdf->tenkhac}} </span><span>luôn chấp hành tốt chủ trương đường lối của Đảng, Chính sách Pháp luật của Nhà nước và các quy định của địa phương, kinh tế gia đình ổn định.</span>
+          <p style="margin-left:35.5pt; text-indent:25.55pt; text-align:justify; font-size:14pt"><span>Bản khai lý lịch trên là đúng, bản thân và gia đình công dân </span><span style="font-weight:bold">{{$pdf->tenkhaisinh}} </span><span>luôn chấp hành tốt chủ trương đường lối của Đảng, Chính sách Pháp luật của Nhà nước và các quy định của địa phương, kinh tế gia đình ổn định.</span>
           </p>
           <p style="margin-left:20.25pt; text-indent:50.7pt; text-align:justify; font-size:14pt"><span>Bản thân đủ điều kiện tham gia lực lượng dân quân.</span>
           </p>

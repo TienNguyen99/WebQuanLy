@@ -18,11 +18,11 @@
                         <th>Số điện thoại</th>
                         <th>Năm sinh</th>
                         <th>Quê quán</th>
-                        <th>Đơn vị</th>
+                        <th>Ảnh</th>
                         <th>Thành phần</th>
                         <th>Chỉnh sửa</th>
+                        <th>In</th>
                         <th>Xóa</th>
-                        <th>In hồ sơ</th>
                         
 
                     </tr>
@@ -41,8 +41,8 @@
                             <td>{{$show_tongdanquan->sdt}}</td>
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->format('d/m/y')}}</td>
                             <td>{{$show_tongdanquan->quequan}}</td>
-                            <td>{{$show_tongdanquan->status}}</td>
-                            <td>{{$show_tongdanquan->thanhphan_id}}</td>
+                            <td><img src="{{asset('public/backend/images/'.$show_tongdanquan->anh34)}}" width="100px" height="100%" alt="..."></td>
+                            <td>{{$show_tongdanquan->thanhphan->title}}</td>
                             
                             <td>
                              <button type="button" data-bs-toggle="modal"
@@ -52,7 +52,11 @@
                          </button>
 
                      </td>
-                     <td>
+                     
+                  <td>
+                      <a href="{{route('danquan.edit',$show_tongdanquan->id)}}" class="btn btn-default"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
+                  </td>
+                  <td>
                         {!! Form::open(['method'=>'DELETE','route' => ['danquan.destroy',$show_tongdanquan->id],'onsubmit'=>'return submitForm(this)']) !!}
 
                         <button type="submit" class="btn btn-default">
@@ -77,9 +81,6 @@
                               return false;
                           }
                       </script>
-                  </td>
-                  <td>
-                      <a href="{{route('danquan.edit',$show_tongdanquan->id)}}" class="btn btn-default"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
                   </td>
               </tr>	
               @include('admincp.tongdanquan.tongdanquan_modal')

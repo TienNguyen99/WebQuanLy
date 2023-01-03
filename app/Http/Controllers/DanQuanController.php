@@ -18,7 +18,7 @@ class DanQuanController extends Controller
      */
     public function index()
     {
-        $list = DanQuan::all();
+        $list = DanQuan::with('thanhphan')->get();
         $thanhphan = ThanhPhan::pluck('title','id');
         
         return view('admincp.tongdanquan.tongdanquan_them',compact('list','thanhphan'));
@@ -32,7 +32,7 @@ class DanQuanController extends Controller
     public function create()
     {
 
-        return view('admincp.tongdanquan.tongdanquan_them');
+        // return view('admincp.tongdanquan.tongdanquan_them');
     }
 
     /**
@@ -44,6 +44,7 @@ class DanQuanController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        // dd($data);
         $danquan = new DanQuan();
         $danquan->tenkhaisinh = $data['tenkhaisinh'];
         $danquan->tenkhac = $data['tenkhac'];
@@ -59,11 +60,32 @@ class DanQuanController extends Controller
         $danquan->dantoc = $data['dantoc'];
         $danquan->tongiao = $data['tongiao'];
         $danquan->thuongtru = $data['thuongtru'];
+        $danquan->noio = $data['noio'];
+
+
+
+        $danquan->tinhhinhgiadinh = $data['tinhhinhgiadinh'];
+        $danquan->tinhhinhbanthan = $data['tinhhinhbanthan'];
+
+
+        // thêm ảnh
+        // 
+        // 
+        $get_image = $request->file('anh34');
+        $path = 'public/backend/images/';
+        if($get_image){
+
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode(',',$get_name_image));
+            $new_image = $name_image.rand(0,9999).'.'.$get_image->getClientOriginalName();
+            $get_image->move($path,$new_image);
+            $danquan->anh34 = $new_image;
+        }
         $danquan->save();
         if ($data) {
-        alert()->success('Tạo hồ sơ thành công'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
+        toast()->success('Tạo hồ sơ thành công'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
     } else {
-        alert()->error('Lỗi', 'Vui lòng điền đúng thông tin.'); // hoặc có thể dùng alert('Post Created','Something went wrong!', 'error');
+        toast()->error('Lỗi', 'Vui lòng điền đúng thông tin.'); // hoặc có thể dùng alert('Post Created','Something went wrong!', 'error');
     }
 
         
@@ -114,7 +136,7 @@ class DanQuanController extends Controller
         $danquan->sdt = $data['sdt'];
         $danquan->gioitinh = $data['gioitinh'];
         
-        $danquan->namsinh  = Carbon::parse($data['namsinh'])->format('y/d/m');
+        $danquan->namsinh  = Carbon::parse($data['namsinh'])->format('y/m/d');
         
         $danquan->thanhphan_id = $data['thanhphan_id'];
         $danquan->cancuoc = $data['cancuoc'];
@@ -123,8 +145,33 @@ class DanQuanController extends Controller
         $danquan->dantoc = $data['dantoc'];
         $danquan->tongiao = $data['tongiao'];
         $danquan->thuongtru = $data['thuongtru'];
+        $danquan->noio = $data['noio'];
+
+
+
+        $danquan->tinhhinhgiadinh = $data['tinhhinhgiadinh'];
+        $danquan->tinhhinhbanthan = $data['tinhhinhbanthan'];
+
+
+        // thêm ảnh
+        // 
+        // 
+        $get_image = $request->file('anh34');
+        $path = 'public/backend/images/';
+        if($get_image){
+
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode(',',$get_name_image));
+            $new_image = $name_image.rand(0,9999).'.'.$get_image->getClientOriginalName();
+            $get_image->move($path,$new_image);
+            $danquan->anh34 = $new_image;
+        }
         $danquan->save();
-        
+        if ($data) {
+        toast()->success('Chỉnh sửa hồ sơ thành công'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
+    } else {
+        toast()->error('Lỗi', 'Vui lòng điền đúng thông tin.'); // hoặc có thể dùng alert('Post Created','Something went wrong!', 'error');
+    }
 
         
         
@@ -139,8 +186,12 @@ class DanQuanController extends Controller
      */
     public function destroy($id)
     {
-        DanQuan::find($id)->delete();
-        alert()->success('Xóa thành công');
+        $danquan = DanQuan::find($id);
+        if(!empty($danquan->anh34)){
+            unlink('public/backend/images/'.$danquan->anh34);
+        }
+        $danquan->delete();
+        toast()->success('Xóa thành công');
         return redirect()->back();
     }
    
