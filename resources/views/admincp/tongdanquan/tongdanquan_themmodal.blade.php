@@ -85,11 +85,14 @@
                        </div>
                      </div>
                      <div class="col-sm-2">
-                       <div class="form-group">
-                         {!! Form::label('noidkks', 'Nơi đăng ký khai sinh', []) !!}
-                         {!! Form::text('noidkks',null, ['class'=>'form-control','placeholder'=>'Nơi ĐKKS','id'=>'noidkks']) !!}
-                       </div>
-                     </div>
+                         <div class="form-group">
+
+                          {!! Form::label('congancapngay', 'Năm sinh ' ) !!}
+
+                          {!! Form::text('congancapngay', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
+                          'congancapngay']) !!}
+                        </div>
+                      </div>
                      <div class="col-sm-2">
                        <div class="form-group">
                          {!! Form::label('quequan', 'Quê quán', []) !!}
