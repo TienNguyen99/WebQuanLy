@@ -53,11 +53,11 @@ class DanQuanController extends Controller
         
         // $danquan->namsinh  = Carbon::parse($data['namsinh'])->format('y-d-m');
         $danquan->namsinh = Carbon::createFromFormat('d/m/Y', $data['namsinh']);
-
+        $danquan->congancapngay = Carbon::createFromFormat('d/m/Y', $data['congancapngay']);
         
         $danquan->thanhphan_id = $data['thanhphan_id'];
         $danquan->cancuoc = $data['cancuoc'];
-        $danquan->congancapngay = Carbon::createFromFormat('d/m/Y', $data['congancapngay']);
+        
         
         $danquan->noidkks = $data['noidkks'];
         $danquan->quequan = $data['quequan'];
@@ -94,7 +94,7 @@ class DanQuanController extends Controller
 
         
         
-        // return redirect()->back();
+        return redirect()->back();
     }
 
     /**
