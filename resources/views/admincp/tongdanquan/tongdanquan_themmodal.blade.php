@@ -87,7 +87,7 @@
                      <div class="col-sm-2">
                          <div class="form-group">
 
-                          {!! Form::label('congancapngay', 'Năm sinh ' ) !!}
+                          {!! Form::label('congancapngay', 'Cấp ngày ' ) !!}
 
                           {!! Form::text('congancapngay', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
                           'congancapngay']) !!}

@@ -83,6 +83,15 @@
  </div>
 </div>
 <div class="col-sm-2">
+ <div class="form-group">
+
+  {!! Form::label('congancapngay', 'Cấp ngày ' ) !!}
+
+  {!! Form::text('congancapngay', isset($show_tongdanquan) ? Carbon\Carbon::parse($show_tongdanquan->congancapngay)->format('d/m/Y'): '', ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
+  'congancapngay']) !!}
+</div>
+</div>
+<div class="col-sm-2">
    <div class="form-group">
      {!! Form::label('noidkks', 'Nơi đăng ký khai sinh', []) !!}
      {!! Form::text('noidkks',isset($show_tongdanquan) ? $show_tongdanquan->noidkks: '', ['class'=>'form-control','placeholder'=>'Nơi ĐKKS','id'=>'noidkks']) !!}

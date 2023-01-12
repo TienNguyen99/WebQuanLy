@@ -11,24 +11,24 @@
       font-family: 'Times New Roman';
       font-size: 12pt
     }
-    
+
     p {
       margin: 0pt
     }
-    
+
     li,
     table {
       margin-top: 0pt;
       margin-bottom: 0pt
     }
-    
+
     .ListParagraph {
       margin-left: 36pt;
       margin-bottom: 0pt;
       line-height: normal;
       font-size: 12pt
     }
-    
+
     .TableGrid {}
 
   </style>
@@ -36,7 +36,7 @@
 </head>
 
 <body>
-  
+
  <div>
   <table cellspacing="0" cellpadding="0" class="TableGrid" style="width:1118.15pt; border-collapse:collapse">
     <tr style="height:772.05pt">
@@ -165,7 +165,7 @@
         <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ, chữ đệm và tên thường dùng: {{$pdf->tenkhac}}</span>
         </p>
         <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày {{Carbon\Carbon::parse($pdf->namsinh)->format('d')}} tháng {{Carbon\Carbon::parse($pdf->namsinh)->format('m')}} năm 19{{Carbon\Carbon::parse($pdf->namsinh)->format('y')}}</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:55.25pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Giới tính (nam, nữ): 
-          
+
           <?php if ($pdf->gioitinh == 1): ?>
             Nam
           <?php else: ?>
@@ -173,7 +173,7 @@
           <?php endif ?>
         </span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; font-size:14pt"><span>Số CMND/CCCD:{{$pdf->cancuoc}}</span><span style="width:108.82pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:256.15pt">&#xa0;</span><span>Công an Bình Dương cấp ngày ...</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; font-size:14pt"><span>Số CMND/CCCD:{{$pdf->cancuoc}}</span><span style="width:108.82pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:256.15pt">&#xa0;</span><span>Công an Bình Dương cấp ngày {{Carbon\Carbon::parse($pdf->congancapngay)->format('d/m/Y')}}</span>
       </p>
       <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi đăng ký khai sinh: {{$pdf->noidkks}}</span>
       </p>
@@ -286,7 +286,7 @@
       </p>
       <p style="margin-left:31.65pt; text-align:justify; font-size:14pt" ><span style="white-space: pre-line;">{{$pdf->tinhhinhbanthan}}</span>
       </p>
-      
+
       <p style="text-align:justify; font-size:14pt"><span style="-aw-import:ignore">&#xa0;</span>
       </p>
       <table cellspacing="0" cellpadding="0" class="TableGrid" style="width:576.35pt; border-collapse:collapse">

@@ -57,7 +57,8 @@ class DanQuanController extends Controller
         
         $danquan->thanhphan_id = $data['thanhphan_id'];
         $danquan->cancuoc = $data['cancuoc'];
-        $danquan->congancapngay = $data['congancapngay'];
+        $danquan->congancapngay = Carbon::createFromFormat('d/m/Y', $data['congancapngay']);
+        
         $danquan->noidkks = $data['noidkks'];
         $danquan->quequan = $data['quequan'];
         $danquan->dantoc = $data['dantoc'];
@@ -143,6 +144,7 @@ class DanQuanController extends Controller
         
         $danquan->thanhphan_id = $data['thanhphan_id'];
         $danquan->cancuoc = $data['cancuoc'];
+        $danquan->congancapngay = Carbon::createFromFormat('d/m/Y', $data['congancapngay']);
         $danquan->noidkks = $data['noidkks'];
         $danquan->quequan = $data['quequan'];
         $danquan->dantoc = $data['dantoc'];
