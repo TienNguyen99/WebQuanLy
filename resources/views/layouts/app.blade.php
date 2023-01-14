@@ -102,11 +102,11 @@
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
-                                <span>test</span>
+                                <span>Dự bị động viên</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="#">Dân quân thường trực</a>
+                                    <a href="{{route('dqtt')}}">Dân quân thường trực</a>
                                 </li>
 
                             </ul>

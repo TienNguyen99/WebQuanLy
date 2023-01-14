@@ -9,5 +9,10 @@ class ThanhPhan extends Model
 {
     public $timestamps = false;
     public $table = "thanhphans";
+
     use HasFactory;
+    public function danquan()
+    {
+        return $this->hasMany('DanQuan::class');
+    }
 }

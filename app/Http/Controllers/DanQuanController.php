@@ -23,7 +23,18 @@ class DanQuanController extends Controller
         
         return view('admincp.tongdanquan.tongdanquan_them',compact('list','thanhphan'));
     }
+    public function show_dqtt()
+    {
+        $list = DanQuan::with('thanhphan')
+        ->where('thanhphan_id','thanhphan.id')
+        ->get();
+        // ->toSql();
 
+        dd($list);
+        $thanhphan = ThanhPhan::pluck('title','id');
+        
+        return view('admincp.tongdanquan.tongdanquan_them',compact('list','thanhphan'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -164,7 +175,9 @@ class DanQuanController extends Controller
         $get_image = $request->file('anh34');
         $path = 'public/backend/images/';
         if($get_image){
-
+            if(!empty($danquan->anh34)){
+                unlink('public/backend/images/'.$danquan->anh34);
+            }
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode(',',$get_name_image));
             $new_image = $name_image.rand(0,9999).'.'.$get_image->getClientOriginalName();

@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DanQuan extends Model
 {
-    public $timestamps = false;
-    protected $dateFormat = 'd/m/Y';
+    
+    
     public $table = "danquans";
     use HasFactory;
     public function thanhphan()

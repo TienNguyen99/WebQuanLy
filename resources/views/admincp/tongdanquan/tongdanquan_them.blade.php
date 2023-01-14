@@ -42,7 +42,7 @@
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->format('d/m/Y')}}</td>
                             <td>{{$show_tongdanquan->quequan}}</td>
                             <td><img src="{{asset('public/backend/images/'.$show_tongdanquan->anh34)}}" width="100px" height="100%" alt="..."></td>
-                            <td>{{$show_tongdanquan->thanhphan->title}}</td>
+                            <td>{{$show_tongdanquan->thanhphan['title']}}</td>
                             
                             <td>
                              <button type="button" data-bs-toggle="modal"

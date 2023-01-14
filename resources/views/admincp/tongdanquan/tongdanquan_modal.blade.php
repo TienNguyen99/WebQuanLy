@@ -18,7 +18,7 @@
 
                   <div class="card-content">
                     <div class="card-body">
-                      {!! Form::open(['route'=>['danquan.update',$show_tongdanquan->id],'method'=>'PUT']) !!}
+                      {!! Form::open(['route'=>['danquan.update',$show_tongdanquan->id],'method'=>'PUT','enctype'=>'multipart/form-data']) !!}
                       <div class="row">
                         <div class="col-sm-6"><img src="{{asset('public/backend/images/'.$show_tongdanquan->anh34)}}" width="100px" height="100%" alt="...">
                         </div>
