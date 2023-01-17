@@ -105,10 +105,11 @@
                                 <span>Dự bị động viên</span>
                             </a>
                             <ul class="submenu ">
+                                {{-- @foreach ($thanhphan as $thanhphan_sidebar)
                                 <li class="submenu-item ">
-                                    <a href="{{route('dqtt')}}">Dân quân thường trực</a>
+                                    <a href="{{route('dqtt')}}">{{$thanhphan_sidebar->title??null}}</a>
                                 </li>
-
+                                @endforeach --}}
                             </ul>
                         </li>
                         @endauth
@@ -166,7 +167,7 @@
 
     <!-- start main -->
     <main>
-        
+
         <div style="padding: 2rem;">
             <div class="page-content" id="content">
                 <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Ẩn/Hiện</small></button>
@@ -315,7 +316,7 @@
 
 <!-- Sweetalert -->
 <script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
-    <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
+<script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
 @include('sweetalert::alert')
 
 

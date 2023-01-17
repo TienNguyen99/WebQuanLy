@@ -18,8 +18,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h6 class="text-muted font-semibold">DQTV</h6>
-                                            <h6 align="flex-center">{{$count}}</h6>
+                                            <h6 class="text-muted font-semibold">Tổng DQTV</h6>
+                                            <h6 class="font-extrabold mb-0">{{$counttongdq}}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -35,8 +35,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h6 class="text-muted font-semibold">DQTT</h6>
-                                            <h6 class="font-extrabold mb-0">9</h6>
+                                            <h6 class="text-muted font-semibold">Thường trực</h6>
+                                            <h6 class="font-extrabold mb-0">{{$countdqtt}}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -52,8 +52,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h6 class="text-muted font-semibold">DQCĐ</h6>
-                                            <h6 class="font-extrabold mb-0">30</h6>
+                                            <h6 class="text-muted font-semibold">Cơ động</h6>
+                                            <h6 class="font-extrabold mb-0">{{$countdqcd}}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -69,8 +69,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h6 class="text-muted font-semibold">DQKP</h6>
-                                            <h6 class="font-extrabold mb-0">50</h6>
+                                            <h6 class="text-muted font-semibold">Khu phố</h6>
+                                            <h6 class="font-extrabold mb-0">{{$countdqkp}}</h6>
                                         </div>
                                     </div>
                                 </div>

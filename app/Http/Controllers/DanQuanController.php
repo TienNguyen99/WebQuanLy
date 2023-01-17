@@ -26,11 +26,11 @@ class DanQuanController extends Controller
     public function show_dqtt()
     {
         $list = DanQuan::with('thanhphan')
-        ->where('thanhphan_id','thanhphan.id')
+        ->where('thanhphan_id','thanhphan.')
         ->get();
         // ->toSql();
 
-        dd($list);
+        // dd($list);
         $thanhphan = ThanhPhan::pluck('title','id');
         
         return view('admincp.tongdanquan.tongdanquan_them',compact('list','thanhphan'));

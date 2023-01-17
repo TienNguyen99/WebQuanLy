@@ -28,12 +28,23 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $danquan = DanQuan::all();
+        $thanhphan = ThanhPhan::pluck('title','id');
         $users = User::select("*")
-                        ->whereNotNull('last_seen')
-                        ->orderBy('last_seen', 'DESC')
-                        ->paginate(10);
-         $count = DB::table('danquans')->count();
-         echo $users;
-        return view('home',compact('count','users','danquan'));
+        ->whereNotNull('last_seen')
+        ->orderBy('last_seen', 'DESC')
+        ->paginate(3);
+        $counttongdq = DB::table('danquans')->count();
+        $countdqtt = DB::table('danquans')
+        ->where('thanhphan_id','2')
+        ->count();
+        $countdqcd = DB::table('danquans')
+        ->where('thanhphan_id','4')
+        ->count();
+        $countdqkp = DB::table('danquans')
+        ->where('thanhphan_id','14')
+        ->count();
+
+
+        return view('home',compact('counttongdq','users','danquan','thanhphan','countdqtt','countdqcd','countdqkp'));
     }
 }
