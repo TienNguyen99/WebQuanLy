@@ -45,18 +45,18 @@
                             <td>{{$show_tongdanquan->thanhphan['title']}}</td>
                             
                             <td>
-                             <button type="button" data-bs-toggle="modal"
-                             data-bs-target="#danquanmodal{{$show_tongdanquan->id}}" class="btn btn-default" >
-                             <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+                               <button type="button" data-bs-toggle="modal"
+                               data-bs-target="#danquanmodal{{$show_tongdanquan->id}}" class="btn btn-default" >
+                               <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
 
-                         </button>
+                           </button>
 
-                     </td>
-                     
-                  <td>
-                      <a href="{{route('danquan.edit',$show_tongdanquan->id)}}" class="btn btn-default"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
-                  </td>
-                  <td>
+                       </td>
+                       
+                       <td>
+                          <a href="{{route('danquan.edit',$show_tongdanquan->id)}}" class="btn btn-default"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
+                      </td>
+                      <td>
                         {!! Form::open(['method'=>'DELETE','route' => ['danquan.destroy',$show_tongdanquan->id],'onsubmit'=>'return submitForm(this)']) !!}
 
                         <button type="submit" class="btn btn-default">
@@ -68,27 +68,27 @@
                                 Swal.fire({
                                     title: 'Bạn có chắc muốn xóa?',
                                   // text: "You won't be able to revert this!",
-                                  icon: 'warning',
-                                  showCancelButton: true,
-                                  confirmButtonColor: '#3085d6',
-                                  cancelButtonColor: '#d33',
-                                  confirmButtonText: 'Chắc chắn'
-                              }).then((result) => {
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Chắc chắn'
+                                }).then((result) => {
                                   if (result.isConfirmed) {
                                     form.submit();
                                 }
                             });
-                              return false;
-                          }
-                      </script>
-                  </td>
-              </tr>	
-              @include('admincp.tongdanquan.tongdanquan_modal')
-          <?php endforeach ?>
+                                return false;
+                            }
+                        </script>
+                    </td>
+                </tr>	
+                @include('admincp.tongdanquan.tongdanquan_modal')
+            <?php endforeach ?>
 
 
-      </tbody>
-  </table>
+        </tbody>
+    </table>
 </div>
 </div>
 

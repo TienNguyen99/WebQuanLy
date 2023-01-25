@@ -264,29 +264,26 @@
     });
 </script>
 <!-- // Modal datatable -->
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#datatable').dataTable();
-        
-        $("[data-toggle=tooltip]").tooltip();
-        
-    } );
-</script>
+<script>$(document).ready(function() {
+    $('#table1').DataTable({
+        dom: 'Plfrtip'
+    });
+});</script>
 <!-- script  -->
 <!-- filepond validation -->
-<script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+{{-- <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
 <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
 
 <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-<script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script> --}}
 
 <!-- toastify -->
 <script src="{{asset('public/backend/vendors/toastify/toastify.js')}}"></script>
 
 <!-- filepond -->
-<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+{{-- <script src="https://unpkg.com/filepond/dist/filepond.js"></script> --}}
 <!-- image editor -->
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     FilePond.registerPlugin(
         // calculates & adds resize information...
         FilePondPluginImageResize,
@@ -311,7 +308,7 @@
             resolve(type);
         })
     });
-</script>
+</script> --}}
 <!-- end image editor -->
 
 <!-- Sweetalert -->
