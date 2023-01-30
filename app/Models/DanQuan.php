@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class DanQuan extends Model
 {
     
-    
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var boolean
+     */
+    public $timestamps = false;
     public $table = "danquans";
     use HasFactory;
     public function thanhphan()
