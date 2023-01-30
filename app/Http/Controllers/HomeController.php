@@ -50,13 +50,9 @@ class HomeController extends Controller
                     ->where('vaonam', '>=', $range)
                     ->groupBy('getYear')
                     ->orderBy('getYear', 'ASC')
-                    ->pluck('getYear', 'value');
-                    // ->get();
+                    ->get();
+                    
 
-        $labels = $chart->keys();
-        $data = $chart->values();
-
-
-        return view('home',compact('counttongdq','users','danquan','thanhphan','countdqtt','countdqcd','countdqkp','data','labels'));
+        return view('home',compact('counttongdq','users','danquan','thanhphan','countdqtt','countdqcd','countdqkp','chart'));
     }
 }

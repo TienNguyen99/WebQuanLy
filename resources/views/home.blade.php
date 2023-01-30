@@ -3,7 +3,7 @@
 
             @section('content')
             <script type="text/javascript">
-                
+
             </script>
             <section class="row">
                 <div class="col-12 col-lg-9">
@@ -81,19 +81,23 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Profile Visit</h4>
+                                    <h4>Biểu đồ số lượng dân quân tham gia qua các năm</h4>
                                 </div>
                                 <div class="card-body">
-                                    <canvas id="myChart"></canvas>
+                                    <div id="container" data-order="{{ $chart }}"></div>
                                 </div>
                             </div>
+                            {{ Html::script('https://code.highcharts.com/highcharts.js') }}
+                            {{ Html::script('https://code.highcharts.com/modules/exporting.js') }}
+                            {{ Html::script('https://code.highcharts.com/modules/export-data.js') }}
                         </div>
+
                     </div>
                     <div class="row">
                         <div class="col-12 col-xl-4">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Profile Visit</h4>
+                                    <h4>Biểu đồ số lượng dân quân tham gia qua các năm</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
@@ -202,48 +206,48 @@
                     </div>
                 </div>
             </div>
-            </div>
-            </div>
-            <div class="col-12 col-lg-3">
-                <div class="card">
-                    <div class="card-body py-4 px-5">
-                        <div class="d-flex align-items-center">
-                            <div class="avatar avatar-xl">
-                                <img src="{{asset('public/backend/images/faces/1.jpg')}}" >
-                            </div>
-                            <div class="ms-3 name">
-                                <h5 class="font-bold">Hello,</h5>
-                                <h6 class="text-muted mb-0">{{ Auth::user()->name }}</h6>
-                            </div>
-                        </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-3">
+        <div class="card">
+            <div class="card-body py-4 px-5">
+                <div class="d-flex align-items-center">
+                    <div class="avatar avatar-xl">
+                        <img src="{{asset('public/backend/images/faces/1.jpg')}}" >
+                    </div>
+                    <div class="ms-3 name">
+                        <h5 class="font-bold">Hello,</h5>
+                        <h6 class="text-muted mb-0">{{ Auth::user()->name }}</h6>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Mới truy cập</h4>
-                    </div>
-                    <div class="card-content pb-4">
-                        <?php foreach ($users as $key => $value): ?>
-                        <div class="recent-message d-flex px-4 py-3">
-                            <div class="avatar avatar-lg">
-                                <img src="{{asset('public/backend/images/faces/4.jpg')}}">
-                            </div>
-                            
-                                <div class="name ms-4">
-                                <h5 class="mb-1">{{$value->name}}</h5>
-                                
-                                <h6 class="text-muted mb-0">
-                                    @if(Cache::has('user-is-online-' . $value->id))
-                            <span class="text-success">Online</span>
-                        @else
-                            <span class="text-secondary">Offline</span>
-                        @endif</h6>
-                        <h8 class="mb-1">{{ Carbon\Carbon::parse($value->last_seen)->diffForHumans() }}</h8>
-                            </div>
-                            
-                            
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Mới truy cập</h4>
+            </div>
+            <div class="card-content pb-4">
+                <?php foreach ($users as $key => $value): ?>
+                    <div class="recent-message d-flex px-4 py-3">
+                        <div class="avatar avatar-lg">
+                            <img src="{{asset('public/backend/images/faces/4.jpg')}}">
                         </div>
-                        <?php endforeach ?>
+
+                        <div class="name ms-4">
+                            <h5 class="mb-1">{{$value->name}}</h5>
+
+                            <h6 class="text-muted mb-0">
+                                @if(Cache::has('user-is-online-' . $value->id))
+                                <span class="text-success">Online</span>
+                                @else
+                                <span class="text-secondary">Offline</span>
+                            @endif</h6>
+                            <h8 class="mb-1">{{ Carbon\Carbon::parse($value->last_seen)->diffForHumans() }}</h8>
+                        </div>
+
+
+                    </div>
+                <?php endforeach ?>
                         <!-- <div class="px-4">
                             <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
                             Conversation</button>
@@ -259,7 +263,7 @@
                     </div>
                 </div>
             </div>
-            </section>
+        </section>
 
 
 
@@ -268,4 +272,4 @@
 
 
 
-            @endsection
+        @endsection

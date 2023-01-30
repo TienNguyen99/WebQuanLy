@@ -93,12 +93,7 @@
                           'congancapngay']) !!}
                         </div>
                       </div>
-                     <div class="col-sm-2">
-                       <div class="form-group">
-                         {!! Form::label('quequan', 'Quê quán', []) !!}
-                         {!! Form::text('quequan',null, ['class'=>'form-control','placeholder'=>'Nhập quê quán','id'=>'quequan']) !!}
-                       </div>
-                     </div>
+                     
                      <div class="col-sm-2">
                        <div class="form-group">
                          {!! Form::label('dantoc', 'Dân tộc', []) !!}
@@ -117,6 +112,24 @@
                          {!! Form::text('quoctich','Việt Nam', ['class'=>'form-control','id'=>'quoctich','disabled']) !!}
                        </div>
                      </div>
+                     <div class="col-sm-2">
+                         <div class="form-group">
+                           {!! Form::label('thanhphangiadinh', 'Thành phần gia đình', []) !!}
+                           {!! Form::select('thanhphangiadinh', ['Trung nông','Công nhân'],null, ['class'=>'form-control']) !!}
+                         </div>
+                       </div>
+                     <div class="col-sm-2">
+                       <div class="form-group">
+                         {!! Form::label('banthan', 'Bản thân', []) !!}
+                         {!! Form::text('banthan','Phụ thuộc', ['class'=>'form-control','id'=>'banthan']) !!}
+                       </div>
+                     </div>
+                     <div class="col-sm-2">
+                         <div class="form-group">
+                           {!! Form::label('vanhoa', 'Văn hoá', []) !!}
+                           {!! Form::select('vanhoa', ['9/12','10/12','11/12','12/12'],null, ['class'=>'form-control']) !!}
+                         </div>
+                       </div>
                      <div class="col-sm-6">
                        <div class="form-group">
                          {!! Form::label('noidkks', 'Nơi đăng ký khai sinh', []) !!}

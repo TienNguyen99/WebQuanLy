@@ -252,44 +252,14 @@
 
 <script>
     $(document).ready( function () {
-    $('#table1').DataTable({
-        language:{
-            url:'https://cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json'
-        }
-    });
-} );
-</script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-{{-- script chart --}}
-<script type="text/javascript">
-  
-      var labels =  {{ Js::from($labels) }};
-      var chart =  {{ Js::from($data) }};
-  
-      const data = {
-        labels: labels,
-        datasets: [{
-          label: 'Số lượng dân quân tự vệ',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: chart,
-        }]
-      };
-  
-      const config = {
-        type: 'line',
-        data: data,
-        options: {}
-      };
-  
-      const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-      );
-  
+        $('#table1').DataTable({
+            language:{
+                url:'https://cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json'
+            }
+        });
+    } );
 </script>
 
-{{-- end chart --}}
 <!-- End script datatables -->
 <!--Script thêm -->
 <script type="text/javascript">
@@ -300,6 +270,79 @@
         });
     });
 </script>
+
+{{-- chart --}}
+<script>
+    $(document).ready(function(){
+        var order = $('#container').data('order');
+        var listOfValue = [];
+        var listOfYear = [];
+        order.forEach(function(element){
+            listOfYear.push(element.getYear);
+            listOfValue.push(element.value);
+        });
+        console.log(listOfValue);
+        var chart = Highcharts.chart('container', {
+
+            title: {
+                text: 'Dân quân'
+            },
+
+            
+
+            xAxis: {
+                categories: listOfYear,
+            },
+
+            series: [{
+                type: 'column',
+                name: 'Số lượng',   
+                colorByPoint: true,
+                data: listOfValue,
+                showInLegend: false
+            }]
+        });
+
+        $('#plain').click(function () {
+            chart.update({
+                chart: {
+                    inverted: false,
+                    polar: false
+                },
+                subtitle: {
+                    text: 'Plain'
+                }
+            });
+        });
+
+        $('#inverted').click(function () {
+            chart.update({
+                chart: {
+                    inverted: true,
+                    polar: false
+                },
+                subtitle: {
+                    text: 'Inverted'
+                }
+            });
+        });
+
+        $('#polar').click(function () {
+            chart.update({
+                chart: {
+                    inverted: false,
+                    polar: true
+                },
+                subtitle: {
+                    text: 'Polar'
+                }
+            });
+        });
+    });
+
+
+</script>
+{{-- end chart --}}
 <!-- // Modal datatable -->
 
 <!-- script  -->
