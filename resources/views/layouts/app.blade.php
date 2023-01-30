@@ -45,7 +45,8 @@
     <link rel="stylesheet" href="{{asset('public/backend/vendors/bootstrap-icons/bootstrap-icons.css')}}">
     <link rel="stylesheet" href="{{asset('public/backend/css/app.css')}}">
     <!-- css DataTables -->
-    <link rel="stylesheet" href="{{asset('public/backend/vendors/simple-datatables/style.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('public/backend/vendors/simple-datatables/style.css')}}"> --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <!-- End Css Datatables -->
     <!-- sweetalert -->
     <link rel="stylesheet" href="{{asset('public/backend/vendors/sweetalert2/sweetalert2.min.css')}}">
@@ -90,10 +91,10 @@
                             <ul class="submenu ">
                                 <li class="submenu-item ">
 
-                                    <a href="{{route('danquan.index')}}">Tổng dân quân</a>
+                                    <a href="{{route('danquan.index')}}" class="dropdown-item">Tổng dân quân</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{{route('thanhphan.create')}}">Thành phần</a>
+                                    <a href="{{route('thanhphan.create')}}" class="dropdown-item">Thành phần</a>
                                 </li>
                             </ul>
 
@@ -215,7 +216,9 @@
 
     <script src="{{asset('public/backend/js/main.js')}}"></script>
     <!-- Script Datatables -->
-    <script src="{{asset('public/backend/vendors/simple-datatables/simple-datatables.js')}}"></script>
+    {{-- <script src="{{asset('public/backend/vendors/simple-datatables/simple-datatables.js')}}"></script> --}}
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https//cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json"></script>
     <!-- CKeditor  -->
     <!-- <script src="{{asset('public/backend/vendors/ckeditor/ckeditor.js')}}"></script>
     <script>
@@ -246,13 +249,47 @@
 </script>
 
 <!-- End Datepicker -->
+
 <script>
-        // Simple Datatable
-    let table1 = document.querySelector('#table1');
-    let dataTable = new simpleDatatables.DataTable(table1);
+    $(document).ready( function () {
+    $('#table1').DataTable({
+        language:{
+            url:'https://cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json'
+        }
+    });
+} );
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{{-- script chart --}}
+<script type="text/javascript">
+  
+      var labels =  {{ Js::from($labels) }};
+      var chart =  {{ Js::from($data) }};
+  
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'Số lượng dân quân tự vệ',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: chart,
+        }]
+      };
+  
+      const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+  
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+  
 </script>
 
-
+{{-- end chart --}}
 <!-- End script datatables -->
 <!--Script thêm -->
 <script type="text/javascript">
@@ -264,11 +301,7 @@
     });
 </script>
 <!-- // Modal datatable -->
-<script>$(document).ready(function() {
-    $('#table1').DataTable({
-        dom: 'Plfrtip'
-    });
-});</script>
+
 <!-- script  -->
 <!-- filepond validation -->
 {{-- <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
