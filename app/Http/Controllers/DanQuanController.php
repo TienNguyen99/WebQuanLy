@@ -68,6 +68,22 @@ class DanQuanController extends Controller
         
         $danquan->thanhphan_id = $data['thanhphan_id'];
         $danquan->cancuoc = $data['cancuoc'];
+        $danquan->thanhphangiadinh = $data['thanhphangiadinh'];
+        $danquan->banthan = $data['banthan'];
+        $danquan->vanhoa = $data['vanhoa'];
+        $danquan->vaonam = $data['vaonam'];
+        $danquan->tinhtrangcha = $data['tinhtrangcha'];
+        $danquan->tencha = $data['tencha'];
+        $danquan->namsinhcha = $data['namsinhcha'];
+        $danquan->nghenghiepcha = $data['nghenghiepcha'];
+        $danquan->tinhtrangme = $data['tinhtrangme'];
+        $danquan->tenme = $data['tenme'];
+        $danquan->namsinhme = $data['namsinhme'];
+        $danquan->nghenghiepme = $data['nghenghiepme'];
+        $danquan->socon = $data['socon'];
+        $danquan->contrai = $data['contrai'];
+        $danquan->congai = $data['congai'];
+        $danquan->banthanla = $data['banthanla'];
         
         
         $danquan->noidkks = $data['noidkks'];
@@ -151,11 +167,30 @@ class DanQuanController extends Controller
         $danquan->sdt = $data['sdt'];
         $danquan->gioitinh = $data['gioitinh'];
         
+        // $danquan->namsinh  = Carbon::parse($data['namsinh'])->format('y-d-m');
         $danquan->namsinh = Carbon::createFromFormat('d/m/Y', $data['namsinh']);
+        $danquan->congancapngay = Carbon::createFromFormat('d/m/Y', $data['congancapngay']);
         
         $danquan->thanhphan_id = $data['thanhphan_id'];
         $danquan->cancuoc = $data['cancuoc'];
-        $danquan->congancapngay = Carbon::createFromFormat('d/m/Y', $data['congancapngay']);
+        $danquan->thanhphangiadinh = $data['thanhphangiadinh'];
+        $danquan->banthan = $data['banthan'];
+        $danquan->vanhoa = $data['vanhoa'];
+        $danquan->vaonam = $data['vaonam'];
+        $danquan->tinhtrangcha = $data['tinhtrangcha'];
+        $danquan->tencha = $data['tencha'];
+        $danquan->namsinhcha = $data['namsinhcha'];
+        $danquan->nghenghiepcha = $data['nghenghiepcha'];
+        $danquan->tinhtrangme = $data['tinhtrangme'];
+        $danquan->tenme = $data['tenme'];
+        $danquan->namsinhme = $data['namsinhme'];
+        $danquan->nghenghiepme = $data['nghenghiepme'];
+        $danquan->socon = $data['socon'];
+        $danquan->contrai = $data['contrai'];
+        $danquan->congai = $data['congai'];
+        $danquan->banthanla = $data['banthanla'];
+        
+        
         $danquan->noidkks = $data['noidkks'];
         $danquan->quequan = $data['quequan'];
         $danquan->dantoc = $data['dantoc'];
@@ -167,8 +202,6 @@ class DanQuanController extends Controller
 
         $danquan->tinhhinhgiadinh = $data['tinhhinhgiadinh'];
         $danquan->tinhhinhbanthan = $data['tinhhinhbanthan'];
-
-
         // thêm ảnh
         // 
         // 

@@ -46,7 +46,16 @@
     <link rel="stylesheet" href="{{asset('public/backend/css/app.css')}}">
     <!-- css DataTables -->
     {{-- <link rel="stylesheet" href="{{asset('public/backend/vendors/simple-datatables/style.css')}}"> --}}
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"> --}}
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju/dt-1.13.1/sb-1.4.0/sp-2.1.0/datatables.min.css"/>
+
+
+
+
+
+
+
     <!-- End Css Datatables -->
     <!-- sweetalert -->
     <link rel="stylesheet" href="{{asset('public/backend/vendors/sweetalert2/sweetalert2.min.css')}}">
@@ -217,8 +226,12 @@
     <script src="{{asset('public/backend/js/main.js')}}"></script>
     <!-- Script Datatables -->
     {{-- <script src="{{asset('public/backend/vendors/simple-datatables/simple-datatables.js')}}"></script> --}}
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script src="https//cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json"></script>
+    {{-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> --}}
+
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/ju/dt-1.13.1/sb-1.4.0/sp-2.1.0/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.5.0/js/dataTables.select.min.js"></script>
+    
     <!-- CKeditor  -->
     <!-- <script src="{{asset('public/backend/vendors/ckeditor/ckeditor.js')}}"></script>
     <script>
@@ -255,7 +268,11 @@
         $('#table1').DataTable({
             language:{
                 url:'https://cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json'
-            }
+            },
+            select: {
+                style: 'multi'
+            },
+            dom: 'Pfrtip'
         });
     } );
 </script>
@@ -343,50 +360,8 @@
 
 </script>
 {{-- end chart --}}
-<!-- // Modal datatable -->
-
-<!-- script  -->
-<!-- filepond validation -->
-{{-- <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
-<script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
-
-<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-<script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script> --}}
-
 <!-- toastify -->
 <script src="{{asset('public/backend/vendors/toastify/toastify.js')}}"></script>
-
-<!-- filepond -->
-{{-- <script src="https://unpkg.com/filepond/dist/filepond.js"></script> --}}
-<!-- image editor -->
-{{-- <script type="text/javascript">
-    FilePond.registerPlugin(
-        // calculates & adds resize information...
-        FilePondPluginImageResize,
-        // preview the image file type...
-        FilePondPluginImagePreview,
-        );
-
-    // Filepond: Image Resize
-    FilePond.create( document.querySelector('.image-resize-filepond'), {
-        allowImagePreview: true, 
-        allowImageFilter: false,
-        allowImageExifOrientation: false,
-        allowImageCrop: false,
-        allowImageResize: true,
-        imageResizeTargetWidth: 100,
-        imageResizeTargetHeight: 100,
-        imageResizeMode: 'cover',
-        imageResizeUpscale: true,
-        acceptedFileTypes: ['image/png','image/jpg','image/jpeg'],
-        fileValidateTypeDetectType: (source, type) => new Promise((resolve, reject) => {
-            // Do custom type detection here and return with promise
-            resolve(type);
-        })
-    });
-</script> --}}
-<!-- end image editor -->
-
 <!-- Sweetalert -->
 <script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
 <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
