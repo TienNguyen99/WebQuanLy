@@ -50,12 +50,6 @@
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju/dt-1.13.1/sb-1.4.0/sp-2.1.0/datatables.min.css"/>
 
-
-
-
-
-
-
     <!-- End Css Datatables -->
     <!-- sweetalert -->
     <link rel="stylesheet" href="{{asset('public/backend/vendors/sweetalert2/sweetalert2.min.css')}}">
@@ -272,7 +266,11 @@
             select: {
                 style: 'multi'
             },
-            dom: 'Pfrtip'
+            searchPanes: {
+            viewTotal: true,
+            columns: [3, 6, 7,8]
+        },
+        dom: 'Plfrtip',
         });
     } );
 </script>

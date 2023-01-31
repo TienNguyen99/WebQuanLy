@@ -127,18 +127,14 @@
                  <div class="col-sm-2 ">
                    <div class="form-group">
                      {!! Form::label('vanhoa', 'Văn hoá', []) !!}
-                     {!! Form::text('vanhoa','9/12', ['class'=>'form-control','id'=>'vanhoa']) !!}
+                     {!! Form::text('vanhoa',null, ['class'=>'form-control','id'=>'vanhoa','placeholder'=>'9/12']) !!}
                    </div>
                  </div>
                  <div class="col-sm-4 ">
                    <div class="form-group">
                      {!! Form::label('vaonam', 'Năm tham gia DQTV', []) !!}
-                     <select name="vaonam" id="" class ="form-control">
-                       <option value="2021">2021</option>
-                       <option value="2022">2022</option>
-                       <option value="2023">2023</option>
-                       <option value="2024">2024</option>
-                     </select>
+                     {!! Form::text('vaonam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
+                        'namsinh']) !!}
                    </div>
                  </div>
                  <div class="w-100"></div>

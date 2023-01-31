@@ -46,7 +46,7 @@ class HomeController extends Controller
         // fill
         $range = \Carbon\Carbon::now()->subYears(5);
         $chart = DB::table('danquans')
-                    ->select(DB::raw('vaonam as getYear'), DB::raw('COUNT(*) as value'))
+                    ->select(DB::raw('year(vaonam) as getYear'), DB::raw('COUNT(*) as value'))
                     ->where('vaonam', '>=', $range)
                     ->groupBy('getYear')
                     ->orderBy('getYear', 'ASC')
