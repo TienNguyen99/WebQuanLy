@@ -48,7 +48,12 @@
     {{-- <link rel="stylesheet" href="{{asset('public/backend/vendors/simple-datatables/style.css')}}"> --}}
     {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"> --}}
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> --}}
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju/dt-1.13.1/sb-1.4.0/sp-2.1.0/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.1/sp-2.1.0/sl-1.5.0/datatables.min.css"/>
+ 
+
+    
+
+
 
     <!-- End Css Datatables -->
     <!-- sweetalert -->
@@ -223,7 +228,7 @@
     {{-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> --}}
 
 
-    <script type="text/javascript" src="https://cdn.datatables.net/v/ju/dt-1.13.1/sb-1.4.0/sp-2.1.0/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.13.1/sp-2.1.0/sl-1.5.0/datatables.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.5.0/js/dataTables.select.min.js"></script>
     
     <!-- CKeditor  -->
@@ -267,10 +272,11 @@
                 style: 'multi'
             },
             searchPanes: {
-            viewTotal: true,
-            columns: [3, 6, 7,8]
-        },
-        dom: 'Plfrtip',
+                show: true,
+                columns: [3, 6, 7,8],
+                threshold: 0
+            },
+            dom: 'Plfrtip',
         });
     } );
 </script>
