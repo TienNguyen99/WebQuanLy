@@ -51,7 +51,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.1/sp-2.1.0/sl-1.5.0/datatables.min.css"/>
  
 
-    
+
 
 
 
@@ -263,22 +263,33 @@
 <!-- End Datepicker -->
 
 <script>
-    $(document).ready( function () {
-        $('#table1').DataTable({
-            language:{
+   
+
+    $(document).ready(function() {
+    $('#table1').DataTable({
+        dom: 'Plfrtip',
+        language:{
                 url:'https://cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json'
             },
             select: {
                 style: 'multi'
             },
-            searchPanes: {
-                show: true,
-                columns: [3, 6, 7,8],
-                threshold: 0
+        columnDefs: [
+            {
+                searchPanes: {
+                    show: true
+                },
+                targets: [6 , 7 , 8]
             },
-            dom: 'Plfrtip',
-        });
-    } );
+            {
+                searchPanes: {
+                    show: false
+                },
+                targets: [2]
+            }
+        ]
+    });
+})
 </script>
 
 <!-- End script datatables -->
