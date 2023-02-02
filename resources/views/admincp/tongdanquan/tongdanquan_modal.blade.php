@@ -214,25 +214,25 @@
           <div class="col-sm-6">
            <div class="form-group">
              {!! Form::label('noidkks', 'Nơi đăng ký khai sinh', []) !!}
-             {!! Form::text('noidkks','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'noidkks']) !!}
+             {!! Form::text('noidkks',isset($show_tongdanquan) ? $show_tongdanquan->noidkks: '', ['class'=>'form-control','id'=>'noidkks']) !!}
            </div>
          </div>
          <div class="col-sm-6">
            <div class="form-group">
             {!! Form::label('quequan', 'Quê quán', []) !!}
-            {!! Form::text('quequan','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'quequan']) !!}
+            {!! Form::text('quequan',isset($show_tongdanquan) ? $show_tongdanquan->quequan: '', ['class'=>'form-control','id'=>'quequan']) !!}
           </div>
         </div>
         <div class="col-sm-6">
          <div class="form-group">
           {!! Form::label('thuongtru', 'Thường trú', []) !!}
-          {!! Form::text('thuongtru','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'thuongtru']) !!}
+          {!! Form::text('thuongtru',isset($show_tongdanquan) ? $show_tongdanquan->thuongtru: '', ['class'=>'form-control','id'=>'thuongtru']) !!}
         </div>
       </div>
       <div class="col-sm-6">
        <div class="form-group">
         {!! Form::label('noio', 'Nơi ở', []) !!}
-        {!! Form::text('noio','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'noio']) !!}
+        {!! Form::text('noio',isset($show_tongdanquan) ? $show_tongdanquan->noio: '', ['class'=>'form-control','id'=>'noio']) !!}
       </div>
     </div>
 
@@ -240,13 +240,13 @@
     <div class="col-sm-6">
      <div class="form-group">
        {!! Form::label('tinhhinhgiadinh', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH', []) !!}
-       {!! Form::textarea('tinhhinhgiadinh',null, ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
+       {!! Form::textarea('tinhhinhgiadinh',isset($show_tongdanquan) ? $show_tongdanquan->tinhhinhgiadinh: '', ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
      </div>
    </div>
    <div class="col-sm-6">
      <div class="form-group">
        {!! Form::label('tinhhinhbanthan', 'TÌNH HÌNH KINH TẾ,CHÍNH TRỊ, QUÁ TRÌNH CÔNG TÁC CỦA BẢN THÂN ', []) !!}
-       {!! Form::textarea('tinhhinhbanthan',null, ['class'=>'form-control','id'=>'tinhhinhbanthan']) !!}
+       {!! Form::textarea('tinhhinhbanthan',isset($show_tongdanquan) ? $show_tongdanquan->tinhhinhbanthan: '', ['class'=>'form-control','id'=>'tinhhinhbanthan']) !!}
      </div>
    </div>
 
