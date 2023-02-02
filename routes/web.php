@@ -22,13 +22,11 @@ use App\Http\Controllers\ThanhPhanController;
 
 Auth::routes();
 //admin
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
-Route::get('/dqtt', [App\Http\Controllers\DanQuanController::class, 'show_dqtt'])->middleware('auth')->name('dqtt');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/dqcd', [App\Http\Controllers\DanQuanController::class, 'index']);
 
-
-
-Route::resource('chuyennganh',ChuyenNganhController::class)->middleware('auth');
-Route::resource('danquan',DanQuanController::class)->middleware('auth');
-Route::resource('thanhphan',ThanhPhanController::class)->middleware('auth');
+Route::resource('chuyennganh',ChuyenNganhController::class);
+Route::resource('danquan',DanQuanController::class);
+Route::resource('thanhphan',ThanhPhanController::class);
 

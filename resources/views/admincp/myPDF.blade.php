@@ -217,19 +217,27 @@
       </p>
       <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi làm việc, (học tập): </span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên cha: {{$pdf->hotencha}}</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:30.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>({{$pdf->tinhtrangcha}})</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên cha: {{$pdf->tencha}}</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:30.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>({{$pdf->tinhtrangcha}})</span>
       </p>
       <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày ……....tháng……năm </span><span style="-aw-import:spaces">&#xa0;&#xa0; </span><span>{{$pdf->namsinhcha}} </span><span style="width:21.8pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:272.55pt">&#xa0;</span><span>Nghề nghiệp: {{$pdf->nghenghiepcha}}</span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên mẹ: {{$pdf->hotenme}}</span><span style="width:56.05pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>({{$pdf->tinhtrangme}})</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên mẹ: {{$pdf->tenme}}</span><span style="width:56.05pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>({{$pdf->tinhtrangme}})</span>
       </p>
       <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày ……....tháng……năm {{$pdf->namsinhme}} </span><span style="width:30.75pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Nghề nghiệp: {{$pdf->nghenghiepme}}</span>
       </p>
       <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên vợ: </span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span>Sinh ngày……..tháng …….năm </span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nghề nghiệp: ……………………………</span><span style="width:17.53pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:271pt">..</span><span>Bản thân đã có………con</span><span style="width:124.5pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:541.3pt">..............</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Nghề nghiệp: ……………………………</span><span style="width:17.53pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:271pt">..</span><span>Bản thân đã có………con</span><span style="width:124.5pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:541.3pt">..............</span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Cha mẹ có {{$pdf->socon}} người con, {{$pdf->contrai}} trai, </span><span style="-aw-import:spaces">&#xa0;</span><span>{{$pdf->congai}} gái; bản thân là con thứ {{$pdf->banthanla}}</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Cha mẹ có {{$pdf->socon}} người con, {{$pdf->contrai}} trai, </span><span style="-aw-import:spaces">&#xa0;</span><span>{{$pdf->congai}} gái; bản thân là con thứ
+        @if ($pdf->banthanla === 0)
+    Một
+@elseif ($pdf->banthanla === 1)
+    Hai
+@else
+    Ba
+@endif
+        </span>
       </p>
       <p style="text-align:justify; font-size:12pt"><span style="-aw-import:ignore">&#xa0;</span>
       </p>
@@ -246,7 +254,7 @@
       </p>
       <p style="margin-left:14.2pt; text-indent:1.45pt; text-align:justify; font-size:12pt"><span style="letter-spacing:-0.4pt; -aw-import:ignore">&#xa0;</span>
       </p>
-      <p style="text-indent:14.2pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">* Cha: </span><span>Nguyễn Văn Thanh</span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="letter-spacing:-0.4pt">Sinh năm: </span><span>1970 </span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:51.83pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:368.55pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Nghề nghiệp: Lao động tự do</span>
+      <p style="text-indent:14.2pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">* Cha: </span><span>{{$pdf->tencha}}</span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="letter-spacing:-0.4pt">Sinh năm: </span><span>{{$pdf->namsinhcha}} </span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:51.83pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:368.55pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Nghề nghiệp: {{$pdf->nghenghiepcha}}</span>
       </p>
       <p style="text-indent:14.2pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">Từ 1970 - 1976: Còn nhỏ, ở nhà. </span>
       </p>
@@ -258,7 +266,7 @@
       </p>
       <p style="margin-right:17.4pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0; </span>
       </p>
-      <p style="text-indent:14.2pt; font-size:14pt"><span style="letter-spacing:-0.4pt">* Mẹ: Phạm Thị Minh Trang</span><span style="width:36.3pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:212.65pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Sinh năm: </span><span>1971</span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:49.73pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:368.55pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Nghề nghiệp: Công nhân</span>
+      <p style="text-indent:14.2pt; font-size:14pt"><span style="letter-spacing:-0.4pt">* Mẹ: {{$pdf->tenme}}</span><span style="width:36.3pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:212.65pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Sinh năm: </span><span>{{$pdf->namsinhme}}</span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:49.73pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:368.55pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Nghề nghiệp: {{$pdf->nghenghiepme}}</span>
       </p>
       <p style="text-indent:14.2pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">Từ 1971 - 1977: Còn nhỏ, ở nhà.</span>
       </p>
@@ -268,11 +276,11 @@
       </p>
       <p style="margin-right:17.4pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt; -aw-import:ignore">&#xa0;</span>
       </p>
-      <p style="margin-right:17.4pt; text-indent:14.2pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">*Chị: Nguyễn Thị Xuân Anh</span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0; </span><span style="width:24.63pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:212.65pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Sinh năm: 1990</span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:56.93pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:382.75pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Nghề nghiệp: Công nhân</span>
+      <p style="margin-right:17.4pt; text-indent:14.2pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">*Chị: </span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0; </span><span style="width:24.63pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:212.65pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Sinh năm: 1990</span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:56.93pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:382.75pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Nghề nghiệp: Công nhân</span>
       </p>
       <p style="margin-right:17.4pt; margin-left:14.2pt; text-indent:1.45pt; text-align:justify; font-size:14pt"><span style="-aw-import:ignore">&#xa0;</span>
       </p>
-      <p style="margin-right:17.4pt; text-indent:14.2pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">*Anh: </span><span style="letter-spacing:-1pt">Nguyễn Thanh Trọng Phúc</span><span style="letter-spacing:-1pt; -aw-import:spaces">&#xa0;&#xa0; </span><span style="width:166.75pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:382.75pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Sinh năm: 1992</span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:8.08pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block">&#xa0;</span><span style="letter-spacing:-0.4pt">Nghề nghiệp: Tài xế</span>
+      <p style="margin-right:17.4pt; text-indent:14.2pt; text-align:justify; font-size:14pt"><span style="letter-spacing:-0.4pt">*Anh: </span><span style="letter-spacing:-1pt">ABC</span><span style="letter-spacing:-1pt; -aw-import:spaces">&#xa0;&#xa0; </span><span style="width:166.75pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:382.75pt">&#xa0;</span><span style="letter-spacing:-0.4pt">Sinh năm: 1992</span><span style="letter-spacing:-0.4pt; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:8.08pt; text-indent:0pt; letter-spacing:-0.4pt; display:inline-block">&#xa0;</span><span style="letter-spacing:-0.4pt">Nghề nghiệp: Tài xế</span>
       </p>
       <p style="margin-right:17.4pt; margin-left:14.2pt; text-indent:1.45pt; text-align:justify; font-size:14pt"><span style="-aw-import:ignore">&#xa0;</span>
       </p>
