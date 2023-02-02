@@ -173,7 +173,7 @@
           <?php endif ?>
         </span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; font-size:14pt"><span>Số CMND/CCCD:{{$pdf->cancuoc}}</span><span style="width:108.82pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:256.15pt">&#xa0;</span><span>Công an Bình Dương cấp ngày {{Carbon\Carbon::parse($pdf->congancapngay)->format('d/m/Y')}}</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; font-size:14pt"><span>Số CMND/CCCD:{{$pdf->cancuoc}}</span><span style="width:55.82pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:256.15pt">&#xa0;</span><span>Công an Bình Dương cấp ngày {{Carbon\Carbon::parse($pdf->congancapngay)->format('d/m/Y')}}</span>
       </p>
       <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi đăng ký khai sinh: {{$pdf->noidkks}}</span>
       </p>
@@ -193,10 +193,10 @@
       </p>
       <p style="margin-left:20.25pt; text-align:justify; font-size:14pt"><span style="-aw-import:ignore">&#xa0;</span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Thành phần gia đình: Trung nông</span><span style="width:62.27pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Bản thân: Phụ thuộc</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Thành phần gia đình: {{$pdf->thanhphangiadinh}}</span><span style="width:62.27pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Bản thân: {{$pdf->banthan}}</span>
         <!-- <span style="width:157.07pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:542pt">&#xa0;</span> -->
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Trình độ văn hóa: 12/12</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Trình độ văn hóa: {{$pdf->vanhoa}}</span>
       </p>
       <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Trình độ chuyên môn: </span>
         <span style="width:101.09pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:249.55pt">...........</span><span>Chuyên ngành đào tạo:</span>
@@ -217,19 +217,19 @@
       </p>
       <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi làm việc, (học tập): </span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên cha: Nguyễn Văn Thanh</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:30.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>(sống)</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên cha: {{$pdf->hotencha}}</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:30.4pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>({{$pdf->tinhtrangcha}})</span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày ……....tháng……năm </span><span style="-aw-import:spaces">&#xa0;&#xa0; </span><span>1970 </span><span style="width:21.8pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:272.55pt">&#xa0;</span><span>Nghề nghiệp: Lao động tự do</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày ……....tháng……năm </span><span style="-aw-import:spaces">&#xa0;&#xa0; </span><span>{{$pdf->namsinhcha}} </span><span style="width:21.8pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:272.55pt">&#xa0;</span><span>Nghề nghiệp: {{$pdf->nghenghiepcha}}</span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên mẹ: Phạm Thị Minh Trang </span><span style="width:56.05pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>(sống)</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên mẹ: {{$pdf->hotenme}}</span><span style="width:56.05pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>({{$pdf->tinhtrangme}})</span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày ……....tháng……năm 1971 </span><span style="width:30.75pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Nghề nghiệp: Công nhân</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày ……....tháng……năm {{$pdf->namsinhme}} </span><span style="width:30.75pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Nghề nghiệp: {{$pdf->nghenghiepme}}</span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên vợ: Phạm Thị Kim Phượng</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span>Sinh ngày……..tháng …….năm 1996</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên vợ: </span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span>Sinh ngày……..tháng …….năm </span>
       </p>
       <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nghề nghiệp: ……………………………</span><span style="width:17.53pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:271pt">..</span><span>Bản thân đã có………con</span><span style="width:124.5pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:541.3pt">..............</span>
       </p>
-      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Cha mẹ có 03 người con, 02 trai, </span><span style="-aw-import:spaces">&#xa0;</span><span>01 gái; bản thân là con thứ ba</span>
+      <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Cha mẹ có {{$pdf->socon}} người con, {{$pdf->contrai}} trai, </span><span style="-aw-import:spaces">&#xa0;</span><span>{{$pdf->congai}} gái; bản thân là con thứ {{$pdf->banthanla}}</span>
       </p>
       <p style="text-align:justify; font-size:12pt"><span style="-aw-import:ignore">&#xa0;</span>
       </p>

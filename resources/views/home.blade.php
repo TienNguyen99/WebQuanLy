@@ -95,7 +95,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 col-xl-4">
-                            <div class="card">
+                            {{-- <div class="card">
                                 <div class="card-header">
                                     <h4>Biểu đồ số lượng dân quân tham gia qua các năm</h4>
                                 </div>
@@ -155,9 +155,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
-            <div class="col-12 col-xl-8">
+            {{-- <div class="col-12 col-xl-8">
                 <div class="card">
                     <div class="card-header">
                         <h4>Latest Comments</h4>
@@ -205,7 +205,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="col-12 col-lg-3">
@@ -254,14 +254,14 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="card">
+                {{-- <div class="card">
                     <div class="card-header">
                         <h4>Visitors Profile</h4>
                     </div>
                     <div class="card-body">
                         <div id="chart-visitors-profile"></div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </section>
 
