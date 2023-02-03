@@ -237,7 +237,20 @@
     </div>
 
 
-    <div class="col-sm-6">
+
+   <div class="col-sm-6">
+   <div class="form-group">
+     {!! Form::label('tinhhinhgiadinhcha', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH (Cha)', []) !!}
+     {!! Form::textarea('tinhhinhgiadinhcha',isset($show_tongdanquan) ? $show_tongdanquan->tinhhinhgiadinhcha: '', ['class'=>'form-control','id'=>'tinhhinhgiadinhcha']) !!}
+   </div>
+ </div>
+ <div class="col-sm-6">
+   <div class="form-group">
+     {!! Form::label('tinhhinhgiadinhme', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH (MẸ)', []) !!}
+     {!! Form::textarea('tinhhinhgiadinhme',isset($show_tongdanquan) ? $show_tongdanquan->tinhhinhgiadinhme: '', ['class'=>'form-control','id'=>'tinhhinhgiadinhme']) !!}
+   </div>
+ </div>
+ <div class="col-sm-6">
      <div class="form-group">
        {!! Form::label('tinhhinhgiadinh', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH', []) !!}
        {!! Form::textarea('tinhhinhgiadinh',isset($show_tongdanquan) ? $show_tongdanquan->tinhhinhgiadinh: '', ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}

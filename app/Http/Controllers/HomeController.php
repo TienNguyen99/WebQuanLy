@@ -44,7 +44,7 @@ class HomeController extends Controller
         ->where('thanhphan_id','14')
         ->count();
         // fill
-        $range = \Carbon\Carbon::now()->subYears(5);
+        $range = \Carbon\Carbon::now()->subYears(15);
         $chart = DB::table('danquans')
         ->select(DB::raw('year(vaonam) as getYear'), DB::raw('COUNT(*) as value'))
         ->where('vaonam', '>=', $range)

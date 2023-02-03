@@ -97,6 +97,8 @@ class DanQuanController extends Controller
 
 
         $danquan->tinhhinhgiadinh = $data['tinhhinhgiadinh'];
+        $danquan->tinhhinhgiadinhcha = $data['tinhhinhgiadinhcha'];
+        $danquan->tinhhinhgiadinhme = $data['tinhhinhgiadinhme'];
         $danquan->tinhhinhbanthan = $data['tinhhinhbanthan'];
 
 
@@ -203,6 +205,8 @@ class DanQuanController extends Controller
 
 
         $danquan->tinhhinhgiadinh = $data['tinhhinhgiadinh'];
+        $danquan->tinhhinhgiadinhcha = $data['tinhhinhgiadinhcha'];
+        $danquan->tinhhinhgiadinhme = $data['tinhhinhgiadinhme'];
         $danquan->tinhhinhbanthan = $data['tinhhinhbanthan'];
         // thêm ảnh
         // 
