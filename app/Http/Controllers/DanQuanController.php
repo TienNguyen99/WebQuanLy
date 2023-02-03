@@ -253,6 +253,7 @@ class DanQuanController extends Controller
     }
     public function wordExport($id){
         $danquan = DanQuan::find($id);
+        // dd($danquan);
         $templateProcessor = new TemplateProcessor('public/backend/word-template/tuoi17.docx');
         $templateProcessor->setValue('tenkhaisinh',$danquan->tenkhaisinh);
         $templateProcessor->setValue('tenkhac',$danquan->tenkhac);
@@ -260,12 +261,15 @@ class DanQuanController extends Controller
         // $templateProcessor->setValue('congancapngay',Carbon::createFromFormat('d/m/Y', $danquan->congancapngay));
         // $templateProcessor->setValue('namsinh',Carbon::createFromFormat('d/m/Y', $danquan->namsinh));
         $templateProcessor->setValue('cancuoc',$danquan->cancuoc);
+        $templateProcessor->setValue('namsinh',$danquan->namsinh);
+        $templateProcessor->setValue('congancapngay',$danquan->congancapngay);
+
         $templateProcessor->setValue('thanhphangiadinh',$danquan->thanhphangiadinh);
         $templateProcessor->setValue('banthan',$danquan->banthan);
         $templateProcessor->setValue('vanhoa',$danquan->vanhoa);
         $templateProcessor->setValue('tinhtrangcha',$danquan->tinhtrangcha);
         $templateProcessor->setValue('tencha',$danquan->tencha);
-        $templateProcessor->setValue('nghenghiepcha',$danquan->nghenghiepcha);
+        $templateProcessor->setValue('namsinhcha',$danquan->namsinhcha);
         $templateProcessor->setValue('nghenghiepcha',$danquan->nghenghiepcha);
         $templateProcessor->setValue('tinhtrangme',$danquan->tinhtrangme);
         $templateProcessor->setValue('tenme',$danquan->tenme);
@@ -281,6 +285,13 @@ class DanQuanController extends Controller
         $templateProcessor->setValue('tongiao',$danquan->tongiao);
         $templateProcessor->setValue('thuongtru',$danquan->thuongtru);
         $templateProcessor->setValue('noio',$danquan->noio);
+        $danquan->tinhhinhbanthan = str_replace("\n", '</w:t><w:br/><w:t>', $danquan->tinhhinhbanthan);
+        $danquan->tinhhinhgiadinhme = str_replace("\n", '</w:t><w:br/><w:t>', $danquan->tinhhinhgiadinhme);
+        $danquan->tinhhinhgiadinhcha = str_replace("\n", '</w:t><w:br/><w:t>', $danquan->tinhhinhgiadinhcha);
+        $templateProcessor->setValue('tinhhinhbanthan',$danquan->tinhhinhbanthan);
+        $templateProcessor->setValue('tinhhinhgiadinh',$danquan->tinhhinhgiadinh);
+        $templateProcessor->setValue('tinhhinhgiadinhme',$danquan->tinhhinhgiadinhme);
+        $templateProcessor->setValue('tinhhinhgiadinhcha',$danquan->tinhhinhgiadinhcha);
         $fileName = $danquan->tenkhaisinh;
         $templateProcessor->saveAs($fileName.'.docx');
         return response()->download($fileName.'.docx')->deleteFileAfterSend(true);
