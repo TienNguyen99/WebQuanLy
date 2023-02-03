@@ -7,7 +7,7 @@ use App\Models\DanQuan;
 use App\Models\ThanhPhan;
 use Carbon\Carbon;
 use PDF;
-
+use PhpOffice\PhpWord\TemplateProcessor;
 
 class DanQuanController extends Controller
 {
@@ -251,5 +251,40 @@ class DanQuanController extends Controller
         toast()->success('Xóa thành công');
         return redirect()->back();
     }
+    public function wordExport($id){
+        $danquan = DanQuan::find($id);
+        $templateProcessor = new TemplateProcessor('public/backend/word-template/tuoi17.docx');
+        $templateProcessor->setValue('tenkhaisinh',$danquan->tenkhaisinh);
+        $templateProcessor->setValue('tenkhac',$danquan->tenkhac);
+        $templateProcessor->setValue('sdt',$danquan->sdt);
+        // $templateProcessor->setValue('congancapngay',Carbon::createFromFormat('d/m/Y', $danquan->congancapngay));
+        // $templateProcessor->setValue('namsinh',Carbon::createFromFormat('d/m/Y', $danquan->namsinh));
+        $templateProcessor->setValue('cancuoc',$danquan->cancuoc);
+        $templateProcessor->setValue('thanhphangiadinh',$danquan->thanhphangiadinh);
+        $templateProcessor->setValue('banthan',$danquan->banthan);
+        $templateProcessor->setValue('vanhoa',$danquan->vanhoa);
+        $templateProcessor->setValue('tinhtrangcha',$danquan->tinhtrangcha);
+        $templateProcessor->setValue('tencha',$danquan->tencha);
+        $templateProcessor->setValue('nghenghiepcha',$danquan->nghenghiepcha);
+        $templateProcessor->setValue('nghenghiepcha',$danquan->nghenghiepcha);
+        $templateProcessor->setValue('tinhtrangme',$danquan->tinhtrangme);
+        $templateProcessor->setValue('tenme',$danquan->tenme);
+        $templateProcessor->setValue('namsinhme',$danquan->namsinhme);
+        $templateProcessor->setValue('nghenghiepme',$danquan->nghenghiepme);
+        $templateProcessor->setValue('socon',$danquan->socon);
+        $templateProcessor->setValue('contrai',$danquan->contrai);
+        $templateProcessor->setValue('congai',$danquan->congai);
+        $templateProcessor->setValue('banthanla',$danquan->banthanla);
+        $templateProcessor->setValue('noidkks',$danquan->noidkks);
+        $templateProcessor->setValue('quequan',$danquan->quequan);
+        $templateProcessor->setValue('dantoc',$danquan->dantoc);
+        $templateProcessor->setValue('tongiao',$danquan->tongiao);
+        $templateProcessor->setValue('thuongtru',$danquan->thuongtru);
+        $templateProcessor->setValue('noio',$danquan->noio);
+        $fileName = $danquan->tenkhaisinh;
+        $templateProcessor->saveAs($fileName.'.docx');
+        return response()->download($fileName.'.docx')->deleteFileAfterSend(true);
+    } 
    
 }
+       

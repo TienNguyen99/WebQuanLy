@@ -25,6 +25,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/dqcd', [App\Http\Controllers\DanQuanController::class, 'index']);
+Route::get('/word-export/{id}', [App\Http\Controllers\DanQuanController::class, 'wordExport'])->name('word');
+
 
 Route::resource('chuyennganh',ChuyenNganhController::class);
 Route::resource('danquan',DanQuanController::class);

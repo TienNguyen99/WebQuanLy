@@ -23,7 +23,8 @@
                         <th>Tháng tham gia DQTV</th>
                         <th>Năm tham gia DQTV</th>
                         <th>Chỉnh sửa</th>
-                        <th>In</th>
+                        <th>In PDF</th>
+                        <th>In Word</th>
                         <th>Xóa</th>
                         
 
@@ -59,6 +60,9 @@
 
                      <td>
                       <a href="{{route('danquan.edit',$show_tongdanquan->id)}}" class="btn btn-default"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
+                  </td>
+                  <td>
+                      <a href="{{route('word',$show_tongdanquan->id)}}" class="btn btn-default"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
                   </td>
                   <td>
                     {!! Form::open(['method'=>'DELETE','route' => ['danquan.destroy',$show_tongdanquan->id],'onsubmit'=>'return submitForm(this)']) !!}
