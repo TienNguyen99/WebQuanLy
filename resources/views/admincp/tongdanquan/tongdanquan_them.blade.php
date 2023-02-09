@@ -5,6 +5,7 @@
 
 <button type="button" data-bs-toggle="modal" data-bs-target="#themmodal" class="btn btn-success rounded-pill shadow-sm px-4 mb-4" style="float: right;" ><i class="fa fa-plus-square-o mr-2"></i><small class="text-uppercase font-weight-bold">Thêm</small></button>
 @include('admincp.tongdanquan.tongdanquan_themmodal')
+
 <section class="section">
     <div class="card">
         <!-- Toggle button -->

@@ -8,7 +8,7 @@ use App\Models\ThanhPhan;
 use Carbon\Carbon;
 use PDF;
 use PhpOffice\PhpWord\TemplateProcessor;
-
+use Validator;
 
 class DanQuanController extends Controller
 {
@@ -53,11 +53,13 @@ class DanQuanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         $data = $request->all();
         // dd($data);
         $danquan = new DanQuan();
+
         $danquan->tenkhaisinh = $data['tenkhaisinh'];
         $danquan->tenkhac = $data['tenkhac'];
         $danquan->sdt = $data['sdt'];
@@ -117,17 +119,42 @@ class DanQuanController extends Controller
             $danquan->anh34 = $new_image;
         }
 
+        $messages = [
+
+            'sdt.max' => 'gồm 11 số',
+            'namsinh.date_format' => 'Nhập đúng định dạng ngày/tháng/năm',
+            'vaonam.date_format' => 'Nhập đúng định dạng ngày/tháng/năm',
+            'congancapngay.date_format' => 'Nhập đúng định dạng ngày/tháng/năm',
+
+        ];
+
+        $this->validate($request,[
+
+            'sdt'=>'max:11',
+            'namsinh'=>'date_format:d/m/Y',
+            'vaonam'=>'date_format:d/m/Y',
+            'congancapngay'=>'date_format:d/m/Y',
+
+
+        ], $messages);
+
         $danquan->save();
-        if ($data) {
+
+
+
+
+
+        if ($danquan->save()) {
         toast()->success('Tạo hồ sơ thành công'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
-    } else {
-        toast()->error('Lỗi', 'Vui lòng điền đúng thông tin.'); // hoặc có thể dùng alert('Post Created','Something went wrong!', 'error');
+    }else
+    {
+        toast()->error('Lỗi');
     }
 
-        
-        
-        return redirect()->back();
-    }
+
+
+    return redirect()->back();
+}
 
     /**
      * Display the specified resource.
@@ -148,7 +175,7 @@ class DanQuanController extends Controller
      */
     public function edit($pdfid)
     {
-        
+
         $pdf = DanQuan::where('id',$pdfid)->first();
         // print_r($pdf);
 
@@ -234,10 +261,10 @@ class DanQuanController extends Controller
 
     }
 
-        
-        
-        return redirect()->back();
-    }
+
+
+    return redirect()->back();
+}
 
     /**
      * Remove the specified resource from storage.
@@ -300,6 +327,6 @@ class DanQuanController extends Controller
         $templateProcessor->saveAs($fileName.'.docx');
         return response()->download($fileName.'.docx')->deleteFileAfterSend(true);
     } 
-   
+
 }
-       
+

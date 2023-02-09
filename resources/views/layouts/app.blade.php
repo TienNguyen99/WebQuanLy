@@ -30,6 +30,9 @@
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
     <!--  -->
+    {{-- toast css --}}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    {{--  --}}
     <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- End Script -->
@@ -374,9 +377,18 @@
 
 
 </script>
+
+
 {{-- end chart --}}
 <!-- toastify -->
 <script src="{{asset('public/backend/vendors/toastify/toastify.js')}}"></script>
+  @if (count($errors) > 0)
+    <script type="text/javascript">
+        $( document ).ready(function() {
+             $('#themmodal').modal('show');
+        });
+    </script>
+  @endif
 <!-- Sweetalert -->
 <script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
 <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>

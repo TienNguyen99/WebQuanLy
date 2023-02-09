@@ -1,3 +1,4 @@
+
         <div class="modal fade text-left w-100" id="themmodal" tabindex="-1"
         role="dialog" aria-labelledby="myModalLabel20" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-full"
@@ -17,6 +18,15 @@
             <div class="card">
 
               <div class="card-content">
+                {{-- @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{$error}} </li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif --}}
                 <div class="card-body">
                   {!! Form::open(['route'=>'danquan.store','method'=>'POST','enctype'=>'multipart/form-data']) !!}
                   <div class="row">
@@ -25,249 +35,254 @@
                     </div>
 
                     <div class="col-12">
-                       <div class="form-group">
-                         {!! Form::label('Image', 'Thêm ảnh', []) !!}
-                         {!! Form::file('anh34', ['class'=>'form-control','id'=>'formFile' ]) !!}
-                     </div>
-                 </div>
-                 <div class="col-12">
-                    <div class="divider">
-                      <div class="divider-text">Hồ sơ dân quân tự vệ</div>
-                  </div>
-              </div>
-
-              <div class="col-sm-2">
-                 <div class="form-group">
-                   {!! Form::label('tenkhaisinh', 'Tên khai sinh', []) !!}
-                   {!! Form::text('tenkhaisinh',null, ['class'=>'form-control','placeholder'=>'Nhập tên khai sinh','id'=>'tenkhaisinh','required']) !!}
+                     <div class="form-group">
+                       {!! Form::label('Image', 'Thêm ảnh', []) !!}
+                       {!! Form::file('anh34', ['class'=>'form-control','id'=>'formFile' ]) !!}
+                   </div>
                </div>
-           </div>
-           <div class="col-sm-2">
-             <div class="form-group">
-               {!! Form::label('tenkhac', 'Tên khác', []) !!}
-               {!! Form::text('tenkhac',null, ['class'=>'form-control','placeholder'=>'Nhập tên khác','id'=>'tenkhac']) !!}
-           </div>
-       </div>
-       <div class="col-sm-2">
-         <div class="form-group">
-           {!! Form::label('sdt', 'Số điện thoại', []) !!}
-           {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt']) !!}
-       </div>
-   </div>
-   <div class="col-sm-2">
-     <div class="form-group">
-       {!! Form::label('gioitinh', 'Giới tính', []) !!}
-       {!! Form::select('gioitinh', ['1'=>'Nam','0'=>'Nữ'],null, ['class'=>'form-control']) !!}
-   </div>
+               <div class="col-12">
+                <div class="divider">
+                  <div class="divider-text">Hồ sơ dân quân tự vệ</div>
+              </div>
+          </div>
+
+          <div class="col-sm-2">
+           <div class="form-group">
+             {!! Form::label('tenkhaisinh', 'Tên khai sinh', []) !!}
+             {!! Form::text('tenkhaisinh',null, ['class'=>'form-control','placeholder'=>'Nhập tên khai sinh','id'=>'tenkhaisinh','required']) !!}
+         </div>
+     </div>
+     <div class="col-sm-2">
+       <div class="form-group">
+         {!! Form::label('tenkhac', 'Tên khác', []) !!}
+         {!! Form::text('tenkhac',null, ['class'=>'form-control','placeholder'=>'Nhập tên khác','id'=>'tenkhac']) !!}
+
+     </div>
+ </div>
+ <div class="col-sm-2">
+   <div class="form-group">
+     {!! Form::label('sdt', 'Số điện thoại', []) !!}
+     {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt']) !!}
+     <p class="text-danger">{{ $errors->first('sdt') }}</p>
+ </div>
 </div>
 <div class="col-sm-2">
- <div class="form-group">
+   <div class="form-group">
+     {!! Form::label('gioitinh', 'Giới tính', []) !!}
+     {!! Form::select('gioitinh', ['1'=>'Nam','0'=>'Nữ'],null, ['class'=>'form-control']) !!}
+ </div>
+</div>
+<div class="col-sm-2">
+   <div class="form-group">
 
     {!! Form::label('namsinh', 'Năm sinh ' ) !!}
 
     {!! Form::text('namsinh', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
     'namsinh']) !!}
+    <p class="text-danger">{{ $errors->first('namsinh') }}</p>
 </div>
 </div>
 
 
 <div class="col-sm-2">
-   <div class="form-group">
-     {!! Form::label('thanhphan_id', 'Thành phần', []) !!}
+ <div class="form-group">
+   {!! Form::label('thanhphan_id', 'Thành phần', []) !!}
 
-     {!! Form::select('thanhphan_id', $thanhphan,null, ['class'=>'form-control']) !!}
+   {!! Form::select('thanhphan_id', $thanhphan,null, ['class'=>'form-control']) !!}
+</div>
+</div>
+<div class="col-sm-2">
+ <div class="form-group">
+   {!! Form::label('cancuoc', 'CMND / CCCD', []) !!}
+   {!! Form::text('cancuoc',null, ['class'=>'form-control','placeholder'=>'Nhập số căn cước','id'=>'cancuoc']) !!}
+</div>
+</div>
+<div class="col-sm-2">
+ <div class="form-group">
+
+  {!! Form::label('congancapngay', 'Cấp ngày ' ) !!}
+
+  {!! Form::text('congancapngay', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
+  'congancapngay','required']) !!}
+  <p class="text-danger">{{ $errors->first('congancapngay') }}</p>
+</div>
+</div>
+
+<div class="col-sm-2">
+   <div class="form-group">
+     {!! Form::label('dantoc', 'Dân tộc', []) !!}
+     {!! Form::text('dantoc','Kinh', ['class'=>'form-control','placeholder'=>'Dân tộc','id'=>'dantoc']) !!}
  </div>
 </div>
 <div class="col-sm-2">
    <div class="form-group">
-     {!! Form::label('cancuoc', 'CMND / CCCD', []) !!}
-     {!! Form::text('cancuoc',null, ['class'=>'form-control','placeholder'=>'Nhập số căn cước','id'=>'cancuoc']) !!}
+     {!! Form::label('tongiao', 'Tôn giáo', []) !!}
+     {!! Form::text('tongiao','Không', ['class'=>'form-control','id'=>'tongiao']) !!}
  </div>
 </div>
 <div class="col-sm-2">
    <div class="form-group">
-
-      {!! Form::label('congancapngay', 'Cấp ngày ' ) !!}
-
-      {!! Form::text('congancapngay', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
-      'congancapngay','required']) !!}
-  </div>
-</div>
-
-<div class="col-sm-2">
- <div class="form-group">
-   {!! Form::label('dantoc', 'Dân tộc', []) !!}
-   {!! Form::text('dantoc','Kinh', ['class'=>'form-control','placeholder'=>'Dân tộc','id'=>'dantoc']) !!}
-</div>
+     {!! Form::label('quoctich', 'Quốc tịch', []) !!}
+     {!! Form::text('quoctich','Việt Nam', ['class'=>'form-control','id'=>'quoctich','disabled']) !!}
+ </div>
 </div>
 <div class="col-sm-2">
- <div class="form-group">
-   {!! Form::label('tongiao', 'Tôn giáo', []) !!}
-   {!! Form::text('tongiao','Không', ['class'=>'form-control','id'=>'tongiao']) !!}
-</div>
-</div>
-<div class="col-sm-2">
- <div class="form-group">
-   {!! Form::label('quoctich', 'Quốc tịch', []) !!}
-   {!! Form::text('quoctich','Việt Nam', ['class'=>'form-control','id'=>'quoctich','disabled']) !!}
-</div>
+   <div class="form-group">
+     {!! Form::label('thanhphangiadinh', 'Thành phần gia đình', []) !!}
+     {!! Form::select('thanhphangiadinh', ['Kinh doanh','Buôn bán','Nội trợ','Công nhân'],'Kinh doanh', ['class'=>'form-control']) !!}
+ </div>
 </div>
 <div class="col-sm-2">
- <div class="form-group">
-   {!! Form::label('thanhphangiadinh', 'Thành phần gia đình', []) !!}
-   {!! Form::select('thanhphangiadinh', ['Kinh doanh','Buôn bán','Nội trợ','Công nhân'],'Kinh doanh', ['class'=>'form-control']) !!}
-</div>
-</div>
-<div class="col-sm-2">
- <div class="form-group">
-   {!! Form::label('banthan', 'Bản thân', []) !!}
-   {!! Form::text('banthan','Phụ thuộc', ['class'=>'form-control','id'=>'banthan']) !!}
-</div>
+   <div class="form-group">
+     {!! Form::label('banthan', 'Bản thân', []) !!}
+     {!! Form::text('banthan','Phụ thuộc', ['class'=>'form-control','id'=>'banthan']) !!}
+ </div>
 </div>
 <div class="col-sm-2 ">
- <div class="form-group">
-   {!! Form::label('vanhoa', 'Văn hoá', []) !!}
-   {!! Form::text('vanhoa',null, ['class'=>'form-control','id'=>'vanhoa','placeholder'=>'9/12']) !!}
-</div>
+   <div class="form-group">
+     {!! Form::label('vanhoa', 'Văn hoá', []) !!}
+     {!! Form::text('vanhoa',null, ['class'=>'form-control','id'=>'vanhoa','placeholder'=>'9/12']) !!}
+ </div>
 </div>
 <div class="col-sm-4 ">
- <div class="form-group">
-   {!! Form::label('vaonam', 'Năm tham gia DQTV', []) !!}
-   {!! Form::text('vaonam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
-   'namsinh','required','oninvalid'=>'Vui lòng nhập đúng định dạng ngày/tháng/năm']) !!}
-</div>
+   <div class="form-group">
+     {!! Form::label('vaonam', 'Năm tham gia DQTV', []) !!}
+     {!! Form::text('vaonam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
+     'namsinh','required']) !!}
+     <p class="text-danger">{{ $errors->first('vaonam') }}</p>
+ </div>
 </div>
 <div class="w-100"></div>
 
 <div class="col-sm-3 ">
- <div class="form-group">
+   <div class="form-group">
     {!! Form::label('tinhtrangcha', 'Sống / Mất', []) !!}
     <select name="tinhtrangcha" id="tinhtrangcha" class ="form-control">
-       <option value="Sống">Sống</option>
-       <option value="Mất">Chết</option>
-   </select>
+     <option value="Sống">Sống</option>
+     <option value="Mất">Chết</option>
+ </select>
 </div>
 </div>
 <div class="col-sm-3">
-   <div class="form-group">
-     {!! Form::label('tencha', 'Tên cha', []) !!}
-     {!! Form::text('tencha',null, ['class'=>'form-control','id'=>'tencha']) !!}
- </div>
+ <div class="form-group">
+   {!! Form::label('tencha', 'Tên cha', []) !!}
+   {!! Form::text('tencha',null, ['class'=>'form-control','id'=>'tencha']) !!}
+</div>
 </div>
 <div class="col-sm-3">
-   <div class="form-group">
-     {!! Form::label('namsinhcha', 'Năm sinh cha', []) !!}
-     {!! Form::text('namsinhcha',null, ['class'=>'form-control','id'=>'namsinhcha']) !!}
- </div>
+ <div class="form-group">
+   {!! Form::label('namsinhcha', 'Năm sinh cha', []) !!}
+   {!! Form::text('namsinhcha',null, ['class'=>'form-control','id'=>'namsinhcha']) !!}
+</div>
 </div>
 <div class="col-sm-3">
-   <div class="form-group">
-     {!! Form::label('nghenghiepcha', 'Nghề nghiệp cha', []) !!}
-     {!! Form::text('nghenghiepcha',null, ['class'=>'form-control','id'=>'nghenghiepcha']) !!}
- </div>
+ <div class="form-group">
+   {!! Form::label('nghenghiepcha', 'Nghề nghiệp cha', []) !!}
+   {!! Form::text('nghenghiepcha',null, ['class'=>'form-control','id'=>'nghenghiepcha']) !!}
+</div>
 </div>
 
 <div class="col-sm-3 ">
+ <div class="form-group">
+  {!! Form::label('tinhtrangme', 'Sống / Mất', []) !!}
+  <select name="tinhtrangme" id="tinhtrangcha" class ="form-control">
+   <option value="Sống">Sống</option>
+   <option value="Mất">Chết</option>
+</select>
+</div>
+</div>
+<div class="col-sm-3">
    <div class="form-group">
-      {!! Form::label('tinhtrangme', 'Sống / Mất', []) !!}
-      <select name="tinhtrangme" id="tinhtrangcha" class ="form-control">
-         <option value="Sống">Sống</option>
-         <option value="Mất">Chết</option>
-     </select>
+     {!! Form::label('tenme', 'Tên mẹ', []) !!}
+     {!! Form::text('tenme',null, ['class'=>'form-control','id'=>'tenme']) !!}
  </div>
 </div>
 <div class="col-sm-3">
- <div class="form-group">
-   {!! Form::label('tenme', 'Tên mẹ', []) !!}
-   {!! Form::text('tenme',null, ['class'=>'form-control','id'=>'tenme']) !!}
-</div>
-</div>
-<div class="col-sm-3">
- <div class="form-group">
-   {!! Form::label('namsinhme', 'Năm sinh mẹ', []) !!}
-   {!! Form::text('namsinhme',null, ['class'=>'form-control','id'=>'namsinhme']) !!}
-</div>
+   <div class="form-group">
+     {!! Form::label('namsinhme', 'Năm sinh mẹ', []) !!}
+     {!! Form::text('namsinhme',null, ['class'=>'form-control','id'=>'namsinhme']) !!}
+ </div>
 </div>
 <div class="col-sm-3">
- <div class="form-group">
-   {!! Form::label('nghenghiepme', 'Nghề nghiệp mẹ', []) !!}
-   {!! Form::text('nghenghiepme',null, ['class'=>'form-control','id'=>'nghenghiepme']) !!}
-</div>
-</div>
-<div class="col-sm-3">
- <div class="form-group">
-   {!! Form::label('socon', 'Cha mẹ có', []) !!}
-   {!! Form::select('socon', ['0','1','2','3','4','5'],null, ['class'=>'form-control']) !!}
-</div>
+   <div class="form-group">
+     {!! Form::label('nghenghiepme', 'Nghề nghiệp mẹ', []) !!}
+     {!! Form::text('nghenghiepme',null, ['class'=>'form-control','id'=>'nghenghiepme']) !!}
+ </div>
 </div>
 <div class="col-sm-3">
- <div class="form-group">
+   <div class="form-group">
+     {!! Form::label('socon', 'Cha mẹ có', []) !!}
+     {!! Form::select('socon', ['0','1','2','3','4','5'],null, ['class'=>'form-control']) !!}
+ </div>
+</div>
+<div class="col-sm-3">
+   <div class="form-group">
     {!! Form::label('contrai', 'Con trai', []) !!}
     {!! Form::select('contrai', ['0','1','2','3','4','5'],null, ['class'=>'form-control']) !!}
 </div>
 </div>
 <div class="col-sm-3">
-   <div class="form-group">
-      {!! Form::label('congai', 'Con gái', []) !!}
-      {!! Form::select('congai', ['0','1','2','3','4','5'],null, ['class'=>'form-control']) !!}
-  </div>
+ <div class="form-group">
+  {!! Form::label('congai', 'Con gái', []) !!}
+  {!! Form::select('congai', ['0','1','2','3','4','5'],null, ['class'=>'form-control']) !!}
+</div>
 </div>
 <div class="col-sm-3">
- <div class="form-group">
+   <div class="form-group">
     {!! Form::label('banthanla', 'Bản thân là con thứ', []) !!}
     {!! Form::select('banthanla', ['Một','Hai','Ba'],null, ['class'=>'form-control']) !!}
 </div>
 </div>
 <div class="col-sm-6">
-   <div class="form-group">
-     {!! Form::label('noidkks', 'Nơi đăng ký khai sinh', []) !!}
-     {!! Form::text('noidkks','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'noidkks']) !!}
- </div>
+ <div class="form-group">
+   {!! Form::label('noidkks', 'Nơi đăng ký khai sinh', []) !!}
+   {!! Form::text('noidkks','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'noidkks']) !!}
 </div>
-<div class="col-sm-6">
-   <div class="form-group">
-      {!! Form::label('quequan', 'Quê quán', []) !!}
-      {!! Form::text('quequan','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'quequan']) !!}
-  </div>
 </div>
 <div class="col-sm-6">
  <div class="form-group">
+  {!! Form::label('quequan', 'Quê quán', []) !!}
+  {!! Form::text('quequan','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'quequan']) !!}
+</div>
+</div>
+<div class="col-sm-6">
+   <div class="form-group">
     {!! Form::label('thuongtru', 'Thường trú', []) !!}
     {!! Form::text('thuongtru','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'thuongtru']) !!}
 </div>
 </div>
 <div class="col-sm-6">
+ <div class="form-group">
+  {!! Form::label('noio', 'Nơi ở', []) !!}
+  {!! Form::text('noio','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'noio']) !!}
+</div>
+</div>
+
+
+
+<div class="col-sm-6">
    <div class="form-group">
-      {!! Form::label('noio', 'Nơi ở', []) !!}
-      {!! Form::text('noio','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'noio']) !!}
-  </div>
-</div>
-
-
-
-<div class="col-sm-6">
- <div class="form-group">
-   {!! Form::label('tinhhinhgiadinhcha', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH (Cha)', []) !!}
-   {!! Form::textarea('tinhhinhgiadinhcha',null, ['class'=>'form-control','id'=>'tinhhinhgiadinhcha']) !!}
-</div>
+     {!! Form::label('tinhhinhgiadinhcha', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH (Cha)', []) !!}
+     {!! Form::textarea('tinhhinhgiadinhcha',null, ['class'=>'form-control','id'=>'tinhhinhgiadinhcha']) !!}
+ </div>
 </div>
 <div class="col-sm-6">
- <div class="form-group">
-   {!! Form::label('tinhhinhgiadinhme', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH (MẸ)', []) !!}
-   {!! Form::textarea('tinhhinhgiadinhme',null, ['class'=>'form-control','id'=>'tinhhinhgiadinhme']) !!}
-</div>
-</div>
-<div class="col-sm-6">
- <div class="form-group">
-   {!! Form::label('tinhhinhgiadinh', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH', []) !!}
-   {!! Form::textarea('tinhhinhgiadinh',null, ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
-</div>
+   <div class="form-group">
+     {!! Form::label('tinhhinhgiadinhme', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH (MẸ)', []) !!}
+     {!! Form::textarea('tinhhinhgiadinhme',null, ['class'=>'form-control','id'=>'tinhhinhgiadinhme']) !!}
+ </div>
 </div>
 <div class="col-sm-6">
- <div class="form-group">
-   {!! Form::label('tinhhinhbanthan', 'TÌNH HÌNH KINH TẾ,CHÍNH TRỊ, QUÁ TRÌNH CÔNG TÁC CỦA BẢN THÂN ', []) !!}
-   {!! Form::textarea('tinhhinhbanthan',null, ['class'=>'form-control','id'=>'tinhhinhbanthan']) !!}
+   <div class="form-group">
+     {!! Form::label('tinhhinhgiadinh', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH', []) !!}
+     {!! Form::textarea('tinhhinhgiadinh',null, ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
+ </div>
 </div>
+<div class="col-sm-6">
+   <div class="form-group">
+     {!! Form::label('tinhhinhbanthan', 'TÌNH HÌNH KINH TẾ,CHÍNH TRỊ, QUÁ TRÌNH CÔNG TÁC CỦA BẢN THÂN ', []) !!}
+     {!! Form::textarea('tinhhinhbanthan',null, ['class'=>'form-control','id'=>'tinhhinhbanthan']) !!}
+ </div>
 </div>
 
 
@@ -293,3 +308,4 @@
 </div>
 </div>
 </div>
+
