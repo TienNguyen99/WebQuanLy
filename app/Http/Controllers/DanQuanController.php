@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use PDF;
 use PhpOffice\PhpWord\TemplateProcessor;
 
+
 class DanQuanController extends Controller
 {
     /**
@@ -115,6 +116,7 @@ class DanQuanController extends Controller
             $get_image->move($path,$new_image);
             $danquan->anh34 = $new_image;
         }
+
         $danquan->save();
         if ($data) {
         toast()->success('Tạo hồ sơ thành công'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
@@ -224,10 +226,12 @@ class DanQuanController extends Controller
             $danquan->anh34 = $new_image;
         }
         $danquan->save();
+
         if ($data) {
         toast()->success('Chỉnh sửa hồ sơ thành công'); // hoặc có thể dùng alert('Post Created','Successfully', 'success');
     } else {
         toast()->error('Lỗi', 'Vui lòng điền đúng thông tin.'); // hoặc có thể dùng alert('Post Created','Something went wrong!', 'error');
+
     }
 
         

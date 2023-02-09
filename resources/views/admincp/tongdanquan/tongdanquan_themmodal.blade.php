@@ -115,7 +115,7 @@
 <div class="col-sm-2">
  <div class="form-group">
    {!! Form::label('thanhphangiadinh', 'Thành phần gia đình', []) !!}
-   {!! Form::select('thanhphangiadinh', ['Kinh doanh','Buôn bán','Nội trợ'],'Kinh doanh', ['class'=>'form-control']) !!}
+   {!! Form::select('thanhphangiadinh', ['Kinh doanh','Buôn bán','Nội trợ','Công nhân'],'Kinh doanh', ['class'=>'form-control']) !!}
 </div>
 </div>
 <div class="col-sm-2">
@@ -134,7 +134,7 @@
  <div class="form-group">
    {!! Form::label('vaonam', 'Năm tham gia DQTV', []) !!}
    {!! Form::text('vaonam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
-   'namsinh','required']) !!}
+   'namsinh','required','oninvalid'=>'Vui lòng nhập đúng định dạng ngày/tháng/năm']) !!}
 </div>
 </div>
 <div class="w-100"></div>

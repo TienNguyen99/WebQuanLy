@@ -285,7 +285,7 @@
                 searchPanes: {
                     show: false
                 },
-                targets: [2]
+                targets: [2 , 5]
             }
         ]
     });
