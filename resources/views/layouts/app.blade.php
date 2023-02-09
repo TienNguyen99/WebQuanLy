@@ -279,7 +279,7 @@
                 searchPanes: {
                     show: true
                 },
-                targets: [6 , 7 , 8]
+                targets: [0 , 7 , 8 , 9]
             },
             {
                 searchPanes: {

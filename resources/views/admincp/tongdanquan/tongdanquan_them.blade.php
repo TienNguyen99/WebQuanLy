@@ -13,6 +13,7 @@
             <table class="table table-striped" id="table1">
                 <thead>
                     <tr>
+                        <th>Số kết nạp</th>
                         <th>Tên</th>
                         <th>Giới tính</th>
                         <th>Số điện thoại</th>
@@ -34,6 +35,7 @@
 
                     <?php foreach ($list as $key => $show_tongdanquan): ?>
                         <tr>
+                            <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('Y')}}{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('m')}}{{$key}}</td>
                             <td>{{$show_tongdanquan->tenkhaisinh}}</td>
                             <?php if ($show_tongdanquan->gioitinh == 1): ?>
                                 <td>Nam</td>

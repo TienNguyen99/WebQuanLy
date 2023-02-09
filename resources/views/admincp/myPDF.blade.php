@@ -164,7 +164,7 @@
   </p>
   <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ, chữ đệm và tên thường dùng: {{$pdf->tenkhac}}</span>
   </p>
-  <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày {{Carbon\Carbon::parse($pdf->namsinh)->format('d')}} tháng {{Carbon\Carbon::parse($pdf->namsinh)->format('m')}} năm 19{{Carbon\Carbon::parse($pdf->namsinh)->format('y')}}</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:55.25pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Giới tính (nam, nữ):
+  <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Sinh ngày {{Carbon\Carbon::parse($pdf->namsinh)->format('d')}} tháng {{Carbon\Carbon::parse($pdf->namsinh)->format('m')}} năm {{Carbon\Carbon::parse($pdf->namsinh)->format('Y')}}</span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0; </span><span style="width:55.25pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Giới tính (nam, nữ):
 
       <?php if ($pdf->gioitinh == 1): ?>
         Nam

@@ -115,7 +115,7 @@
 <div class="col-sm-2">
  <div class="form-group">
    {!! Form::label('thanhphangiadinh', 'Thành phần gia đình', []) !!}
-   {!! Form::select('thanhphangiadinh', ['Trung nông','Công nhân'],'Trung nông', ['class'=>'form-control']) !!}
+   {!! Form::select('thanhphangiadinh', ['Kinh doanh','Buôn bán','Nội trợ'],'Kinh doanh', ['class'=>'form-control']) !!}
 </div>
 </div>
 <div class="col-sm-2">
@@ -134,7 +134,7 @@
  <div class="form-group">
    {!! Form::label('vaonam', 'Năm tham gia DQTV', []) !!}
    {!! Form::text('vaonam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
-   'namsinh']) !!}
+   'namsinh','required']) !!}
 </div>
 </div>
 <div class="w-100"></div>
@@ -221,25 +221,25 @@
 <div class="col-sm-6">
    <div class="form-group">
      {!! Form::label('noidkks', 'Nơi đăng ký khai sinh', []) !!}
-     {!! Form::text('noidkks','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'noidkks']) !!}
+     {!! Form::text('noidkks','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'noidkks']) !!}
  </div>
 </div>
 <div class="col-sm-6">
    <div class="form-group">
       {!! Form::label('quequan', 'Quê quán', []) !!}
-      {!! Form::text('quequan','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'quequan']) !!}
+      {!! Form::text('quequan','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'quequan']) !!}
   </div>
 </div>
 <div class="col-sm-6">
  <div class="form-group">
     {!! Form::label('thuongtru', 'Thường trú', []) !!}
-    {!! Form::text('thuongtru','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'thuongtru']) !!}
+    {!! Form::text('thuongtru','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'thuongtru']) !!}
 </div>
 </div>
 <div class="col-sm-6">
    <div class="form-group">
       {!! Form::label('noio', 'Nơi ở', []) !!}
-      {!! Form::text('noio','Bình An - Dĩ An - Bình Dương', ['class'=>'form-control','id'=>'noio']) !!}
+      {!! Form::text('noio','phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'noio']) !!}
   </div>
 </div>
 
