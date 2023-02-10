@@ -196,8 +196,12 @@
 </p>
 <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Thành phần gia đình:
     @if($pdf->thanhphangiadinh == 0)
-    Trung Nông
-    @else
+    Kinh doanh
+    @elseif($pdf->thanhphangiadinh == 1)
+    Buôn bán
+    @elseif($pdf->thanhphangiadinh == 2)
+    Nội trợ
+    @elseif($pdf->thanhphangiadinh == 3)
     Công nhân
     @endif
 

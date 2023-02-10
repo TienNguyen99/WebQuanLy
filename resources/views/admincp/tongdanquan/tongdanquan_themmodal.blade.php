@@ -230,7 +230,7 @@
 <div class="col-sm-3">
    <div class="form-group">
     {!! Form::label('banthanla', 'Bản thân là con thứ', []) !!}
-    {!! Form::select('banthanla', ['Một','Hai','Ba'],null, ['class'=>'form-control']) !!}
+    {!! Form::select('banthanla', ['Một','Hai','Ba','Bốn','Năm'],null, ['class'=>'form-control']) !!}
 </div>
 </div>
 <div class="col-sm-6">

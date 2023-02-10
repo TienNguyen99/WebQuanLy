@@ -208,7 +208,7 @@
            <div class="col-sm-3">
              <div class="form-group">
               {!! Form::label('banthanla', 'Bản thân là con thứ', []) !!}
-              {!! Form::select('banthanla', ['Một','Hai','Ba'],isset($show_tongdanquan) ? $show_tongdanquan->banthanla: '', ['class'=>'form-control']) !!}
+              {!! Form::select('banthanla', ['Một','Hai','Ba','Bốn','Năm'],isset($show_tongdanquan) ? $show_tongdanquan->banthanla: '', ['class'=>'form-control']) !!}
             </div>
           </div>
           <div class="col-sm-6">
