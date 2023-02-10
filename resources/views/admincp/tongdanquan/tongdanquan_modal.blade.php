@@ -136,6 +136,13 @@
                         'vaonam','required']) !!}
                      </div>
                    </div>
+                   <div class="col-sm-4 ">
+   <div class="form-group">
+     {!! Form::label('bienche', 'Biên chế', []) !!}
+     {!! Form::select('bienche', ['1'=>'Đã biên chế','0'=>'Chưa biên chế'],isset($show_tongdanquan) ? $show_tongdanquan->bienche: '', ['class'=>'form-control']) !!}
+
+ </div>
+</div>
                    <div class="w-100"></div>
 
                    <div class="col-sm-3 ">

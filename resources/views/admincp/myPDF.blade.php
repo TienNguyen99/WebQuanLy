@@ -246,8 +246,12 @@
     Một
     @elseif ($pdf->banthanla === 1)
     Hai
-    @else
+    @elseif($pdf->banthanla === 2)
     Ba
+    @elseif($pdf->banthanla === 3)
+    Bốn
+    @elseif($pdf->banthanla === 4)
+    Năm
     @endif
 </span>
 </p>

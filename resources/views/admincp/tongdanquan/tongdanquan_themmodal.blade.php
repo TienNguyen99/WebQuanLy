@@ -152,6 +152,13 @@
      <p class="text-danger">{{ $errors->first('vaonam') }}</p>
  </div>
 </div>
+<div class="col-sm-4 ">
+   <div class="form-group">
+     {!! Form::label('bienche', 'Biên chế', []) !!}
+     {!! Form::select('bienche', ['1'=>'Đã biên chế','0'=>'Chưa biên chế'],null, ['class'=>'form-control']) !!}
+
+ </div>
+</div>
 <div class="w-100"></div>
 
 <div class="col-sm-3 ">

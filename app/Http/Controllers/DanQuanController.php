@@ -77,6 +77,7 @@ class DanQuanController extends Controller
         
         $danquan->vaonam = Carbon::createFromFormat('d/m/Y', $data['vaonam']);
         $danquan->tinhtrangcha = $data['tinhtrangcha'];
+        $danquan->bienche = $data['bienche'];
         $danquan->tencha = $data['tencha'];
         $danquan->namsinhcha = $data['namsinhcha'];
         $danquan->nghenghiepcha = $data['nghenghiepcha'];
@@ -211,6 +212,7 @@ class DanQuanController extends Controller
         
         $danquan->vaonam = Carbon::createFromFormat('d/m/Y', $data['vaonam']);
         $danquan->tinhtrangcha = $data['tinhtrangcha'];
+        $danquan->bienche = $data['bienche'];
         $danquan->tencha = $data['tencha'];
         $danquan->namsinhcha = $data['namsinhcha'];
         $danquan->nghenghiepcha = $data['nghenghiepcha'];
