@@ -8,8 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Ban chỉ huy quân sự phường Bình An</title>
-
-
+    <link rel="icon" type="image/x-icon" href="{{asset('public/backend/images/logodqtv.png')}}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +39,7 @@
     <link rel="stylesheet" href="{{asset('public/backend/vendors/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{asset('public/backend/css/navbar.css')}}">
-    <link rel="icon" href="{{asset('public/backend/images/logodqtv.ico')}}" type="image/ico">
+
 
     <link rel="stylesheet" href="{{asset('public/backend/vendors/iconly/bold.css')}}">
 
