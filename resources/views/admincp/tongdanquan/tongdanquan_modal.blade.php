@@ -197,19 +197,19 @@
                <div class="col-sm-3">
                  <div class="form-group">
                    {!! Form::label('socon', 'Cha mẹ có', []) !!}
-                   {!! Form::select('socon', ['0','1','2','3'],isset($show_tongdanquan) ? $show_tongdanquan->socon: '', ['class'=>'form-control']) !!}
+                   {!! Form::select('socon', ['1','2','3','4','5'],isset($show_tongdanquan) ? $show_tongdanquan->socon: '', ['class'=>'form-control']) !!}
                  </div>
                </div>
                <div class="col-sm-3">
                  <div class="form-group">
                   {!! Form::label('contrai', 'Con trai', []) !!}
-                  {!! Form::select('contrai', ['0','1','2','3'],isset($show_tongdanquan) ? $show_tongdanquan->contrai: '', ['class'=>'form-control']) !!}
+                  {!! Form::select('contrai', ['0','1','2','3','4','5'],isset($show_tongdanquan) ? $show_tongdanquan->contrai: '', ['class'=>'form-control']) !!}
                </div>
              </div>
              <div class="col-sm-3">
                <div class="form-group">
                 {!! Form::label('congai', 'Con gái', []) !!}
-                {!! Form::select('congai', ['0','1','2','3'],isset($show_tongdanquan) ? $show_tongdanquan->congai: '', ['class'=>'form-control']) !!}
+                {!! Form::select('congai', ['0','1','2','3','4','5'],isset($show_tongdanquan) ? $show_tongdanquan->congai: '', ['class'=>'form-control']) !!}
              </div>
            </div>
            <div class="col-sm-3">

@@ -21,21 +21,13 @@ class DanQuanController extends Controller
     {
         $list = DanQuan::with('thanhphan')->get();
         $thanhphan = ThanhPhan::pluck('title','id');
-        
+        // Đếm đủ số năm ra quân
+        // $dateOfBirth = '1994-07-02';
+        // $years = Carbon::parse($dateOfBirth)->age;
+        // dd($years);
         return view('admincp.tongdanquan.tongdanquan_them',compact('list','thanhphan'));
     }
-    public function show_dqtt()
-    {
-        $list = DanQuan::with('thanhphan')
-        ->where('thanhphan_id','thanhphan.')
-        ->get();
-        // ->toSql();
 
-        // dd($list);
-        $thanhphan = ThanhPhan::pluck('title','id');
-        
-        return view('admincp.tongdanquan.tongdanquan_them',compact('list','thanhphan'));
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -139,6 +131,9 @@ class DanQuanController extends Controller
 
         ], $messages);
 
+
+
+        // lưu data csdl
         $danquan->save();
 
 

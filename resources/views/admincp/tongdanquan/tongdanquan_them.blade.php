@@ -35,7 +35,18 @@
                 <tbody>
 
                     <?php foreach ($list as $key => $show_tongdanquan): ?>
-                        <tr>
+                        @php
+                        $join = $show_tongdanquan->vaonam;
+                        $years = \Carbon\Carbon::parse($join)->age;
+                        @endphp
+                       <?php if ($years >= 3): ?>
+                        <tr style="background-color: #61AED1;">
+                        <?php else: ?>
+                            <tr>
+                        <?php endif ?>
+
+
+
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('Y')}}{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('m')}}{{$key}}</td>
                             <td>{{$show_tongdanquan->tenkhaisinh}}</td>
                             <?php if ($show_tongdanquan->gioitinh == 1): ?>
@@ -43,7 +54,7 @@
                             <?php else: ?>
                                 <td>Nữ</td>
                             <?php endif ?>
-                            
+
                             <td>{{$show_tongdanquan->sdt}}</td>
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->format('d/m/Y')}}</td>
                             <td>{{$show_tongdanquan->quequan}}</td>
@@ -51,7 +62,7 @@
                             <td>{{$show_tongdanquan->thanhphan['title']}}</td>
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('m')}}</td>
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('Y')}}</td>
-                            
+
                             <td>
                              <button type="button" data-bs-toggle="modal"
                              data-bs-target="#danquanmodal{{$show_tongdanquan->id}}" class="btn btn-default" >
@@ -93,7 +104,7 @@
                         }
                     </script>
                 </td>
-            </tr>	
+            </tr>
             @include('admincp.tongdanquan.tongdanquan_modal')
         <?php endforeach ?>
 

@@ -191,7 +191,7 @@
                 <footer>
                     <div class="footer clearfix mb-0 text-muted" align="right">
                         <div class="float-start">
-                            <p>2022 &copy; Ban chỉ huy quân sự phường Bình An</p>
+                            <p>2023 &copy; Ban chỉ huy quân sự phường Bình An</p>
                         </div>
                         <div class="float-end">
                             <p>Được tạo bởi <a
@@ -287,7 +287,7 @@
                 searchPanes: {
                     show: false
                 },
-                targets: [2 , 5]
+                targets: [1,2,3,4 , 5,6]
             }
         ]
     });
@@ -381,6 +381,7 @@
 {{-- end chart --}}
 <!-- toastify -->
 <script src="{{asset('public/backend/vendors/toastify/toastify.js')}}"></script>
+{{-- Hiện lỗi show modal --}}
   @if (count($errors) > 0)
     <script type="text/javascript">
         $( document ).ready(function() {
@@ -388,6 +389,7 @@
         });
     </script>
   @endif
+  {{-- Hiện lỗi show modal --}}
 <!-- Sweetalert -->
 <script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
 <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
