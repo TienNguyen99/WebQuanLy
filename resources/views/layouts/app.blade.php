@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Andika:ital@1&display=swap" rel="stylesheet">
+    <style type="text/css">
+        #results { padding:20px; border:1px solid; background:#ccc; }
+    </style>
     <style>
         body{
             font-family: Andika !important;
@@ -217,8 +220,8 @@
     
     <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <script src="{{asset('public/backend/vendors/apexcharts/apexcharts.js')}}"></script>
     <script src="{{asset('public/backend/js/pages/dashboard.js')}}"></script>
@@ -273,21 +276,22 @@
         language:{
                 url:'https://cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json'
             },
-            select: {
-                style: 'multi'
-            },
+            // select: {
+            //     style: 'multi'
+            // },
+            stateSave: true,
         columnDefs: [
             {
                 searchPanes: {
                     show: true
                 },
-                targets: [0 , 7 , 8 , 9]
+                targets: [1 , 8 , 9 , 10]
             },
             {
                 searchPanes: {
                     show: false
                 },
-                targets: [1,2,3,4 , 5,6]
+                targets: [2,3,4 , 5,6,7]
             }
         ]
     });
@@ -333,7 +337,7 @@
                 name: 'Số lượng',   
                 colorByPoint: true,
                 data: listOfValue,
-                showInLegend: false
+                showInLegend: true
             }]
         });
 

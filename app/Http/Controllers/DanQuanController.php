@@ -21,10 +21,7 @@ class DanQuanController extends Controller
     {
         $list = DanQuan::with('thanhphan')->get();
         $thanhphan = ThanhPhan::pluck('title','id');
-        // Đếm đủ số năm ra quân
-        // $dateOfBirth = '1994-07-02';
-        // $years = Carbon::parse($dateOfBirth)->age;
-        // dd($years);
+
         return view('admincp.tongdanquan.tongdanquan_them',compact('list','thanhphan'));
     }
 

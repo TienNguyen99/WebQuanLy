@@ -16,6 +16,7 @@
                 <thead>
                     <tr>
                         <th>Số kết nạp</th>
+                        <th>Biên chế</th>
                         <th>Tên</th>
                         <th>Giới tính</th>
                         <th>Số điện thoại</th>
@@ -49,6 +50,15 @@
 
 
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('Y')}}{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('m')}}{{$key}}</td>
+
+
+                            <?php if ($show_tongdanquan->bienche == 1): ?>
+                                <td><p class="text-success">Đã biên chế</p></td>
+                            <?php else: ?>
+                                <td><p class="text-danger">Chưa biên chế</p></td>
+                            <?php endif ?>
+
+
                             <td>{{$show_tongdanquan->tenkhaisinh}}</td>
                             <?php if ($show_tongdanquan->gioitinh == 1): ?>
                                 <td>Nam</td>

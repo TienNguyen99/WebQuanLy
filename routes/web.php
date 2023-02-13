@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/dqcd', [App\Http\Controllers\DanQuanController::class, 'index']);
 Route::get('/word-export/{id}', [App\Http\Controllers\DanQuanController::class, 'wordExport'])->name('word');
+Route::get('updateToggleSwitchStatus', 'DanQuanController@updateToggleSwitchStatus');
 
 
 Route::resource('chuyennganh',ChuyenNganhController::class);
