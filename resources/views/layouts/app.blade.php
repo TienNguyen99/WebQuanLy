@@ -54,7 +54,7 @@
     {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"> --}}
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.1/sp-2.1.0/sl-1.5.0/datatables.min.css"/>
- 
+
 
 
 
@@ -229,8 +229,7 @@
 
     <script src="{{asset('public/backend/js/main.js')}}"></script>
     <!-- Script Datatables -->
-    {{-- <script src="{{asset('public/backend/vendors/simple-datatables/simple-datatables.js')}}"></script> --}}
-    {{-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> --}}
+
 
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.13.1/sp-2.1.0/sl-1.5.0/datatables.min.js"></script>
@@ -248,10 +247,13 @@
     <!-- End CKeditor -->
     <!-- Datepicker -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.vi.min.js"></script>
-    <script>
 
-        $(document).ready(function(){
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.vi.min.js"></script>
+<script>
+
+    $(document).ready(function(){
       var date_input=$('input[name="namsinh"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
       var options={
@@ -268,19 +270,19 @@
 <!-- End Datepicker -->
 
 <script>
-   
+
 
     $(document).ready(function() {
-    $('#table1').DataTable({
-        dom: 'Plfrtip',
-        language:{
+        $('#table1').DataTable({
+            dom: 'Plfrtip',
+            language:{
                 url:'https://cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json'
             },
             // select: {
             //     style: 'multi'
             // },
             stateSave: true,
-        columnDefs: [
+            columnDefs: [
             {
                 searchPanes: {
                     show: true
@@ -293,9 +295,9 @@
                 },
                 targets: [2,3,4 , 5,6,7]
             }
-        ]
-    });
-})
+            ]
+        });
+    })
 </script>
 
 <!-- End script datatables -->
@@ -386,14 +388,14 @@
 <!-- toastify -->
 <script src="{{asset('public/backend/vendors/toastify/toastify.js')}}"></script>
 {{-- Hiện lỗi show modal --}}
-  @if (count($errors) > 0)
-    <script type="text/javascript">
-        $( document ).ready(function() {
-             $('#themmodal').modal('show');
-        });
-    </script>
-  @endif
-  {{-- Hiện lỗi show modal --}}
+@if (count($errors) > 0)
+<script type="text/javascript">
+    $( document ).ready(function() {
+       $('#themmodal').modal('show');
+   });
+</script>
+@endif
+{{-- Hiện lỗi show modal --}}
 <!-- Sweetalert -->
 <script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
 <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>

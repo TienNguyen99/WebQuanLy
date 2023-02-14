@@ -296,6 +296,7 @@
 
 
 <div class="modal-footer">
+
   <div class="col-12" align="right">
     {!! Form::submit('Thêm', ['class'=>'btn btn-primary me-1 mb-1']) !!}
 </div>
