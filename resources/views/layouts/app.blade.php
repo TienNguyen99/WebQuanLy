@@ -64,7 +64,7 @@
     <!-- End Css Datatables -->
     <!-- sweetalert -->
     <link rel="stylesheet" href="{{asset('public/backend/vendors/sweetalert2/sweetalert2.min.css')}}">
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 
 
@@ -286,6 +286,7 @@
             //     style: 'multi'
             // },
             stateSave: true,
+
             columnDefs: [
             {
                 searchPanes: {
@@ -395,14 +396,78 @@
 @if (count($errors) > 0)
 <script type="text/javascript">
     $( document ).ready(function() {
-       $('#themmodal').modal('show');
-   });
+     $('#themmodal').modal('show');
+ });
 </script>
 @endif
 {{-- Hiện lỗi show modal --}}
 <!-- Sweetalert -->
 <script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
 <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
+{{-- <script type="text/javascript">
+    const suggestions = [
+                      "Here comes the suggestions",
+                      "I like pizza",
+                      "I'm a good programmer"
+                    ]
+
+var textarea = document.getElementById('tinhhinhgiadinhcha')
+
+textarea.addEventListener('keyup', (e) => {
+  var result = suggestions.filter(el => el.startsWith(textarea.value))
+  console.log(result)
+})
+</script> --}}
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+  $( function() {
+    var availableTags = [
+      "phường Bình An, thành phố Dĩ An, tỉnh Bình Dương.",
+      "Tiểu học Bình An",
+      "Trung học cơ sở Bình An",
+
+      ];
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+  }
+
+  $( "#tinhhinhgiadinhcha" )
+      // don't navigate away from the field on tab when selecting an item
+  .on( "keydown", function( event ) {
+    if ( event.keyCode === $.ui.keyCode.TAB &&
+        $( this ).autocomplete( "instance" ).menu.active ) {
+      event.preventDefault();
+}
+})
+  .autocomplete({
+    minLength: 0,
+    source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+      response( $.ui.autocomplete.filter(
+        availableTags, extractLast( request.term ) ) );
+  },
+  focus: function() {
+          // prevent value inserted on focus
+      return false;
+  },
+  select: function( event, ui ) {
+      var terms = split( this.value );
+          // remove the current input
+      terms.pop();
+          // add the selected item
+      terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+      terms.push( "" );
+      this.value = terms.join( "  " );
+      return false;
+  }
+});
+} );
+</script>
+
 @include('sweetalert::alert')
 
 

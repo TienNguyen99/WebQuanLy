@@ -32,7 +32,7 @@ class HomeController extends Controller
         $users = User::select("*")
         ->whereNotNull('last_seen')
         ->orderBy('last_seen', 'DESC')
-        ->paginate(3);
+        ->paginate(2);
         $counttongdq = DB::table('danquans')->count();
         $countdqtt = DB::table('danquans')
         ->where('thanhphan_id','2')

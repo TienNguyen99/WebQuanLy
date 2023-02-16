@@ -11,7 +11,7 @@
             <i data-feather="x"></i>
         </button>
     </div>
-    <div class="modal-body">
+    <div class="modal-body ui-front">
       <section id="multiple-column-form">
         <div class="row match-height">
           <div class="col-12">
@@ -78,7 +78,7 @@
     {!! Form::label('namsinh', 'Năm sinh ' ) !!}
 
     {!! Form::text('namsinh', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
-    'namsinh']) !!}
+    'namsinh','required']) !!}
     <p class="text-danger">{{ $errors->first('namsinh') }}</p>
 </div>
 </div>
@@ -166,7 +166,7 @@
     {!! Form::label('tinhtrangcha', 'Sống / Mất', []) !!}
     <select name="tinhtrangcha" id="tinhtrangcha" class ="form-control">
      <option value="Sống">Sống</option>
-     <option value="Mất">Chết</option>
+     <option value="Mất">Mất</option>
  </select>
 </div>
 </div>
@@ -194,7 +194,7 @@
   {!! Form::label('tinhtrangme', 'Sống / Mất', []) !!}
   <select name="tinhtrangme" id="tinhtrangcha" class ="form-control">
    <option value="Sống">Sống</option>
-   <option value="Mất">Chết</option>
+   <option value="Mất">Mất</option>
 </select>
 </div>
 </div>
@@ -281,7 +281,7 @@
 </div>
 <div class="col-sm-6">
    <div class="form-group">
-     {!! Form::label('tinhhinhgiadinh', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH', []) !!}
+     {!! Form::label('tinhhinhgiadinh', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH ( Anh, Chị, Em )', []) !!}
      {!! Form::textarea('tinhhinhgiadinh',null, ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
  </div>
 </div>
