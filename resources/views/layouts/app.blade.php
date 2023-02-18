@@ -425,6 +425,8 @@ textarea.addEventListener('keyup', (e) => {
       "phường Bình An, thành phố Dĩ An, tỉnh Bình Dương.",
       "Tiểu học Bình An",
       "Trung học cơ sở Bình An",
+      "Trung học phổ thông Bình An",
+      "Dĩ An"
 
       ];
     function split( val ) {
@@ -434,7 +436,7 @@ textarea.addEventListener('keyup', (e) => {
       return split( term ).pop();
   }
 
-  $( "#tinhhinhgiadinhcha" )
+  $( "#tinhhinhbanthan" )
       // don't navigate away from the field on tab when selecting an item
   .on( "keydown", function( event ) {
     if ( event.keyCode === $.ui.keyCode.TAB &&
