@@ -33,6 +33,9 @@
                     <div class="col-sm-6"><img src="{{asset('public/backend/images/faces/2.jpg')}}" width="100px" height="100%" alt="...">
 
                     </div>
+<div class="col-sm-6"><button id="qrtest" class="btn btn-info"><i class="fa fa-qrcode" aria-hidden="true"></i></span> QR code</button>
+
+                    </div>
 
                     <div class="col-12">
                      <div class="form-group">

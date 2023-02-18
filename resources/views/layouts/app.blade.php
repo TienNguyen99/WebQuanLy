@@ -396,8 +396,8 @@
 @if (count($errors) > 0)
 <script type="text/javascript">
     $( document ).ready(function() {
-     $('#themmodal').modal('show');
- });
+       $('#themmodal').modal('show');
+   });
 </script>
 @endif
 {{-- Hiện lỗi show modal --}}
@@ -436,7 +436,7 @@ textarea.addEventListener('keyup', (e) => {
       return split( term ).pop();
   }
 
-  $( "#tinhhinhbanthan" )
+  $( "#tinhhinhbanthan,#tinhhinhgiadinhcha,#tinhhinhgiadinhme,#tinhhinhgiadinh" )
       // don't navigate away from the field on tab when selecting an item
   .on( "keydown", function( event ) {
     if ( event.keyCode === $.ui.keyCode.TAB &&
@@ -463,13 +463,51 @@ textarea.addEventListener('keyup', (e) => {
       terms.push( ui.item.value );
           // add placeholder to get the comma-and-space at the end
       terms.push( "" );
-      this.value = terms.join( "  " );
+      this.value = terms.join( "" );
       return false;
   }
 });
 } );
 </script>
 
+{{-- add / to date --}}
+{{-- <script type="text/javascript">
+    var dob = document.getElementById("namsinh");
+dob.addEventListener("keydown", getAge);
+function getAge() {
+    dob.value = dob.value.replace(/^(\d\d)(\d)$/g,"$1-$2").replace(/^(\d\d\-\d\d)(\d+)$/g,"$1-$2").replace(/[^\d\-]/g,'');
+}
+</script> --}}
+<script type="text/javascript">
+    $(document).ready(function() {
+  $("#namsinh, #vaonam, #congancapngay").keyup(function(e) {
+    if (e.keyCode != 8) {
+      if ($(this).val().length == 2) {
+        $(this).val($(this).val() + "/");
+      } else if ($(this).val().length == 5) {
+        $(this).val($(this).val() + "/");
+      }
+    }
+  });
+});
+</script>
+{{-- qr code --}}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#qrtest").click(function(){
+            var str = window.prompt("Vui lòng quét mã QR", "074099004776|281203034|Nguyễn Minh Tiến|10081999|Nam|Số Nhà 286/B1, Khu Phố Bình Thung 2, Bình An, TP.Dĩ An, Bình Dương|28062021");
+            var result=str.split('|');
+            $("#cancuoc").val(result[0]);
+
+            $("#tenkhaisinh").val(result[2]);
+            $("#namsinh").val(result[3]);
+
+            $("#thuongtru").val(result[5]);
+            $("#congancapngay").val(result[6]);
+        })
+
+    });
+</script>
 @include('sweetalert::alert')
 
 
