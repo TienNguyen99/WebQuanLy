@@ -14,9 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Andika:ital@1&display=swap" rel="stylesheet">
-    <style type="text/css">
-        #results { padding:20px; border:1px solid; background:#ccc; }
-    </style>
+
     <style>
         body{
             font-family: Andika !important;
@@ -404,6 +402,8 @@
 <!-- Sweetalert -->
 <script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
 <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
+{{-- QR code  --}}
+{{-- <script src="{{asset('public/backend/js/html5-qrcode.min.js')}}"></script> --}}
 {{-- <script type="text/javascript">
     const suggestions = [
                       "Here comes the suggestions",
@@ -495,7 +495,8 @@ function getAge() {
 <script type="text/javascript">
     $(document).ready(function () {
         $("#qrtest").click(function(){
-            var str = window.prompt("Vui lòng quét mã QR", "074099004776|281203034|Nguyễn Minh Tiến|10081999|Nam|Số Nhà 286/B1, Khu Phố Bình Thung 2, Bình An, TP.Dĩ An, Bình Dương|28062021");
+            var str1 = '074099004776|281203034|Nguyễn Minh Tiến|10081999|Nam|Số Nhà 286/B1, Khu Phố Bình Thung 2, Bình An, TP.Dĩ An, Bình Dương|28062021';
+            var str = window.prompt("Vui lòng quét mã QR", str1);
             var result=str.split('|');
             $("#cancuoc").val(result[0]);
 
@@ -503,6 +504,7 @@ function getAge() {
             $("#namsinh").val(result[3]);
 
             $("#thuongtru").val(result[5]);
+            $("#noio").val(result[5]);
             $("#congancapngay").val(result[6]);
         })
 
