@@ -30,7 +30,7 @@ role="document">
                 <div class="card-body">
                   {!! Form::open(['route'=>'danquan.store','method'=>'POST','enctype'=>'multipart/form-data']) !!}
                   <div class="row">
-                    <div class="col-sm-4"><img src="{{asset('public/backend/images/faces/2.jpg')}}" width="100px" height="100%" alt="...">
+                    <div class="col-sm-4"><img src="{{asset('public/backend/images/faces/2.jpg')}}" width="100px" height="100px" alt="...">
 
                     </div>
                     <div class="col-sm-4">
@@ -38,9 +38,14 @@ role="document">
 
                     </div>
                     <div class="col-sm-4">
-                        <div id="reader"></div>
+                        <div class="form-group">
+                            <div id="reader"></div>
 
+                            {!! Form::label('CopyCode', 'Copy dòng code', []) !!}
+    <div id="result"></div>
                     </div>
+                        </div>
+
                     <div class="col-12">
                        <div class="form-group">
                          {!! Form::label('Image', 'Thêm ảnh', []) !!}

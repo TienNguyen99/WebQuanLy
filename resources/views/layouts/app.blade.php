@@ -63,6 +63,7 @@
     <!-- sweetalert -->
     <link rel="stylesheet" href="{{asset('public/backend/vendors/sweetalert2/sweetalert2.min.css')}}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="{{asset('public/backend/js/html5-qrcode.min.js')}}"></script>
 </head>
 
 
@@ -394,8 +395,8 @@
 @if (count($errors) > 0)
 <script type="text/javascript">
     $( document ).ready(function() {
-       $('#themmodal').modal('show');
-   });
+     $('#themmodal').modal('show');
+ });
 </script>
 @endif
 {{-- Hiện lỗi show modal --}}
@@ -480,16 +481,16 @@ function getAge() {
 </script> --}}
 <script type="text/javascript">
     $(document).ready(function() {
-  $("#namsinh, #vaonam, #congancapngay").keyup(function(e) {
-    if (e.keyCode != 8) {
-      if ($(this).val().length == 2) {
-        $(this).val($(this).val() + "/");
-      } else if ($(this).val().length == 5) {
-        $(this).val($(this).val() + "/");
-      }
+      $("#namsinh, #vaonam, #congancapngay").keyup(function(e) {
+        if (e.keyCode != 8) {
+          if ($(this).val().length == 2) {
+            $(this).val($(this).val() + "/");
+        } else if ($(this).val().length == 5) {
+            $(this).val($(this).val() + "/");
+        }
     }
-  });
 });
+  });
 </script>
 {{-- qr code --}}
 <script type="text/javascript">
@@ -509,6 +510,18 @@ function getAge() {
         })
 
     });
+</script>
+{{-- QRcode test --}}
+<script type="text/javascript">
+function onScanSuccess(qrCodeMessage) {
+    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+}
+function onScanError(errorMessage) {
+  //handle scan error
+}
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess, onScanError);
 </script>
 @include('sweetalert::alert')
 
