@@ -168,9 +168,9 @@ role="document">
 <div class="col-sm-2 ">
  <div class="form-group">
    {!! Form::label('ranam', 'Năm hoàn thành DQTV', []) !!}
-   {!! Form::text('ranam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
+   {!! Form::text('ranam', null, ['class' => 'form-control','id'=>
    'ranam','disabled']) !!}
-   <p class="text-danger">{{ $errors->first('vaonam') }}</p>
+
 </div>
 </div>
 <div class="col-sm-4 ">

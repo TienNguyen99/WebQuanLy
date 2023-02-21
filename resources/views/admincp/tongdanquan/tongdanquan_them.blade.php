@@ -43,7 +43,7 @@
                         $years = \Carbon\Carbon::parse($join)->age;
                         @endphp
                        <?php if ($years >= 3): ?>
-                        <tr style="background-color: #008080;">
+                        <tr style="background-color: #668096;">
                         <?php else: ?>
                             <tr>
                         <?php endif ?>
@@ -76,7 +76,7 @@
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('Y')}}</td>
 
                                 @if (empty($show_tongdanquan->ranam))
-                            <td>Chưa hoàn thành</td>
+                            <td><p class="text-danger">Chưa hoàn thành</p></td>
                             @else
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->ranam)->format('Y')}}</td>
                             @endif
