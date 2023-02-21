@@ -129,13 +129,21 @@
                        {!! Form::text('vanhoa',isset($show_tongdanquan) ? $show_tongdanquan->vanhoa: '', ['class'=>'form-control','id'=>'vanhoa']) !!}
                      </div>
                    </div>
-                   <div class="col-sm-4 ">
+                   <div class="col-sm-2 ">
                      <div class="form-group">
                        {!! Form::label('vaonam', 'Năm tham gia DQTV', []) !!}
                        {!! Form::text('vaonam', isset($show_tongdanquan) ? Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('d/m/Y'): '', ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
                         'vaonam','required']) !!}
                      </div>
                    </div>
+                   <div class="col-sm-2 ">
+ <div class="form-group">
+   {!! Form::label('ranam', 'Năm hoàn thành DQTV', []) !!}
+   {!! Form::text('ranam', isset($show_tongdanquan) ? Carbon\Carbon::parse($show_tongdanquan->ranam)->format('d/m/Y'): '', ['class' => 'form-control','id'=>
+   'ranam']) !!}
+
+</div>
+</div>
                    <div class="col-sm-4 ">
    <div class="form-group">
      {!! Form::label('bienche', 'Biên chế', []) !!}
@@ -143,7 +151,7 @@
 
  </div>
 </div>
-                   <div class="w-100"></div>
+                   {{-- <div class="w-100"></div> --}}
 
                    <div class="col-sm-3 ">
                      <div class="form-group">

@@ -481,7 +481,7 @@ function getAge() {
 </script> --}}
 <script type="text/javascript">
     $(document).ready(function() {
-      $("#namsinh, #vaonam, #congancapngay").keyup(function(e) {
+      $("#namsinh, #vaonam, #congancapngay,#ranam").keyup(function(e) {
         if (e.keyCode != 8) {
           if ($(this).val().length == 2) {
             $(this).val($(this).val() + "/");

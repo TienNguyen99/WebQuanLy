@@ -156,11 +156,20 @@ role="document">
    {!! Form::text('vanhoa',null, ['class'=>'form-control','id'=>'vanhoa','placeholder'=>'9/12']) !!}
 </div>
 </div>
-<div class="col-sm-4 ">
+<div class="col-sm-2 ">
  <div class="form-group">
    {!! Form::label('vaonam', 'Năm tham gia DQTV', []) !!}
    {!! Form::text('vaonam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
    'namsinh','required']) !!}
+   <p class="text-danger">{{ $errors->first('vaonam') }}</p>
+</div>
+
+</div>
+<div class="col-sm-2 ">
+ <div class="form-group">
+   {!! Form::label('ranam', 'Năm hoàn thành DQTV', []) !!}
+   {!! Form::text('ranam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
+   'ranam','disabled']) !!}
    <p class="text-danger">{{ $errors->first('vaonam') }}</p>
 </div>
 </div>
@@ -171,7 +180,7 @@ role="document">
 
 </div>
 </div>
-<div class="w-100"></div>
+{{-- <div class="w-100"></div> --}}
 
 <div class="col-sm-3 ">
  <div class="form-group">

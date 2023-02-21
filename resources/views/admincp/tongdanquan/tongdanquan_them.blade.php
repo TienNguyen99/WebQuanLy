@@ -24,8 +24,9 @@
                         <th>Quê quán</th>
                         <th>Ảnh</th>
                         <th>Thành phần</th>
-                        <th>Tháng tham gia DQTV</th>
+                        {{-- <th>Tháng tham gia DQTV</th> --}}
                         <th>Năm tham gia DQTV</th>
+                        <th>Năm hoàn thành DQTV</th>
                         <th>Chỉnh sửa</th>
                         <th>In PDF</th>
                         <th>In Word</th>
@@ -42,7 +43,7 @@
                         $years = \Carbon\Carbon::parse($join)->age;
                         @endphp
                        <?php if ($years >= 3): ?>
-                        <tr style="background-color: silver;">
+                        <tr style="background-color: #008080;">
                         <?php else: ?>
                             <tr>
                         <?php endif ?>
@@ -71,8 +72,15 @@
                             <td>{{$show_tongdanquan->quequan}}</td>
                             <td><img src="{{asset('public/backend/images/'.$show_tongdanquan->anh34)}}" width="100px" height="100%" alt="..."></td>
                             <td>{{$show_tongdanquan->thanhphan['title']}}</td>
-                            <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('m')}}</td>
+                            {{-- <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('m')}}</td> --}}
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('Y')}}</td>
+
+                                @if (empty($show_tongdanquan->ranam))
+                            <td>Chưa hoàn thành</td>
+                            @else
+                            <td>{{ \Carbon\Carbon::parse($show_tongdanquan->ranam)->format('Y')}}</td>
+                            @endif
+
 
                             <td>
                              <button type="button" data-bs-toggle="modal"
