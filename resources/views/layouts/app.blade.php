@@ -223,7 +223,7 @@
     
     <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script> --}}
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <script src="{{asset('public/backend/vendors/apexcharts/apexcharts.js')}}"></script>
@@ -395,8 +395,8 @@
 @if (count($errors) > 0)
 <script type="text/javascript">
     $( document ).ready(function() {
-     $('#themmodal').modal('show');
- });
+       $('#themmodal').modal('show');
+   });
 </script>
 @endif
 {{-- Hiện lỗi show modal --}}
@@ -420,6 +420,9 @@ textarea.addEventListener('keyup', (e) => {
 })
 </script> --}}
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+{{-- chụp --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
 <script>
   $( function() {
     var availableTags = [
@@ -511,20 +514,40 @@ function getAge() {
 
     });
 </script>
+{{-- chụp --}}
+{{-- <script type="text/javascript">
+    Webcam.set({
+        width: 490,
+        height: 350,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
+
+    Webcam.attach( '#my_camera' );
+
+    function take_snapshot() {
+        Webcam.snap( function(data_uri) {
+            // var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
+
+            $(".image-tag").val(data_uri);
+            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+        } );
+    }
+</script> --}}
 {{-- QRcode test --}}
 <script type="text/javascript" src="https://unpkg.com/html5-qrcode"></script>
 <script type="text/javascript">
-function onScanSuccess(qrCodeMessage) {
-    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
-}
-function onScanError(errorMessage) {
-  document.getElementById('result').innerHTML = '<span class="result">'+errorMessage+'</span>';
-}
-var html5QrcodeScanner = new Html5QrcodeScanner(
+    function onScanSuccess(qrCodeMessage) {
+        document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+    }
+    function onScanError(errorMessage) {
+
+  }
+  var html5QrcodeScanner = new Html5QrcodeScanner(
     "reader", { fps: 10,
-        qrbox: {width: 250, height: 250},
-        formatsToSupport: [ Html5QrcodeSupportedFormats.QR_CODE ] });
-html5QrcodeScanner.render(onScanSuccess, onScanError);
+    qrbox: {width: 250, height: 250},
+    formatsToSupport: [ Html5QrcodeSupportedFormats.QR_CODE ] });
+  html5QrcodeScanner.render(onScanSuccess, onScanError);
 </script>
 @include('sweetalert::alert')
 

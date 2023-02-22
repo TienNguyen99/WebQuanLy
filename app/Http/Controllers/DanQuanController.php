@@ -99,6 +99,7 @@ class DanQuanController extends Controller
         // 
         // 
         $get_image = $request->file('anh34');
+        // $take_image = $request->input('anh34');
         $path = 'public/backend/images/';
         if($get_image){
 
@@ -108,6 +109,18 @@ class DanQuanController extends Controller
             $get_image->move($path,$new_image);
             $danquan->anh34 = $new_image;
         }
+        // if($take_image){
+        //     $image_parts = explode(";base64,", $take_image);
+        //     $image_type_aux = explode("image/", $image_parts[0]);
+        //     $image_type = $image_type_aux[1];
+
+        //     $image_base64 = base64_decode($image_parts[1]);
+        //     $fileName = uniqid() . '.png';
+        //     $file = $path . $fileName;
+
+        //     Storage::put($file, $image_base64);
+        //     $danquan->anh34 = $fileName;
+        // }
 
         $messages = [
 
