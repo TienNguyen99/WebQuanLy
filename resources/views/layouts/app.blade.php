@@ -63,7 +63,7 @@
     <!-- sweetalert -->
     <link rel="stylesheet" href="{{asset('public/backend/vendors/sweetalert2/sweetalert2.min.css')}}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <script src="{{asset('public/backend/js/html5-qrcode.min.js')}}"></script>
+    {{-- <script src="{{asset('public/backend/js/html5-qrcode.min.js')}}"></script> --}}
 </head>
 
 
@@ -512,15 +512,18 @@ function getAge() {
     });
 </script>
 {{-- QRcode test --}}
+<script type="text/javascript" src="https://unpkg.com/html5-qrcode"></script>
 <script type="text/javascript">
 function onScanSuccess(qrCodeMessage) {
     document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
 }
 function onScanError(errorMessage) {
-  //handle scan error
+  document.getElementById('result').innerHTML = '<span class="result">'+errorMessage+'</span>';
 }
 var html5QrcodeScanner = new Html5QrcodeScanner(
-    "reader", { fps: 10, qrbox: 250 });
+    "reader", { fps: 10,
+        qrbox: {width: 250, height: 250},
+        formatsToSupport: [ Html5QrcodeSupportedFormats.QR_CODE ] });
 html5QrcodeScanner.render(onScanSuccess, onScanError);
 </script>
 @include('sweetalert::alert')
