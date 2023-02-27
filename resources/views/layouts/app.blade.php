@@ -315,7 +315,7 @@
     });
 </script>
 
-{{-- chart --}}
+{{-- chart year --}}
 <script>
     $(document).ready(function(){
         var order = $('#container').data('order');
@@ -329,7 +329,7 @@
         var chart = Highcharts.chart('container', {
 
             title: {
-                text: 'Dân quân'
+                text: 'Dân quân tham gia'
             },
 
             
@@ -386,8 +386,47 @@
 
 
 </script>
+{{-- dân quân ra --}}
+<script>
+    $(document).ready(function(){
+        var order = $('#containerthang').data('order');
+        var listOfValue = [];
+        var listOfYear = [];
+        order.forEach(function(element){
+            listOfYear.push(element.getYear);
+            listOfValue.push(element.value);
+        });
+        console.log(listOfValue);
+        var chart = Highcharts.chart('containerthang', {
+
+            title: {
+                text: 'Dân quân ra quân'
+            },
 
 
+
+            xAxis: {
+                categories: listOfYear,
+            },
+
+            series: [{
+                type: 'line',
+                name: 'Số lượng',
+                colorByPoint: true,
+                data: listOfValue,
+                showInLegend: true
+            }]
+        });
+
+
+
+
+
+
+    });
+
+
+</script>
 {{-- end chart --}}
 <!-- toastify -->
 <script src="{{asset('public/backend/vendors/toastify/toastify.js')}}"></script>
