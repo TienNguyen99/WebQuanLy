@@ -94,20 +94,20 @@
 
                         <li class="sidebar-item ">
                             <a href="{{route('home')}}" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
+                                <i class="bi bi-bar-chart-line-fill"></i>
                                 <span>Tổng quan</span>
                             </a>
                         </li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
+                                <i class="bi bi-grid-fill "></i>
                                 <span>Lực lượng dân quân</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
 
-                                    <a href="{{route('danquan.index')}}" class="dropdown-item">Tổng dân quân</a>
+                                    <a href="{{route('danquan.index')}}" class="dropdown-item"><span>Tổng dân quân</span></a>
                                 </li>
                                 <li class="submenu-item ">
                                     <a href="{{route('thanhphan.create')}}" class="dropdown-item">Thành phần</a>
@@ -137,108 +137,108 @@
                         @if (Route::has('login'))
                         <li class="sidebar-item ">
                             <a href="{{route('login')}}" class='sidebar-link'>
-                                <i class="bi bi-brush"></i>
-                                <span>Đăng nhập</span>
-                            </a>
-                        </li>
-                        @endif
+                             <i class="bi bi-door-closed-fill"></i>
+                             <span>Đăng nhập</span>
+                         </a>
+                     </li>
+                     @endif
 
-                        @if (Route::has('register'))
-                        <li class="sidebar-item ">
-                            <a href="{{route('register')}}" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Đăng ký</span>
-                            </a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
-                                <span>Xin chào,   {{ Auth::user()->name }}</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
+                     @if (Route::has('register'))
+                     <li class="sidebar-item ">
+                        <a href="{{route('register')}}" class='sidebar-link'>
+                           <i class="bi bi-brush-fill"></i>
+                            <span>Đăng ký</span>
+                        </a>
+                    </li>
+                    @endif
+                    @else
+                    <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-door-open-fill"></i>
+                            <span>Xin chào,   {{ Auth::user()->name }}</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item ">
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                Đăng xuất</a>
-                                <!-- form ẩn -->
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
-                    </li>       
-                    @endguest 
-                </ul>
-            </div> 
-            <!-- sidebar menu end -->
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                            Đăng xuất</a>
+                            <!-- form ẩn -->
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                @endguest
+            </ul>
         </div>
+        <!-- sidebar menu end -->
     </div>
+</div>
 
-    <!-- <button class="sidebar-toggler btn x"><i data-feather="x"></i></button> -->
+<!-- <button class="sidebar-toggler btn x"><i data-feather="x"></i></button> -->
 
-    <!-- navbar end  -->
+<!-- navbar end  -->
 
-    <!-- start main -->
-    <main>
+<!-- start main -->
+<main>
 
-        <div style="padding: 2rem;">
-            <div class="page-content" id="content">
-                <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Ẩn/Hiện</small></button>
-                @yield('content')
+    <div style="padding: 2rem;">
+        <div class="page-content" id="content">
+            <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Ẩn/Hiện</small></button>
+            @yield('content')
 
 
 
-                
-                
-                <footer>
-                    <div class="footer clearfix mb-0 text-muted" align="right">
-                        <div class="float-start">
-                            <p>2023 &copy; Ban chỉ huy quân sự phường Bình An</p>
+
+
+            <footer>
+                <div class="footer clearfix mb-0 text-muted" align="right">
+                    <div class="float-start">
+                        <p>2023 &copy; Ban chỉ huy quân sự phường Bình An</p>
+                    </div>
+                    <div class="float-end">
+                        <p>Được tạo bởi <a
+                            href="#">Tiến Nguyễn<span class="text-danger"><i class="bi bi-heart"></i></span></a></p>
                         </div>
-                        <div class="float-end">
-                            <p>Được tạo bởi <a
-                                href="#">Tiến Nguyễn<span class="text-danger"><i class="bi bi-heart"></i></span></a></p>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- end footer -->
-                </div>
-
+                    </div>
+                </footer>
+                <!-- end footer -->
             </div>
 
-        </main>
-        <!-- end main -->
+        </div>
+
+    </main>
+    <!-- end main -->
 
 
 
-        <!-- start footer -->
+    <!-- start footer -->
 
-    </div>
-    <!-- Scripts -->
-
-    
-    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script> --}}
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-    <script src="{{asset('public/backend/vendors/apexcharts/apexcharts.js')}}"></script>
-    <script src="{{asset('public/backend/js/pages/dashboard.js')}}"></script>
+</div>
+<!-- Scripts -->
 
 
-    <script src="{{asset('public/backend/js/main.js')}}"></script>
-    <!-- Script Datatables -->
+<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script> --}}
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<script src="{{asset('public/backend/vendors/apexcharts/apexcharts.js')}}"></script>
+<script src="{{asset('public/backend/js/pages/dashboard.js')}}"></script>
+
+
+<script src="{{asset('public/backend/js/main.js')}}"></script>
+<!-- Script Datatables -->
 
 
 
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.13.1/sp-2.1.0/sl-1.5.0/datatables.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.5.0/js/dataTables.select.min.js"></script>
-    
-    <!-- CKeditor  -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.13.1/sp-2.1.0/sl-1.5.0/datatables.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.5.0/js/dataTables.select.min.js"></script>
+
+<!-- CKeditor  -->
     <!-- <script src="{{asset('public/backend/vendors/ckeditor/ckeditor.js')}}"></script>
     <script>
         ClassicEditor
@@ -434,8 +434,8 @@
 @if (count($errors) > 0)
 <script type="text/javascript">
     $( document ).ready(function() {
-       $('#themmodal').modal('show');
-   });
+     $('#themmodal').modal('show');
+ });
 </script>
 @endif
 {{-- Hiện lỗi show modal --}}
@@ -581,12 +581,12 @@ function getAge() {
     }
     function onScanError(errorMessage) {
 
-  }
-  var html5QrcodeScanner = new Html5QrcodeScanner(
-    "reader", { fps: 10,
-    qrbox: {width: 250, height: 250},
-    formatsToSupport: [ Html5QrcodeSupportedFormats.QR_CODE ] });
-  html5QrcodeScanner.render(onScanSuccess, onScanError);
+    }
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10,
+        qrbox: {width: 250, height: 250},
+        formatsToSupport: [ Html5QrcodeSupportedFormats.QR_CODE ] });
+    html5QrcodeScanner.render(onScanSuccess, onScanError);
 </script>
 @include('sweetalert::alert')
 
