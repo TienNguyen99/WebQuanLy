@@ -137,7 +137,7 @@
                             <ul class="submenu ">
 
                                 <li class="submenu-item ">
-                                    <a href="#">Doanh thu</a>
+                                    <a href="#" class="dropdown-item"><span>Doanh thu</span></a>
                                 </li>
 
                             </ul>

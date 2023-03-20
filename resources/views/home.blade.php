@@ -81,8 +81,8 @@
                                 <div class="card-body px-3 py-4-5">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <div class="stats-icon red">
-                                                <i class="iconly-boldBookmark"></i>
+                                            <div class="stats-icon black">
+                                                <i class="iconly-boldStar"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
