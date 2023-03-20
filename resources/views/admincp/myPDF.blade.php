@@ -187,9 +187,9 @@
     <!-- <span style="width:53.23pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:542pt">&#xa0;</span> -->
 </p>
 <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi thường trú của gia đình:  {{$pdf->thuongtru}} </span>
-</p>
+{{-- </p>
 <p style="margin-left:20.25pt; text-align:justify; font-size:14pt"><span style="-aw-import:ignore">&#xa0;</span>
-</p>
+</p> --}}
 <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Nơi ở hiện tại của bản thân: {{$pdf->noio}}</span>
 </p>
 <p style="margin-left:20.25pt; text-align:justify; font-size:14pt"><span style="-aw-import:ignore">&#xa0;</span>
@@ -239,8 +239,9 @@
 </p>
 <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Họ tên vợ: </span><span style="-aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; </span><span>Sinh ngày……..tháng …….năm </span>
 </p>
-<p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Nghề nghiệp: ……………………………</span><span style="width:17.53pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:271pt">..</span><span>Bản thân đã có………con</span><span style="width:124.5pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:541.3pt">..............</span>
-</p>
+<p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Nghề nghiệp: ……………………………</span><span style="width:17.53pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:271pt">..</span><span>Bản thân đã có………con</span>
+    {{-- <span style="width:124.5pt; font-family:'Lucida Console'; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-leader:dots; -aw-tabstop-pos:541.3pt">..............</span>
+</p> --}}
 <p style="margin-top:6pt; margin-left:20.15pt; text-align:justify; font-size:14pt"><span>Cha mẹ có {{$pdf->socon}} người con, {{$pdf->contrai}} trai, </span><span style="-aw-import:spaces">&#xa0;</span><span>{{$pdf->congai}} gái; bản thân là con thứ
     @if ($pdf->banthanla === 0)
     Một

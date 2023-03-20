@@ -129,6 +129,19 @@
                                 @endforeach --}}
                             </ul>
                         </li>
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                                <span>Tăng gia sản xuất</span>
+                            </a>
+                            <ul class="submenu ">
+
+                                <li class="submenu-item ">
+                                    <a href="#">Doanh thu</a>
+                                </li>
+
+                            </ul>
+                        </li>
                         @endauth
 
 
@@ -137,19 +150,19 @@
                         @if (Route::has('login'))
                         <li class="sidebar-item ">
                             <a href="{{route('login')}}" class='sidebar-link'>
-                             <i class="bi bi-door-closed-fill"></i>
-                             <span>Đăng nhập</span>
-                         </a>
-                     </li>
-                     @endif
+                               <i class="bi bi-door-closed-fill"></i>
+                               <span>Đăng nhập</span>
+                           </a>
+                       </li>
+                       @endif
 
-                     @if (Route::has('register'))
-                     <li class="sidebar-item ">
+                       @if (Route::has('register'))
+                     {{-- <li class="sidebar-item ">
                         <a href="{{route('register')}}" class='sidebar-link'>
                            <i class="bi bi-brush-fill"></i>
                             <span>Đăng ký</span>
                         </a>
-                    </li>
+                    </li> --}}
                     @endif
                     @else
                     <li class="sidebar-item  has-sub">
@@ -434,8 +447,8 @@
 @if (count($errors) > 0)
 <script type="text/javascript">
     $( document ).ready(function() {
-     $('#themmodal').modal('show');
- });
+       $('#themmodal').modal('show');
+   });
 </script>
 @endif
 {{-- Hiện lỗi show modal --}}

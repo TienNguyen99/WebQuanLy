@@ -43,6 +43,9 @@ class HomeController extends Controller
         $countdqkp = DB::table('danquans')
         ->where('thanhphan_id','14')
         ->count();
+        $countdqrr = DB::table('danquans')
+        ->where('thanhphan_id','16')
+        ->count();
         // fill
         $range = \Carbon\Carbon::now()->subYears(15);
         $chart = DB::table('danquans')
@@ -51,7 +54,7 @@ class HomeController extends Controller
         ->groupBy('getYear')
         ->orderBy('getYear', 'ASC')
         ->get();
-                $chartraquan = DB::table('danquans')
+        $chartraquan = DB::table('danquans')
         ->select(DB::raw('year(ranam) as getYear'), DB::raw('COUNT(*) as value'))
         ->where('ranam', '>=', $range)
         ->groupBy('getYear')
@@ -60,6 +63,6 @@ class HomeController extends Controller
         
 
 
-        return view('home',compact('counttongdq','users','danquan','thanhphan','countdqtt','countdqcd','countdqkp','chart','chartraquan'));
+        return view('home',compact('counttongdq','users','danquan','thanhphan','countdqtt','countdqcd','countdqkp','countdqrr','chart','chartraquan'));
     }
 }
