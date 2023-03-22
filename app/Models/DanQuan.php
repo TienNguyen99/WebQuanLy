@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Carbon\Carbon;
 class DanQuan extends Model
 {
     
@@ -20,4 +20,14 @@ class DanQuan extends Model
     {
         return $this->belongsTo(ThanhPhan::class, 'thanhphan_id');
     }
+    public function getRemainingDaysAttribute()
+{
+
+    if ($this->vaonam) {
+        $remaining_days = Carbon::now()->diffInDays(Carbon::parse($this->vaonam));
+    } else {
+        $remaining_days = 0;
+    }
+    return $remaining_days;
+}
 }

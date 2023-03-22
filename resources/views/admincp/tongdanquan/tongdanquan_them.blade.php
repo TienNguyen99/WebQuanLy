@@ -27,6 +27,7 @@
                         {{-- <th>Tháng tham gia DQTV</th> --}}
                         <th>Năm tham gia DQTV</th>
                         <th>Năm hoàn thành DQTV</th>
+                        <th>Số ngày tham gia</th>
                         <th>Chỉnh sửa</th>
                         <th>In PDF</th>
                         <th>In Word</th>
@@ -39,15 +40,27 @@
 
                     <?php foreach ($list as $key => $show_tongdanquan): ?>
                         @php
-                        $join = $show_tongdanquan->vaonam;
-                        $years = \Carbon\Carbon::parse($join)->age;
+
+                        // $years = \Carbon\Carbon::parse($show_tongdanquan->vaonam)->age;
+                        // $years = \Carbon\Carbon::parse($show_tongdanquan->vaonam)->diff(\Carbon\Carbon::now())->format('%y');
+                        $days = \Carbon\Carbon::parse($show_tongdanquan->vaonam)->diffInDays(\Carbon\Carbon::now());
+                        // dd($days);
                         @endphp
-                       <?php if ($years >= 3): ?>
+                        {{-- Thường trực --}}
+                        @if (str_contains($show_tongdanquan->thanhphan['title'], "Dân quân thường trực"))
+                       <?php if ( $days + 30 >= 730   ): ?>
                         <tr style="background-color: #668096;">
                         <?php else: ?>
                             <tr>
                         <?php endif ?>
-
+                        @else
+                        <?php if ( $days + 30 >= 1460   ): ?>
+                        <tr style="background-color: #668096;">
+                        <?php else: ?>
+                            <tr>
+                        <?php endif ?>
+                        @endif
+                        {{-- End --}}
 
 
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('Y')}}{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('m')}}{{$key}}</td>
@@ -81,7 +94,7 @@
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->ranam)->format('Y')}}</td>
                             @endif
 
-
+                            <td>{{$show_tongdanquan->remaining_days}}</td>
                             <td>
                              <button type="button" data-bs-toggle="modal"
                              data-bs-target="#danquanmodal{{$show_tongdanquan->id}}" class="btn btn-default" >
