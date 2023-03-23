@@ -24,6 +24,15 @@ class DanQuanController extends Controller
 
         return view('admincp.tongdanquan.tongdanquan_them',compact('list','thanhphan'));
     }
+        public function indexTuoi17()
+    {
+        $list = DanQuan::whereHas('thanhphan', function ($query) {
+    return $query->where('id', '=', 17);
+})->get();
+        $thanhphan = ThanhPhan::pluck('title','id');
+
+        return view('admincp.tuoi17.tuoi17_them',compact('list','thanhphan'));
+    }
 
     /**
      * Show the form for creating a new resource.

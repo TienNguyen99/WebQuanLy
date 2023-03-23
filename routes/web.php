@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 //
 use App\Http\Controllers\ChuyenNganhController;
 use App\Http\Controllers\DanQuanController;
+use App\Http\Controllers\Tuoi17Controller;
 use App\Http\Controllers\ThanhPhanController;
 
 /*
@@ -27,9 +28,13 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middlewa
 // Route::get('/dqcd', [App\Http\Controllers\DanQuanController::class, 'index']);
 Route::get('/word-export/{id}', [App\Http\Controllers\DanQuanController::class, 'wordExport'])->name('word')->middleware('auth');
 Route::get('updateToggleSwitchStatus', 'DanQuanController@updateToggleSwitchStatus')->middleware('auth');
+// Tuổi 17
 
+// Route::get('/tuoi17', 'App\Http\Controllers\Tuoi17Controller@indexTuoi17')->name('tuoi17')->middleware('auth');;
 
 Route::resource('chuyennganh',ChuyenNganhController::class)->middleware('auth');
 Route::resource('danquan',DanQuanController::class)->middleware('auth');
+Route::resource('tuoi17',Tuoi17Controller::class)->middleware('auth');
 Route::resource('thanhphan',ThanhPhanController::class)->middleware('auth');
+
 
