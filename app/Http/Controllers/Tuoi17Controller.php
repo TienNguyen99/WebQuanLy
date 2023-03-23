@@ -74,7 +74,7 @@ class Tuoi17Controller extends Controller
 
         $tuoi17->vaonam = Carbon::createFromFormat('d/m/Y', $data['vaonam']);
         $tuoi17->tinhtrangcha = $data['tinhtrangcha'];
-        $tuoi17->bienche = $data['bienche'];
+        // $tuoi17->bienche = $data['bienche'];
         $tuoi17->tencha = $data['tencha'];
         $tuoi17->namsinhcha = $data['namsinhcha'];
         $tuoi17->nghenghiepcha = $data['nghenghiepcha'];
@@ -224,9 +224,9 @@ class Tuoi17Controller extends Controller
         $tuoi17->vanhoa = $data['vanhoa'];
 
         $tuoi17->vaonam = Carbon::createFromFormat('d/m/Y', $data['vaonam']);
-        $tuoi17->ranam = Carbon::createFromFormat('d/m/Y', $data['ranam']);
+        // $tuoi17->ranam = Carbon::createFromFormat('d/m/Y', $data['ranam']);
         $tuoi17->tinhtrangcha = $data['tinhtrangcha'];
-        $tuoi17->bienche = $data['bienche'];
+        // $tuoi17->bienche = $data['bienche'];
         $tuoi17->tencha = $data['tencha'];
         $tuoi17->namsinhcha = $data['namsinhcha'];
         $tuoi17->nghenghiepcha = $data['nghenghiepcha'];

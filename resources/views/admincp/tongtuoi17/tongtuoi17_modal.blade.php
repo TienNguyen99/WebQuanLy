@@ -31,7 +31,7 @@
                          </div>
                          <div class="col-12">
                           <div class="divider">
-                            <div class="divider-text">Hồ sơ dân quân tự vệ</div>
+                            <div class="divider-text">Hồ sơ Thanh niên tuối 17</div>
                           </div>
                         </div>
 
@@ -124,27 +124,27 @@
                    </div>
                    <div class="col-sm-2 ">
                      <div class="form-group">
-                       {!! Form::label('vaonam', 'Năm tham gia DQTV', []) !!}
+                       {!! Form::label('vaonam', 'Ngày đăng ký tuổi 17', []) !!}
                        {!! Form::text('vaonam', isset($show_tongtuoi17) ? Carbon\Carbon::parse($show_tongtuoi17->vaonam)->format('d/m/Y'): '', ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
                         'vaonam','required']) !!}
                      </div>
                    </div>
-                   <div class="col-sm-2 ">
+{{--                    <div class="col-sm-2 ">
  <div class="form-group">
    {!! Form::label('ranam', 'Năm hoàn thành DQTV', []) !!}
    {!! Form::text('ranam', isset($show_tongtuoi17) ? Carbon\Carbon::parse($show_tongtuoi17->ranam)->format('d/m/Y'): '', ['class' => 'form-control','id'=>
    'ranam']) !!}
 
 </div>
-</div>
-                   <div class="col-sm-4 ">
+</div> --}}
+                  {{--  <div class="col-sm-4 ">
    <div class="form-group">
      {!! Form::label('bienche', 'Biên chế', []) !!}
      {!! Form::select('bienche', ['1'=>'Đã biên chế','0'=>'Chưa biên chế'],isset($show_tongtuoi17) ? $show_tongtuoi17->bienche: '', ['class'=>'form-control']) !!}
 
  </div>
-</div>
-                   {{-- <div class="w-100"></div> --}}
+</div> --}}
+                   <div class="w-100"></div>
 
                    <div class="col-sm-3 ">
                      <div class="form-group">

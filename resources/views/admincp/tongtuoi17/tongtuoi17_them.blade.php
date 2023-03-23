@@ -12,22 +12,16 @@
         <!-- Toggle button -->
 
         <div class="card-body">
-            <table class="table table-striped" id="table1">
+            <table class="table table-striped" id="table2">
                 <thead>
                     <tr>
-                        <th>Số kết nạp</th>
-                        <th>Biên chế</th>
                         <th>Tên</th>
+                        <th>Ngày đăng ký tuổi 17</th>
                         <th>Giới tính</th>
                         <th>Số điện thoại</th>
                         <th>Năm sinh</th>
                         <th>Quê quán</th>
                         <th>Ảnh</th>
-
-                        {{-- <th>Tháng tham gia DQTV</th> --}}
-                        <th>Năm tham gia DQTV</th>
-                        <th>Năm hoàn thành DQTV</th>
-                        <th>Số ngày tham gia</th>
                         <th>Chỉnh sửa</th>
                         <th>In PDF</th>
                         <th>In Word</th>
@@ -42,17 +36,8 @@
 
 
 
-                            <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->vaonam)->format('Y')}}{{ \Carbon\Carbon::parse($show_tongtuoi17->vaonam)->format('m')}}{{$key}}</td>
-
-
-                            <?php if ($show_tongtuoi17->bienche == 1): ?>
-                                <td><p class="text-success">Đã biên chế</p></td>
-                            <?php else: ?>
-                                <td><p class="text-danger">Chưa biên chế</p></td>
-                            <?php endif ?>
-
-
                             <td>{{$show_tongtuoi17->tenkhaisinh}}</td>
+                            <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->vaonam)->format('d/m/Y')}}</td>
                             <?php if ($show_tongtuoi17->gioitinh == 1): ?>
                                 <td>Nam</td>
                             <?php else: ?>
@@ -63,17 +48,6 @@
                             <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->namsinh)->format('d/m/Y')}}</td>
                             <td>{{$show_tongtuoi17->quequan}}</td>
                             <td><img src="{{asset('public/backend/images/'.$show_tongtuoi17->anh34)}}" width="100px" height="100%" alt="..."></td>
-
-                            {{-- <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->vaonam)->format('m')}}</td> --}}
-                            <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->vaonam)->format('Y')}}</td>
-
-                                @if (empty($show_tongtuoi17->ranam))
-                            <td><p class="text-danger">Chưa hoàn thành</p></td>
-                            @else
-                            <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->ranam)->format('Y')}}</td>
-                            @endif
-
-                            <td>{{$show_tongtuoi17->remaining_days}}</td>
                             <td>
                              <button type="button" data-bs-toggle="modal"
                              data-bs-target="#tuoi17modal{{$show_tongtuoi17->id}}" class="btn btn-default" >

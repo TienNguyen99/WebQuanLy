@@ -333,7 +333,37 @@
         });
     })
 </script>
+<script>
 
+
+    $(document).ready(function() {
+        $('#table2').DataTable({
+            dom: 'Plfrtip',
+            language:{
+                url:'https://cdn.datatables.net/plug-ins/1.13.1/i18n/vi.json'
+            },
+            // select: {
+            //     style: 'multi'
+            // },
+            stateSave: true,
+
+            columnDefs: [
+            {
+                searchPanes: {
+                    show: true
+                },
+                targets: [ 1 , 3,4,5 ]
+            },
+            {
+                searchPanes: {
+                    show: false
+                },
+                targets: [0,2]
+            }
+            ]
+        });
+    })
+</script>
 <!-- End script datatables -->
 <!--Script thêm -->
 <script type="text/javascript">
@@ -447,15 +477,48 @@
                 showInLegend: true
             }]
         });
-
-
-
-
-
-
     });
-
-
+</script>
+{{-- tuổi 17 --}}
+<script type="text/javascript">
+    $(document).ready(function(){
+    var productBuy = $('#containertuoi17').data('order');
+    var chartData = [];
+    productBuy.forEach(function(element){
+        var ele = {name : element.name, y : parseFloat(element.y) };
+        chartData.push(ele);
+    });
+    console.log(chartData);
+    Highcharts.chart('containertuoi17', {
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
+        },
+        title: {
+          text: 'Daily order'
+        },
+        tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+              enabled: false
+            },
+            showInLegend: true
+          }
+        },
+        series: [{
+          name: 'Brands',
+          colorByPoint: true,
+          data: chartData,
+        }]
+    });
+});
 </script>
 {{-- end chart --}}
 <!-- toastify -->

@@ -60,9 +60,15 @@ class HomeController extends Controller
         ->groupBy('getYear')
         ->orderBy('getYear', 'ASC')
         ->get();
+                $charttuoi17 = DB::table('tuoi17s')
+        ->select(DB::raw('year(vaonam) as getYear'), DB::raw('COUNT(*) as value'))
+        ->where('vaonam', '>=', $range)
+        ->groupBy('getYear')
+        ->orderBy('getYear', 'ASC')
+        ->get();
         
 
 
-        return view('home',compact('counttongdq','users','danquan','thanhphan','countdqtt','countdqcd','countdqkp','countdqrr','chart','chartraquan'));
+        return view('home',compact('counttongdq','users','danquan','thanhphan','countdqtt','countdqcd','countdqkp','countdqrr','chart','chartraquan','charttuoi17'));
     }
 }

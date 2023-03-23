@@ -159,14 +159,14 @@ role="document">
 </div>
 <div class="col-sm-2 ">
    <div class="form-group">
-     {!! Form::label('vaonam', 'Năm tham gia DQTV', []) !!}
+     {!! Form::label('vaonam', 'Ngày đăng ký tuổi 17', []) !!}
      {!! Form::text('vaonam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
      'namsinh','required']) !!}
      <p class="text-danger">{{ $errors->first('vaonam') }}</p>
  </div>
 
 </div>
-<div class="col-sm-2 ">
+{{-- <div class="col-sm-2 ">
    <div class="form-group">
      {!! Form::label('ranam', 'Năm hoàn thành DQTV', []) !!}
      {!! Form::text('ranam', null, ['class' => 'form-control','id'=>
@@ -180,8 +180,8 @@ role="document">
      {!! Form::select('bienche', ['1'=>'Đã biên chế','0'=>'Chưa biên chế'],null, ['class'=>'form-control']) !!}
 
  </div>
-</div>
-{{-- <div class="w-100"></div> --}}
+</div> --}}
+<div class="w-100"></div>
 
 <div class="col-sm-3 ">
    <div class="form-group">

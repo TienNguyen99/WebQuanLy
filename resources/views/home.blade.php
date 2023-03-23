@@ -112,6 +112,14 @@
                                     <div id="containerthang" data-order="{{ $chartraquan }}"></div>
                                 </div>
                             </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Biểu đồ số lượng dân quân ra quân qua các năm</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="containertuoi17" data-order="{{ $charttuoi17 }}"></div>
+                                </div>
+                            </div>
                             {{ Html::script('https://code.highcharts.com/highcharts.js') }}
                             {{ Html::script('https://code.highcharts.com/modules/exporting.js') }}
                             {{ Html::script('https://code.highcharts.com/modules/export-data.js') }}
