@@ -27,6 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
 // Route::get('/dqcd', [App\Http\Controllers\DanQuanController::class, 'index']);
 Route::get('/word-export/{id}', [App\Http\Controllers\DanQuanController::class, 'wordExport'])->name('word')->middleware('auth');
+Route::get('/word-exporttuoi17/{id}', [App\Http\Controllers\Tuoi17Controller::class, 'wordExporttuoi17'])->name('wordtuoi17')->middleware('auth');
 Route::get('updateToggleSwitchStatus', 'DanQuanController@updateToggleSwitchStatus')->middleware('auth');
 // Tuổi 17
 

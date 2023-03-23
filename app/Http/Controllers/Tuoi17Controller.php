@@ -298,7 +298,7 @@ class Tuoi17Controller extends Controller
         toast()->success('Xóa thành công');
         return redirect()->back();
     }
-    public function wordExport($id){
+    public function wordExporttuoi17($id){
         $tuoi17 = Tuoi17::find($id);
         // dd($tuoi17);
         $templateProcessor = new TemplateProcessor('public/backend/word-template/tuoi17.docx');

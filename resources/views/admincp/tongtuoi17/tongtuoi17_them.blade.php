@@ -61,7 +61,7 @@
                       <a href="{{route('tuoi17.edit',$show_tongtuoi17->id)}}" class="btn btn-default"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
                   </td>
                   <td>
-                      <a href="{{route('word',$show_tongtuoi17->id)}}" class="btn btn-default"><i class="fa fa-file-word-o fa-2x" aria-hidden="true"></i></a>
+                      <a href="{{route('wordtuoi17',$show_tongtuoi17->id)}}" class="btn btn-default"><i class="fa fa-file-word-o fa-2x" aria-hidden="true"></i></a>
                   </td>
                   <td>
                     {!! Form::open(['method'=>'DELETE','route' => ['tuoi17.destroy',$show_tongtuoi17->id],'onsubmit'=>'return submitForm(this)']) !!}

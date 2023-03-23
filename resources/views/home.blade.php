@@ -114,7 +114,7 @@
                             </div>
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Biểu đồ số lượng dân quân ra quân qua các năm</h4>
+                                    <h4>Biểu đồ số lượng Thanh niên đăng ký tuổi 17</h4>
                                 </div>
                                 <div class="card-body">
                                     <div id="containertuoi17" data-order="{{ $charttuoi17 }}"></div>
