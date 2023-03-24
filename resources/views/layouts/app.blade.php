@@ -354,13 +354,13 @@
                 searchPanes: {
                     show: true
                 },
-                targets: [ 1 , 3,4,5 ]
+                targets: [ 1 , 2,5 ]
             },
             {
                 searchPanes: {
                     show: false
                 },
-                targets: [0,2]
+                targets: [0,3,4]
             }
             ]
         });
