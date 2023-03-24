@@ -97,29 +97,33 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header">
-                                    <h4>Biểu đồ số lượng dân quân tham gia qua các năm</h4>
+                                <div class="d-flex justify-content-center">
+                                    <div class="card-header">
+                                    <h4>BIỂU ĐỒ SỐ LƯỢNG DÂN QUÂN THAM GIA</h4>
                                 </div>
+                            </div>
                                 <div class="card-body">
                                     <div id="container" data-order="{{ $chart }}"></div>
                                 </div>
                             </div>
                             <div class="card">
-                                <div class="card-header">
-                                    <h4>Biểu đồ số lượng dân quân ra quân qua các năm</h4>
+                                <div class="d-flex justify-content-center">
+                                    <div class="card-header">
+                                    <h4>BIỂU ĐỒ SỐ LƯỢNG DÂN QUÂN XUẤT NGŨ</h4>
                                 </div>
+                            </div>
                                 <div class="card-body">
                                     <div id="containerthang" data-order="{{ $chartraquan }}"></div>
                                 </div>
                             </div>
-                            <div class="card">
+                            {{-- <div class="card">
                                 <div class="card-header">
                                     <h4>Biểu đồ số lượng Thanh niên đăng ký tuổi 17</h4>
                                 </div>
                                 <div class="card-body">
                                     <div id="containertuoi17" data-order="{{ $charttuoi17 }}"></div>
                                 </div>
-                            </div>
+                            </div> --}}
                             {{ Html::script('https://code.highcharts.com/highcharts.js') }}
                             {{ Html::script('https://code.highcharts.com/modules/exporting.js') }}
                             {{ Html::script('https://code.highcharts.com/modules/export-data.js') }}
@@ -287,14 +291,15 @@
                         </div> -->
                     </div>
                 </div>
-                {{-- <div class="card">
-                    <div class="card-header">
-                        <h4>Visitors Profile</h4>
-                    </div>
+                <div class="card">
+                    <div class="d-flex justify-content-center"><div class="card-header">
+                        <h4>THANH NIÊN TUỔI 17</h4>
+                    </div></div>
+
                     <div class="card-body">
-                        <div id="chart-visitors-profile"></div>
+                        <div id="containertuoi17" data-order="{{ $charttuoi17 }}"></div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </section>
 

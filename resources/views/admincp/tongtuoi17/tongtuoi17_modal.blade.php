@@ -129,6 +129,19 @@
                         'vaonam','required']) !!}
                      </div>
                    </div>
+                   <div class="col-sm-3 ">
+   <div class="form-group">
+    {!! Form::label('khupho', 'Khu phố', []) !!}
+
+ <select name="khupho" id="khupho" class ="form-control">
+    <option <?=$show_tongtuoi17->khupho=="Nội Hoá 1"?'selected="selected"':'';?> value="Nội Hoá 1" class="dr">Nội Hoá 1</option>
+    <option <?=$show_tongtuoi17->khupho=="Nội Hoá 2"?'selected="selected"':'';?> value="Nội Hoá 2" class="dr">Nội Hoá 2</option>
+    <option <?=$show_tongtuoi17->khupho=="Bình Thung 1"?'selected="selected"':'';?> value="Bình Thung 1" class="dr">Bình Thung 1</option>
+    <option <?=$show_tongtuoi17->khupho=="Bình Thung 2"?'selected="selected"':'';?> value="Bình Thung 2" class="dr">Bình Thung 2</option>
+    <option <?=$show_tongtuoi17->khupho=="Châu Thới"?'selected="selected"':'';?> value="Châu Thới" class="dr">Châu Thới</option>
+</select>
+</div>
+</div>
 {{--                    <div class="col-sm-2 ">
  <div class="form-group">
    {!! Form::label('ranam', 'Năm hoàn thành DQTV', []) !!}

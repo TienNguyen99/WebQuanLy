@@ -135,7 +135,9 @@
                                 <span>Tăng gia sản xuất</span>
                             </a>
                             <ul class="submenu ">
-
+                                <li class="submenu-item ">
+                                    <a href="#" class="dropdown-item"><span>Thu hoạch Cải ngọt</span></a>
+                                </li>
                                 <li class="submenu-item ">
                                     <a href="#" class="dropdown-item"><span>Doanh thu</span></a>
                                 </li>
@@ -389,7 +391,7 @@
         var chart = Highcharts.chart('container', {
 
             title: {
-                text: 'Dân quân tham gia'
+                text: ''
             },
 
             
@@ -400,47 +402,11 @@
 
             series: [{
                 type: 'column',
-                name: 'Số lượng',   
+                name: 'Dân quân tự vệ',
                 colorByPoint: true,
                 data: listOfValue,
                 showInLegend: true
             }]
-        });
-
-        $('#plain').click(function () {
-            chart.update({
-                chart: {
-                    inverted: false,
-                    polar: false
-                },
-                subtitle: {
-                    text: 'Plain'
-                }
-            });
-        });
-
-        $('#inverted').click(function () {
-            chart.update({
-                chart: {
-                    inverted: true,
-                    polar: false
-                },
-                subtitle: {
-                    text: 'Inverted'
-                }
-            });
-        });
-
-        $('#polar').click(function () {
-            chart.update({
-                chart: {
-                    inverted: false,
-                    polar: true
-                },
-                subtitle: {
-                    text: 'Polar'
-                }
-            });
         });
     });
 
@@ -453,14 +419,21 @@
         var listOfValue = [];
         var listOfYear = [];
         order.forEach(function(element){
-            listOfYear.push(element.getYear);
+             listOfYear.push(element.getYear);
             listOfValue.push(element.value);
         });
         console.log(listOfValue);
         var chart = Highcharts.chart('containerthang', {
 
+            chart: {
+      type: 'line',
+      spacing: [0, 0, 0, 0],
+      marginTop: 0,
+      marginBottom: 0,
+      spacingTop: 0
+    },
             title: {
-                text: 'Dân quân ra quân'
+                text: ''
             },
 
 
@@ -469,9 +442,10 @@
                 categories: listOfYear,
             },
 
+
             series: [{
-                type: 'line',
-                name: 'Số lượng',
+
+                name: 'Dân quân tự vệ',
                 colorByPoint: true,
                 data: listOfValue,
                 showInLegend: true
@@ -480,46 +454,98 @@
     });
 </script>
 {{-- tuổi 17 --}}
-<script type="text/javascript">
+
+<script>
     $(document).ready(function(){
-    var productBuy = $('#containertuoi17').data('order');
-    var chartData = [];
-    productBuy.forEach(function(element){
-        var ele = {name : element.name, y : parseFloat(element.y) };
-        chartData.push(ele);
-    });
-    console.log(chartData);
-    Highcharts.chart('containertuoi17', {
-        chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: 'pie'
-        },
-        title: {
-          text: 'Daily order'
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-          pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-              enabled: false
+        var order = $('#containertuoi17').data('order');
+        var listOfValue = [];
+        // var listOfYear = [];
+        order.forEach(function(element){
+            // listOfYear.push(element.getYear);
+            // listOfValue.push(element.value);
+            var ele = {name : element.getYear, y : parseFloat(element.value) };
+            listOfValue.push(ele);
+        });
+        console.log(listOfValue);
+        var chart = Highcharts.chart('containertuoi17', {
+
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+
             },
-            showInLegend: true
-          }
-        },
-        series: [{
-          name: 'Brands',
-          colorByPoint: true,
-          data: chartData,
-        }]
+            title: {
+                text: ''
+            },
+            tooltip: {
+                pointFormat: '{series.name}:<b>{point.y}</b></br>'+' Chiếm tỷ lệ:<b>{point.percentage:.1f}%</b>'
+
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                },
+
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Số lượng',
+                colorByPoint: true,
+                data: listOfValue,
+
+                showInLegend: true
+            }]
+        });
     });
-});
 </script>
+{{-- <script>
+    $(document).ready(function(){
+        var order = $('#containertuoi17').data('order');
+        var listOfValue = [];
+        // var listOfYear = [];
+        order.forEach(function(element){
+            // listOfYear.push(element.getYear);
+            // listOfValue.push(element.value);
+            var ele = {name : element.getYear, y : parseFloat(element.value) };
+            listOfValue.push(ele);
+        });
+        console.log(listOfValue);
+        var chart = Highcharts.chart('containertuoi17', {
+
+            chart: {
+                type: 'variablepie'
+            },
+            title: {
+                text: 'Thanh niên tuổi 17'
+            },
+            tooltip: {
+                headerFormat: '',
+                pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+                'Số lượng : <b>{point.y}</b><br/>'
+            },
+
+            series: [{
+                type: 'pie',
+                name: 'Số lượng',
+                colorByPoint: true,
+                data: listOfValue,
+
+                showInLegend: true
+            }]
+        });
+    });
+</script> --}}
 {{-- end chart --}}
 <!-- toastify -->
 <script src="{{asset('public/backend/vendors/toastify/toastify.js')}}"></script>

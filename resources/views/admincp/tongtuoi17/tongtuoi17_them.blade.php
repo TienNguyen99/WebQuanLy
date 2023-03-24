@@ -16,10 +16,11 @@
                 <thead>
                     <tr>
                         <th>Tên</th>
-                        <th>Ngày đăng ký tuổi 17</th>
+                        <th>Năm sinh</th>
+                        <th>Khu phố</th>
                         <th>Giới tính</th>
                         <th>Số điện thoại</th>
-                        <th>Năm sinh</th>
+                        <th>Ngày đăng ký tuổi 17</th>
                         <th>Quê quán</th>
                         <th>Ảnh</th>
                         <th>Chỉnh sửa</th>
@@ -37,7 +38,8 @@
 
 
                             <td>{{$show_tongtuoi17->tenkhaisinh}}</td>
-                            <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->vaonam)->format('d/m/Y')}}</td>
+                            <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->namsinh)->format('d/m/Y')}}</td>
+                            <td>{{$show_tongtuoi17->khupho}}</td>
                             <?php if ($show_tongtuoi17->gioitinh == 1): ?>
                                 <td>Nam</td>
                             <?php else: ?>
@@ -45,7 +47,8 @@
                             <?php endif ?>
 
                             <td>{{$show_tongtuoi17->sdt}}</td>
-                            <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->namsinh)->format('d/m/Y')}}</td>
+
+                            <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->vaonam)->format('d/m/Y')}}</td>
                             <td>{{$show_tongtuoi17->quequan}}</td>
                             <td><img src="{{asset('public/backend/images/'.$show_tongtuoi17->anh34)}}" width="100px" height="100%" alt="..."></td>
                             <td>
