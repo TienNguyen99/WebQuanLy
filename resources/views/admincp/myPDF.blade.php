@@ -322,7 +322,7 @@
         </p>
         <p style="text-align:center; font-size:14pt"><span style="font-style:italic">(Ký ghi rõ họ tên)</span>
         </p>
-        <p style="margin-left:20.25pt; text-indent:342.9pt; text-align:center; font-size:14pt"><span style="font-style:italic">(</span>
+        <p style="margin-left:20.25pt; text-indent:342.9pt; text-align:center; font-size:14pt"><span style="font-style:italic"></span>
         </p>
         <p style="margin-left:20.25pt; text-align:justify; font-size:14pt"><span style="-aw-import:ignore">&#xa0;</span>
         </p>
