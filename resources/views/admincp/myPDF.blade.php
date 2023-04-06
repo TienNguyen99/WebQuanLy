@@ -5,6 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="Aspose.Words for .NET 22.12.0" />
+  <link rel="icon" type="image/x-icon" href="{{asset('public/backend/images/logodqtv.png')}}">
   <title>Ban chỉ huy quân sự phường Bình An</title>
   <style type="text/css">
     body {
@@ -142,7 +143,12 @@
     <p style="margin-left:14.25pt; text-align:justify; font-size:12pt"><span style="height:0pt; text-align:left; display:block; position:absolute; z-index:0"><img src="{{asset('public/backend/images/Aspose.Words.d389d242-4b9f-48d3-b93c-da2b337f830a.001.png')}}" width="184" height="1" alt="" style="margin-top:2.28pt; margin-left:194.02pt; -aw-left-pos:196.65pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:2.65pt; -aw-wrap-type:none; position:absolute" /></span><span style="-aw-import:ignore">&#xa0;</span>
     </p>
     <p style="margin-left:14.25pt; text-align:center; font-size:12pt"><span style="height:0pt; text-align:left; display:block; position:absolute; z-index:1">
-      <img src="{{asset('public/backend/images/'.$pdf->anh34)}}" width="96" height="121" alt="" style="margin-top:3.22pt; margin-left:11.17pt; -aw-left-pos:25.8pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:3.6pt; -aw-wrap-type:none; position:absolute" /></span><span style="width:243.15pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:257.4pt">&#xa0;</span><span style="width:115.95pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:373.35pt">&#xa0;</span><span>Biểu số 08/GCN-2016</span>
+        @if (empty($pdf->anh34))
+        <img src="{{asset('public/backend/images/anhnull.png')}}" width="96" height="121" alt="" style="margin-top:3.22pt; margin-left:11.17pt; -aw-left-pos:25.8pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:3.6pt; -aw-wrap-type:none; position:absolute" />
+        @else
+      <img src="{{asset('public/backend/images/'.$pdf->anh34)}}" width="96" height="121" alt="" style="margin-top:3.22pt; margin-left:11.17pt; -aw-left-pos:25.8pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:3.6pt; -aw-wrap-type:none; position:absolute" />
+      @endif
+  </span><span style="width:243.15pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:257.4pt">&#xa0;</span><span style="width:115.95pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:373.35pt">&#xa0;</span><span>Biểu số 08/GCN-2016</span>
   </p>
   <p style="margin-left:14.25pt; text-align:center; font-size:12pt"><span style="width:253.8pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:268.05pt">&#xa0;</span><span style="width:108.55pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:376.6pt">&#xa0;</span><span>Khổ biểu: 29 x 42</span>
   </p>
