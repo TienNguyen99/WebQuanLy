@@ -318,7 +318,7 @@
             // },
             stateSave: true,
             //
-            searchPanes: {
+                        searchPanes: {
             panes: [
                 {
                     header: 'Độ tuổi từ',
@@ -380,8 +380,9 @@
                 searchPanes: {
                     show: false
                 },
-                targets: [0,2,3,4,5,6,7,11,12,13]
+                targets: [0,2,3,4,5,6,7,11]
             }
+
             ]
         });
     })
