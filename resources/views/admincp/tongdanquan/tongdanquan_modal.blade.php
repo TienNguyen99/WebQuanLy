@@ -144,12 +144,25 @@
 
 </div>
 </div>
-                   <div class="col-sm-4 ">
+                   <div class="col-sm-2 ">
    <div class="form-group">
      {!! Form::label('bienche', 'Biên chế', []) !!}
      {!! Form::select('bienche', ['1'=>'Đã biên chế','0'=>'Chưa biên chế'],isset($show_tongdanquan) ? $show_tongdanquan->bienche: '', ['class'=>'form-control']) !!}
 
  </div>
+</div>
+                   <div class="col-sm-2 ">
+   <div class="form-group">
+    {!! Form::label('khupho', 'Khu phố', []) !!}
+
+ <select name="khupho" id="khupho" class ="form-control">
+    <option <?=$show_tongdanquan->khupho=="Nội Hoá 1"?'selected="selected"':'';?> value="Nội Hoá 1" class="dr">Nội Hoá 1</option>
+    <option <?=$show_tongdanquan->khupho=="Nội Hoá 2"?'selected="selected"':'';?> value="Nội Hoá 2" class="dr">Nội Hoá 2</option>
+    <option <?=$show_tongdanquan->khupho=="Bình Thung 1"?'selected="selected"':'';?> value="Bình Thung 1" class="dr">Bình Thung 1</option>
+    <option <?=$show_tongdanquan->khupho=="Bình Thung 2"?'selected="selected"':'';?> value="Bình Thung 2" class="dr">Bình Thung 2</option>
+    <option <?=$show_tongdanquan->khupho=="Châu Thới"?'selected="selected"':'';?> value="Châu Thới" class="dr">Châu Thới</option>
+</select>
+</div>
 </div>
                    {{-- <div class="w-100"></div> --}}
 

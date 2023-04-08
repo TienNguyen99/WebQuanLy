@@ -27,7 +27,8 @@
                         {{-- <th>Tháng tham gia DQTV</th> --}}
                         <th>Năm tham gia DQTV</th>
                         <th>Năm hoàn thành DQTV</th>
-                        <th>Số ngày tham gia</th>
+                        {{-- <th>Số ngày tham gia</th> --}}
+                        <th>Tuổi</th>
                         <th>Chỉnh sửa</th>
                         <th>In PDF</th>
                         <th>In Word</th>
@@ -94,7 +95,8 @@
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->ranam)->format('Y')}}</td>
                             @endif
 
-                            <td>{{$show_tongdanquan->remaining_days}}</td>
+                            {{-- <td>{{$show_tongdanquan->remaining_days}}</td> --}}
+                            <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->age}}</td>
                             <td>
                              <button type="button" data-bs-toggle="modal"
                              data-bs-target="#danquanmodal{{$show_tongdanquan->id}}" class="btn btn-default" >

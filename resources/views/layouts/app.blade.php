@@ -317,19 +317,70 @@
             //     style: 'multi'
             // },
             stateSave: true,
+            //
+            searchPanes: {
+            panes: [
+                {
+                    header: 'Độ tuổi từ',
+                    options: [
+                        {
+                            label: '18 - 22',
+                            value: function(rowData, rowIdx) {
+                                return rowData[11] <= 22 && rowData[11] >=18;
+                            }
+                        },
+                        // {
+                        //     label: 'Under 50',
+                        //     value: function(rowData, rowIdx) {
+                        //         return rowData[11] < 50;
+                        //     }
+                        // },
+                        {
+                            label: '23 - 28',
+                            value: function(rowData, rowIdx) {
+                                return rowData[11] <= 28 && rowData[11] >=23;
+                            }
+                        },
+                        {
+                            label: '29 - 35',
+                            value: function(rowData, rowIdx) {
+                                return rowData[11] <= 35 && rowData[11] >=29;
+                            }
+                        },
+                        {
+                            label: '36 - 45',
+                            value: function(rowData, rowIdx) {
+                                return rowData[11] <= 45 && rowData[11] >=36;
+                            }
+                        },
+                        {
+                            label: '46 trở lên',
+                            value: function(rowData, rowIdx) {
+                                return rowData[11] > 45;
+                            }
+                        },
+                    ]
+                }
+            ],
 
+        },
+        //
             columnDefs: [
             {
                 searchPanes: {
-                    show: true
+                    show: true,
+
                 },
                 targets: [1 , 8 , 9 , 10]
             },
+            //
+
+            //
             {
                 searchPanes: {
                     show: false
                 },
-                targets: [0,2,3,4,5,6,7,11]
+                targets: [0,2,3,4,5,6,7,11,12,13]
             }
             ]
         });
@@ -352,7 +403,9 @@
             columnDefs: [
             {
                 searchPanes: {
+
                     show: true
+
                 },
                 targets: [ 1 , 2,5 ]
             },

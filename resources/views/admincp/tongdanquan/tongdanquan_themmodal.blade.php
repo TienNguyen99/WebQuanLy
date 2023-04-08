@@ -180,12 +180,25 @@ role="document">
 
  </div>
 </div>
-<div class="col-sm-4 ">
+<div class="col-sm-2 ">
    <div class="form-group">
      {!! Form::label('bienche', 'Biên chế', []) !!}
      {!! Form::select('bienche', ['1'=>'Đã biên chế','0'=>'Chưa biên chế'],null, ['class'=>'form-control']) !!}
 
  </div>
+</div>
+<div class="col-sm-2 ">
+   <div class="form-group">
+    {!! Form::label('khupho', 'Khu phố', []) !!}
+    <select name="khupho" id="khupho" class ="form-control">
+     <option value="Nội Hoá 1">Nội Hoá 1</option>
+     <option value="Nội Hoá 2">Nội Hoá 2</option>
+     <option value="Bình Thung 1">Bình Thung 1</option>
+     <option value="Bình Thung 2">Bình Thung 2</option>
+     <option value="Châu Thới">Châu Thới</option>
+
+ </select>
+</div>
 </div>
 {{-- <div class="w-100"></div> --}}
 
