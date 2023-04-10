@@ -49,9 +49,7 @@
     <link rel="stylesheet" href="{{asset('public/backend/vendors/bootstrap-icons/bootstrap-icons.css')}}">
     <link rel="stylesheet" href="{{asset('public/backend/css/app.css')}}">
     <!-- css DataTables -->
-    {{-- <link rel="stylesheet" href="{{asset('public/backend/vendors/simple-datatables/style.css')}}"> --}}
-    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"> --}}
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> --}}
+
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.1/sp-2.1.0/sl-1.5.0/datatables.min.css"/>
 
 
@@ -63,6 +61,7 @@
     <!-- sweetalert -->
     <link rel="stylesheet" href="{{asset('public/backend/vendors/sweetalert2/sweetalert2.min.css')}}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     {{-- <script src="{{asset('public/backend/js/html5-qrcode.min.js')}}"></script> --}}
 </head>
 
@@ -258,7 +257,7 @@
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script> --}}
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-<script src="{{asset('public/backend/vendors/apexcharts/apexcharts.js')}}"></script>
+{{-- <script src="{{asset('public/backend/vendors/apexcharts/apexcharts.js')}}"></script> --}}
 <script src="{{asset('public/backend/js/pages/dashboard.js')}}"></script>
 
 
@@ -632,7 +631,26 @@ textarea.addEventListener('keyup', (e) => {
 })
 </script> --}}
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+{{-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> --}}
 
+{{-- Đổi biên chế ajax --}}
+<script type="text/javascript">
+    $(function(){
+        $('.toggle-class').change(function(){
+            var bienche = $(this).prop('checked') == true ? 1 : 0;
+            var danquan_id = $(this).data('id');
+            $.ajax({
+                type:"GET",
+                dataType:"json",
+                url     : "{{ route('changebienche') }}",
+                data:{'bienche':bienche,'danquan_id':danquan_id},
+                success:function(data){
+                    console.log('Thành công')
+                }
+            });
+        });
+    });
+</script>
 {{-- chụp --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
 <script>
@@ -746,6 +764,7 @@ function getAge() {
         } );
     }
 </script> --}}
+
 {{-- QRcode test --}}
 <script type="text/javascript" src="https://unpkg.com/html5-qrcode"></script>
 <script type="text/javascript">

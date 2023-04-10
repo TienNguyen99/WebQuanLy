@@ -28,8 +28,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middlewa
 // Route::get('/dqcd', [App\Http\Controllers\DanQuanController::class, 'index']);
 Route::get('/word-export/{id}', [App\Http\Controllers\DanQuanController::class, 'wordExport'])->name('word')->middleware('auth');
 Route::get('/word-exporttuoi17/{id}', [App\Http\Controllers\Tuoi17Controller::class, 'wordExporttuoi17'])->name('wordtuoi17')->middleware('auth');
-Route::get('updateToggleSwitchStatus', 'DanQuanController@updateToggleSwitchStatus')->middleware('auth');
-// Tuổi 17
+// Route::get('updateToggleSwitchStatus', 'DanQuanController@updateToggleSwitchStatus')->middleware('auth');
+// Đổi biên chế ajax
+Route::get('/changebienche',[App\Http\Controllers\DanQuanController::class,'changebiencheC'])->name('changebienche');
 
 // Route::get('/tuoi17', 'App\Http\Controllers\Tuoi17Controller@indexTuoi17')->name('tuoi17')->middleware('auth');;
 

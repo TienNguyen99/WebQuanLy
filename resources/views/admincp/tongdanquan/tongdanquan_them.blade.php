@@ -30,6 +30,7 @@
                         <th>Năm hoàn thành DQTV</th>
                         {{-- <th>Số ngày tham gia</th> --}}
                         <th>Tuổi</th>
+                        <th>Bật/Tắt Biên chế</th>
                         <th>Chỉnh sửa</th>
                         <th>In PDF</th>
                         <th>In Word</th>
@@ -89,7 +90,14 @@
                             <td>{{$show_tongdanquan->sdt}}</td>
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->format('d/m/Y')}}</td>
                             <td>{{$show_tongdanquan->quequan}}</td>
+                            @if (empty($show_tongdanquan->anh34))
+
+
+                            <td><img src="{{asset('public/backend/images/anhnull.png')}}" width="100px" height="100%" alt="..."></td>
+                            @else
                             <td><img src="{{asset('public/backend/images/'.$show_tongdanquan->anh34)}}" width="100px" height="100%" alt="..."></td>
+                            @endif
+
                             <td>{{$show_tongdanquan->thanhphan['title']}}</td>
                             {{-- <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('m')}}</td> --}}
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->vaonam)->format('Y')}}</td>
@@ -102,6 +110,7 @@
 
                             {{-- <td>{{$show_tongdanquan->remaining_days}}</td> --}}
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->age}}</td>
+                            <td><input data-id="{{$show_tongdanquan->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Biên chế" data-off="Chưa" {{$show_tongdanquan->bienche ? 'checked' :''}}></td>
                             <td>
                              <button type="button" data-bs-toggle="modal"
                              data-bs-target="#danquanmodal{{$show_tongdanquan->id}}" class="btn btn-default" >

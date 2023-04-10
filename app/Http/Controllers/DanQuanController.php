@@ -205,6 +205,13 @@ class DanQuanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function changebiencheC(Request $request)
+    {
+        $danquans = DanQuan::find($request->danquan_id);
+        $danquans->bienche = $request->bienche;
+
+        $danquans->save();
+    }
     public function update(Request $request, $id)
     {
         $data = $request->all();
