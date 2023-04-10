@@ -371,7 +371,7 @@
                     show: true,
 
                 },
-                targets: [1 , 8 , 9 , 10]
+                targets: [1 ,3, 8 , 9 , 10]
             },
             //
 
@@ -380,7 +380,7 @@
                 searchPanes: {
                     show: false
                 },
-                targets: [0,2,3,4,5,6,7,11]
+                targets: [0,2,4,5,6,7,11]
             }
 
             ]

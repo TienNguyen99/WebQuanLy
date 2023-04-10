@@ -18,7 +18,8 @@
                         <th>Số kết nạp</th>
                         <th>Biên chế</th>
                         <th>Tên</th>
-                        <th>Giới tính</th>
+                        {{-- <th>Giới tính</th> --}}
+                        <th>Khu phố</th>
                         <th>Số điện thoại</th>
                         <th>Năm sinh</th>
                         <th>Quê quán</th>
@@ -75,12 +76,16 @@
 
 
                             <td>{{$show_tongdanquan->tenkhaisinh}}</td>
-                            <?php if ($show_tongdanquan->gioitinh == 1): ?>
+                            {{-- <?php if ($show_tongdanquan->gioitinh == 1): ?>
                                 <td>Nam</td>
                             <?php else: ?>
                                 <td>Nữ</td>
-                            <?php endif ?>
-
+                            <?php endif ?> --}}
+                            @if (empty($show_tongdanquan->khupho))
+                            <td><p class="text-danger">Chưa có thông tin</p></td>
+                            @else
+                            <td>{{$show_tongdanquan->khupho}}</td>
+                            @endif
                             <td>{{$show_tongdanquan->sdt}}</td>
                             <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->format('d/m/Y')}}</td>
                             <td>{{$show_tongdanquan->quequan}}</td>
