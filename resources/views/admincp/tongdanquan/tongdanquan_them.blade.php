@@ -109,7 +109,13 @@
                             @endif
 
                             {{-- <td>{{$show_tongdanquan->remaining_days}}</td> --}}
-                            <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->age}}</td>
+                            @php
+                            $now = \Carbon\Carbon::now()->format('Y');
+                            $dob = \Carbon\Carbon::parse($show_tongdanquan->namsinh)->format('Y');
+                            $age = $now - $dob;
+                            @endphp
+                            {{-- <td>{{ \Carbon\Carbon::parse($show_tongdanquan->namsinh)->age}}</td> --}}
+                            <td>{{$age}}</td>
                             <td><input data-id="{{$show_tongdanquan->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Biên chế" data-off="Chưa" {{$show_tongdanquan->bienche ? 'checked' :''}}></td>
                             <td>
                              <button type="button" data-bs-toggle="modal"
