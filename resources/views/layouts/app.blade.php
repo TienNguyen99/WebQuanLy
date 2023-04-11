@@ -258,7 +258,7 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 {{-- <script src="{{asset('public/backend/vendors/apexcharts/apexcharts.js')}}"></script> --}}
-<script src="{{asset('public/backend/js/pages/dashboard.js')}}"></script>
+{{-- <script src="{{asset('public/backend/js/pages/dashboard.js')}}"></script> --}}
 
 
 <script src="{{asset('public/backend/js/main.js')}}"></script>

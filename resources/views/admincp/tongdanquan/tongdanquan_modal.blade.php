@@ -114,7 +114,13 @@
                    <div class="col-sm-2">
                      <div class="form-group">
                        {!! Form::label('thanhphangiadinh', 'Thành phần gia đình', []) !!}
-                       {!! Form::select('thanhphangiadinh', ['0'=>'Kinh Doanh','1'=>'Buôn bán','2'=>'Nội trợ','3'=>'Công nhân'],isset($show_tongdanquan) ? $show_tongdanquan->thanhphangiadinh: '', ['class'=>'form-control']) !!}
+                       <select name="thanhphangiadinh" id="thanhphangiadinh" class ="form-control">
+    <option <?=$show_tongdanquan->thanhphangiadinh=="Kinh Doanh"?'selected="selected"':'';?> value="Kinh Doanh" class="dr">Kinh Doanh</option>
+    <option <?=$show_tongdanquan->thanhphangiadinh=="Buôn Bán"?'selected="selected"':'';?> value="Buôn Bán" class="dr">Buôn Bán</option>
+    <option <?=$show_tongdanquan->thanhphangiadinh=="Nội trợ"?'selected="selected"':'';?> value="Nội trợ" class="dr">Nội trợ</option>
+    <option <?=$show_tongdanquan->thanhphangiadinh=="Công nhân"?'selected="selected"':'';?> value="Công nhân" class="dr">Công nhân</option>
+
+</select>
                      </div>
                    </div>
                    <div class="col-sm-2">

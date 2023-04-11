@@ -201,7 +201,7 @@
 <p style="margin-left:20.25pt; text-align:justify; font-size:14pt"><span style="-aw-import:ignore">&#xa0;</span>
 </p>
 <p style="margin-top:6pt; margin-left:20.15pt; text-align:left; font-size:14pt"><span>Thành phần gia đình:
-    @if($pdf->thanhphangiadinh == 0)
+    {{-- @if($pdf->thanhphangiadinh == 0)
     Kinh doanh
     @elseif($pdf->thanhphangiadinh == 1)
     Buôn bán
@@ -209,8 +209,8 @@
     Nội trợ
     @elseif($pdf->thanhphangiadinh == 3)
     Công nhân
-    @endif
-
+    @endif --}}
+    {{$pdf->thanhphangiadinh}}
 </span><span style="width:62.27pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:271pt">&#xa0;</span><span>Bản thân: {{$pdf->banthan}}</span>
 <!-- <span style="width:157.07pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:542pt">&#xa0;</span> -->
 </p>

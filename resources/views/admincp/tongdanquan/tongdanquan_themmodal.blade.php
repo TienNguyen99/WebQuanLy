@@ -148,7 +148,14 @@ role="document">
 <div class="col-sm-2">
    <div class="form-group">
      {!! Form::label('thanhphangiadinh', 'Thành phần gia đình', []) !!}
-     {!! Form::select('thanhphangiadinh', ['Kinh doanh','Buôn bán','Nội trợ','Công nhân'],'Kinh doanh', ['class'=>'form-control']) !!}
+     <select name="thanhphangiadinh" id="thanhphangiadinh" class ="form-control">
+     <option value="Kinh Doanh">Kinh Doanh</option>
+     <option value="Buôn Bán">Buôn Bán</option>
+     <option value="Nội trợ">Nội trợ</option>
+     <option value="Công nhân">Công nhân</option>
+
+
+ </select>
  </div>
 </div>
 <div class="col-sm-2">
