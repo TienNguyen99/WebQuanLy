@@ -76,7 +76,7 @@
                             <?php endif ?>
 
 
-                            <td>{{$show_tongdanquan->tenkhaisinh}}</td>
+                            <td><h5 class="font-weight-bold">{{$show_tongdanquan->tenkhaisinh}}</h5></td>
                             {{-- <?php if ($show_tongdanquan->gioitinh == 1): ?>
                                 <td>Nam</td>
                             <?php else: ?>
@@ -93,9 +93,10 @@
                             @if (empty($show_tongdanquan->anh34))
 
 
-                            <td><img src="{{asset('public/backend/images/anhnull.png')}}" width="100px" height="100%" alt="..."></td>
+                            {{-- <td><img src="{{asset('public/backend/images/anhnull.png')}}" width="100px" height="100%" alt="..." class="lazyload"></td> --}}
+                            <td><p class="text-danger">Chưa có ảnh</p></td>
                             @else
-                            <td><img src="{{asset('public/backend/images/'.$show_tongdanquan->anh34)}}" width="100px" height="100%" alt="..."></td>
+                            <td><img src="{{asset('public/backend/images/'.$show_tongdanquan->anh34)}}" width="100px" height="100%" alt="..."  class="lazyload"></td>
                             @endif
 
                             <td>{{$show_tongdanquan->thanhphan['title']}}</td>

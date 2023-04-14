@@ -19,6 +19,21 @@
         body{
             font-family: Andika !important;
         }
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #ffffffcf;
+        }
+        .loader img{
+            position: relative;
+/*            display: block;*/
+            left: 50%;
+            top: 50%;
+        }
 
     </style>
 
@@ -68,7 +83,7 @@
 
 <body>
 
-
+    <div class="loader" ><img src="{{asset('public/backend/images/loader.gif')}}"></div>
     <div id="app">
 
         <!-- navbar start -->
@@ -168,13 +183,13 @@
                         @if (Route::has('login'))
                         <li class="sidebar-item ">
                             <a href="{{route('login')}}" class='sidebar-link'>
-                             <i class="bi bi-door-closed-fill"></i>
-                             <span>Đăng nhập</span>
-                         </a>
-                     </li>
-                     @endif
+                               <i class="bi bi-door-closed-fill"></i>
+                               <span>Đăng nhập</span>
+                           </a>
+                       </li>
+                       @endif
 
-                     @if (Route::has('register'))
+                       @if (Route::has('register'))
                      {{-- <li class="sidebar-item ">
                         <a href="{{route('register')}}" class='sidebar-link'>
                            <i class="bi bi-brush-fill"></i>
@@ -317,57 +332,60 @@
             // },
             stateSave: true,
             //
-                        searchPanes: {
-            panes: [
+            searchPanes: {
+
+                cascadePanes: true,
+                panes: [
                 {
                     header: 'Độ tuổi từ',
                     options: [
-                        {
-                            label: '18 - 22',
-                            value: function(rowData, rowIdx) {
-                                return rowData[11] <= 22 && rowData[11] >=18;
-                            }
-                        },
+                    {
+                        label: '18 - 22',
+                        value: function(rowData, rowIdx) {
+                            return rowData[11] <= 22 && rowData[11] >=18;
+                        }
+                    },
                         // {
                         //     label: 'Under 50',
                         //     value: function(rowData, rowIdx) {
                         //         return rowData[11] < 50;
                         //     }
                         // },
-                        {
-                            label: '23 - 28',
-                            value: function(rowData, rowIdx) {
-                                return rowData[11] <= 28 && rowData[11] >=23;
-                            }
-                        },
-                        {
-                            label: '29 - 35',
-                            value: function(rowData, rowIdx) {
-                                return rowData[11] <= 35 && rowData[11] >=29;
-                            }
-                        },
-                        {
-                            label: '36 - 45',
-                            value: function(rowData, rowIdx) {
-                                return rowData[11] <= 45 && rowData[11] >=36;
-                            }
-                        },
-                        {
-                            label: '46 trở lên',
-                            value: function(rowData, rowIdx) {
-                                return rowData[11] > 45;
-                            }
-                        },
+                    {
+                        label: '23 - 28',
+                        value: function(rowData, rowIdx) {
+                            return rowData[11] <= 28 && rowData[11] >=23;
+                        }
+                    },
+                    {
+                        label: '29 - 35',
+                        value: function(rowData, rowIdx) {
+                            return rowData[11] <= 35 && rowData[11] >=29;
+                        }
+                    },
+                    {
+                        label: '36 - 45',
+                        value: function(rowData, rowIdx) {
+                            return rowData[11] <= 45 && rowData[11] >=36;
+                        }
+                    },
+                    {
+                        label: '46 trở lên',
+                        value: function(rowData, rowIdx) {
+                            return rowData[11] > 45;
+                        }
+                    },
                     ]
                 }
-            ],
+                ],
 
-        },
+            },
         //
             columnDefs: [
             {
                 searchPanes: {
-                    show: true,
+                    show: true
+
 
                 },
                 targets: [1 ,3, 8 , 9 , 10]
@@ -472,38 +490,38 @@
         var listOfValue = [];
         var listOfYear = [];
         order.forEach(function(element){
-             listOfYear.push(element.getYear);
-            listOfValue.push(element.value);
-        });
+           listOfYear.push(element.getYear);
+           listOfValue.push(element.value);
+       });
         console.log(listOfValue);
         var chart = Highcharts.chart('containerthang', {
 
             chart: {
-      type: 'line',
-      spacing: [0, 0, 0, 0],
-      marginTop: 0,
-      marginBottom: 0,
-      spacingTop: 0
-    },
-            title: {
-                text: ''
-            },
+              type: 'line',
+              spacing: [0, 0, 0, 0],
+              marginTop: 0,
+              marginBottom: 0,
+              spacingTop: 0
+          },
+          title: {
+            text: ''
+        },
 
 
 
-            xAxis: {
-                categories: listOfYear,
-            },
+        xAxis: {
+            categories: listOfYear,
+        },
 
 
-            series: [{
+        series: [{
 
-                name: 'Dân quân tự vệ',
-                colorByPoint: true,
-                data: listOfValue,
-                showInLegend: true
-            }]
-        });
+            name: 'Dân quân tự vệ',
+            colorByPoint: true,
+            data: listOfValue,
+            showInLegend: true
+        }]
+    });
     });
 </script>
 {{-- tuổi 17 --}}
@@ -606,8 +624,8 @@
 @if (count($errors) > 0)
 <script type="text/javascript">
     $( document ).ready(function() {
-     $('#themmodal').modal('show');
- });
+       $('#themmodal').modal('show');
+   });
 </script>
 @endif
 {{-- Hiện lỗi show modal --}}
@@ -766,8 +784,8 @@ function getAge() {
 </script> --}}
 
 {{-- QRcode test --}}
-<script type="text/javascript" src="https://unpkg.com/html5-qrcode"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="https://unpkg.com/html5-qrcode" ></script>
+<script type="text/javascript" >
     function onScanSuccess(qrCodeMessage) {
         document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
     }
@@ -779,6 +797,15 @@ function getAge() {
         qrbox: {width: 250, height: 250},
         formatsToSupport: [ Html5QrcodeSupportedFormats.QR_CODE ] });
     html5QrcodeScanner.render(onScanSuccess, onScanError);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js" async=""></script>
+<script>
+    window.onload = function()
+    {
+        //display loader on page load
+        $('.loader').fadeOut();
+    }
+
 </script>
 @include('sweetalert::alert')
 
