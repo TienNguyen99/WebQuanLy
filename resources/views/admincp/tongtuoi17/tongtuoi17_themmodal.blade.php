@@ -74,14 +74,14 @@ role="document">
      <div class="col-sm-2">
        <div class="form-group">
          {!! Form::label('tenkhac', 'Tên khác', []) !!}
-         {!! Form::text('tenkhac',null, ['class'=>'form-control','placeholder'=>'Nhập tên khác','id'=>'tenkhac']) !!}
+         {!! Form::text('tenkhac',null, ['class'=>'form-control','placeholder'=>'Nhập tên khác','id'=>'tenkhac','style'=>'text-transform: uppercase']) !!}
 
      </div>
  </div>
  <div class="col-sm-2">
    <div class="form-group">
      {!! Form::label('sdt', 'Số điện thoại', []) !!}
-     {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt']) !!}
+     {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt','maxlength'=>'11']) !!}
      <p class="text-danger">{{ $errors->first('sdt') }}</p>
  </div>
 </div>
@@ -160,7 +160,7 @@ role="document">
 <div class="col-sm-2 ">
    <div class="form-group">
      {!! Form::label('vaonam', 'Ngày đăng ký tuổi 17', []) !!}
-     {!! Form::text('vaonam', null, ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
+     {!! Form::text('vaonam', '16/04/2023', ['class' => 'form-control','placeholder'=>'dd/mm/yy','id'=>
      'namsinh','required']) !!}
      <p class="text-danger">{{ $errors->first('vaonam') }}</p>
  </div>
@@ -316,14 +316,19 @@ role="document">
 <div class="col-sm-6">
    <div class="form-group">
      {!! Form::label('tinhhinhgiadinh', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH ( Anh, Chị, Em )', []) !!}
-     {!! Form::textarea('tinhhinhgiadinh',null, ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
+     {!! Form::textarea('tinhhinhgiadinh','*Anh:                                                                Sinh năm:                                                   Nghề nghiệp
+*Chị:                                                                 Sinh năm:                                                   Nghề nghiệp
+*Em:                                                                 Sinh năm:                                                    Nghề nghiệp', ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
  </div>
 </div>
 <div class="col-sm-6">
    <div class="form-group">
      {!! Form::label('tinhhinhbanthan', 'TÌNH HÌNH KINH TẾ,CHÍNH TRỊ, QUÁ TRÌNH CÔNG TÁC CỦA BẢN THÂN ', []) !!}
-     {!! Form::textarea('tinhhinhbanthan',null, ['class'=>'form-control','id'=>'tinhhinhbanthan']) !!}
- </div>
+     {!! Form::textarea('tinhhinhbanthan','Từ 2006- 2012: còn nhỏ ở nhà tại  phường Bình An, thành phố Dĩ An, tỉnh Bình Dương
+Từ 2012 -2017:                                tại  phường Bình An, thành phố Dĩ An, tỉnh Bình Dương
+Từ 2017 - 2021:                               tại  phường Bình An, thành phố Dĩ An, tỉnh Bình Dương
+Từ 2021 - 2024:                               tại  phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'tinhhinhbanthan']) !!}
+    </div>
 </div>
 
 

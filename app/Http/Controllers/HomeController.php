@@ -61,7 +61,7 @@ class HomeController extends Controller
         ->orderBy('getYear', 'ASC')
         ->get();
                 $charttuoi17 = DB::table('tuoi17s')
-        ->select(DB::raw('year(vaonam) as getYear'), DB::raw('COUNT(*) as value'))
+        ->select(DB::raw('khupho as getYear'), DB::raw('COUNT(*) as value'))
         ->where('vaonam', '>=', $range)
         ->groupBy('getYear')
         ->orderBy('getYear', 'ASC')

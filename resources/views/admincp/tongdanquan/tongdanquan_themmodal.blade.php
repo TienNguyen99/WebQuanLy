@@ -74,14 +74,14 @@ role="document">
      <div class="col-sm-2">
        <div class="form-group">
          {!! Form::label('tenkhac', 'Tên khác', []) !!}
-         {!! Form::text('tenkhac',null, ['class'=>'form-control','placeholder'=>'Nhập tên khác','id'=>'tenkhac']) !!}
+         {!! Form::text('tenkhac',null, ['class'=>'form-control','placeholder'=>'Nhập tên khác','id'=>'tenkhac','style'=>'text-transform: uppercase']) !!}
 
      </div>
  </div>
  <div class="col-sm-2">
    <div class="form-group">
      {!! Form::label('sdt', 'Số điện thoại', []) !!}
-     {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt']) !!}
+     {!! Form::text('sdt',null, ['class'=>'form-control','placeholder'=>'Nhập số điện thoại','id'=>'sdt','maxlength'=>'11']) !!}
      <p class="text-danger">{{ $errors->first('sdt') }}</p>
  </div>
 </div>

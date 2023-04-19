@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 class DanQuan extends Model
 {
-    
+
     /**
      * Indicates if the model should be timestamped.
      *
@@ -15,19 +15,27 @@ class DanQuan extends Model
      */
     public $timestamps = false;
     public $table = "danquans";
+
     use HasFactory;
     public function thanhphan()
     {
         return $this->belongsTo(ThanhPhan::class, 'thanhphan_id');
     }
     public function getRemainingDaysAttribute()
-{
+    {
 
-    if ($this->vaonam) {
-        $remaining_days = Carbon::now()->diffInDays(Carbon::parse($this->vaonam));
-    } else {
-        $remaining_days = 0;
+        if ($this->vaonam) {
+            $remaining_days = Carbon::now()->diffInDays(Carbon::parse($this->vaonam));
+        } else {
+            $remaining_days = 0;
+        }
+        return $remaining_days;
     }
-    return $remaining_days;
-}
+    public function getPublishedAtAttribute($ranam)
+    {
+        return is_null($ranam) ? null : Carbon::parse($ranam);
+    }
+    protected $dates = [
+    'ranam'
+];
 }

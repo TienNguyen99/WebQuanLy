@@ -211,7 +211,7 @@
 <div class="col-sm-3">
    <div class="form-group">
      {!! Form::label('socon', 'Cha mẹ có', []) !!}
-     {!! Form::select('socon', ['1','2','3','4','5'],isset($show_tongtuoi17) ? $show_tongtuoi17->socon: '', ['class'=>'form-control']) !!}
+     {!! Form::select('socon', ['0','1','2','3','4','5'],isset($show_tongtuoi17) ? $show_tongtuoi17->socon: '', ['class'=>'form-control']) !!}
  </div>
 </div>
 <div class="col-sm-3">
