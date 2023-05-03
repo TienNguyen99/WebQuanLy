@@ -669,9 +669,28 @@ textarea.addEventListener('keyup', (e) => {
         });
     });
 </script>
+{{-- Đổi tuổi 17 -> dân quân ajax --}}
+{{-- <script type="text/javascript">
+    $(function(){
+        $('.toggle-class').change(function(){
+            var bienche = $(this).prop('checked') == true ? 1 : 0;
+            var danquan_id = $(this).data('id');
+            $.ajax({
+                type:"GET",
+                dataType:"json",
+                url     : "{{ route('changebienche') }}",
+                data:{'bienche':bienche,'danquan_id':danquan_id},
+                success:function(data){
+                    console.log('Thành công')
+                }
+            });
+        });
+    });
+</script> --}}
 {{-- chụp --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
-<script>
+{{-- Autocomplete --}}
+{{-- <script>
   $( function() {
     var availableTags = [
       "phường Bình An, thành phố Dĩ An, tỉnh Bình Dương.",
@@ -720,7 +739,7 @@ textarea.addEventListener('keyup', (e) => {
   }
 });
 } );
-</script>
+</script> --}}
 
 {{-- add / to date --}}
 {{-- <script type="text/javascript">
