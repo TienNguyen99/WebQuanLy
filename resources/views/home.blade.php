@@ -93,15 +93,32 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="stats-icon blue">
+                                                <i class="iconly-boldScan"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">Thanh niên 17</h6>
+                                            <h6 class="font-extrabold mb-0">{{$counttuoi17}}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="d-flex justify-content-center">
                                     <div class="card-header">
-                                    <h4>BIỂU ĐỒ SỐ LƯỢNG DÂN QUÂN THAM GIA</h4>
+                                        <h4>BIỂU ĐỒ SỐ LƯỢNG DÂN QUÂN THAM GIA</h4>
+                                    </div>
                                 </div>
-                            </div>
                                 <div class="card-body">
                                     <div id="container" data-order="{{ $chart }}"></div>
                                 </div>
@@ -109,9 +126,9 @@
                             <div class="card">
                                 <div class="d-flex justify-content-center">
                                     <div class="card-header">
-                                    <h4>BIỂU ĐỒ SỐ LƯỢNG DÂN QUÂN XUẤT NGŨ</h4>
+                                        <h4>BIỂU ĐỒ SỐ LƯỢNG DÂN QUÂN XUẤT NGŨ</h4>
+                                    </div>
                                 </div>
-                            </div>
                                 <div class="card-body">
                                     <div id="containerthang" data-order="{{ $chartraquan }}"></div>
                                 </div>

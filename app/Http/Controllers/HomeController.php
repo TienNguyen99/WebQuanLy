@@ -46,6 +46,9 @@ class HomeController extends Controller
         $countdqrr = DB::table('danquans')
         ->where('thanhphan_id','16')
         ->count();
+        $counttuoi17 = DB::table('tuoi17s')
+
+        ->count();
         // fill
         $range = \Carbon\Carbon::now()->subYears(15);
         $chart = DB::table('danquans')
@@ -69,6 +72,6 @@ class HomeController extends Controller
         
 
 
-        return view('home',compact('counttongdq','users','danquan','thanhphan','countdqtt','countdqcd','countdqkp','countdqrr','chart','chartraquan','charttuoi17'));
+        return view('home',compact('counttongdq','users','danquan','thanhphan','countdqtt','countdqcd','countdqkp','countdqrr','chart','chartraquan','charttuoi17','counttuoi17'));
     }
 }
