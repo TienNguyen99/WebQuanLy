@@ -632,25 +632,7 @@
 <!-- Sweetalert -->
 <script src="{{asset('public/backend/js/extensions/sweetalert2.js')}}"></script>
 <script src="{{asset('public/backend/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script>
-{{-- QR code  --}}
-{{-- <script src="{{asset('public/backend/js/html5-qrcode.min.js')}}"></script> --}}
-{{-- <script type="text/javascript">
-    const suggestions = [
-                      "Here comes the suggestions",
-                      "I like pizza",
-                      "I'm a good programmer"
-                    ]
-
-var textarea = document.getElementById('tinhhinhgiadinhcha')
-
-textarea.addEventListener('keyup', (e) => {
-  var result = suggestions.filter(el => el.startsWith(textarea.value))
-  console.log(result)
-})
-</script> --}}
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-{{-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> --}}
-
 {{-- Đổi biên chế ajax --}}
 <script type="text/javascript">
     $(function(){
@@ -763,7 +745,7 @@ function getAge() {
   });
 </script>
 {{-- qr code --}}
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     $(document).ready(function () {
         $("#qrtest").click(function(){
             var str1 = '074099004776|281203034|Nguyễn Minh Tiến|10081999|Nam|Số Nhà 286/B1, Khu Phố Bình Thung 2, Bình An, TP.Dĩ An, Bình Dương|28062021';
@@ -780,7 +762,7 @@ function getAge() {
         })
 
     });
-</script>
+</script> --}}
 {{-- chụp --}}
 {{-- <script type="text/javascript">
     Webcam.set({
@@ -803,8 +785,8 @@ function getAge() {
 </script> --}}
 
 {{-- QRcode test --}}
-<script type="text/javascript" src="https://unpkg.com/html5-qrcode" ></script>
-<script type="text/javascript" >
+{{-- <script type="text/javascript" src="https://unpkg.com/html5-qrcode" ></script> --}}
+{{-- <script type="text/javascript" >
     function onScanSuccess(qrCodeMessage) {
         document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
     }
@@ -816,7 +798,7 @@ function getAge() {
         qrbox: {width: 250, height: 250},
         formatsToSupport: [ Html5QrcodeSupportedFormats.QR_CODE ] });
     html5QrcodeScanner.render(onScanSuccess, onScanError);
-</script>
+</script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js" async=""></script>
 <script>
     window.onload = function()
