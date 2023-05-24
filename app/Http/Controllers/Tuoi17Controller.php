@@ -133,19 +133,21 @@ class Tuoi17Controller extends Controller
 
         $messages = [
 
-            'sdt.max' => 'gồm 11 số',
+            'sdt.min' => 'gồm 10 số',
             'namsinh.date_format' => 'Nhập đúng định dạng ngày/tháng/năm',
             'vaonam.date_format' => 'Nhập đúng định dạng ngày/tháng/năm',
             'congancapngay.date_format' => 'Nhập đúng định dạng ngày/tháng/năm',
+            'tenkhaisinh.unique' => 'Tên đã trùng',
 
         ];
 
         $this->validate($request,[
 
-            'sdt'=>'max:11',
-            'namsinh'=>'date_format:d/m/Y',
-            'vaonam'=>'date_format:d/m/Y',
-            'congancapngay'=>'date_format:d/m/Y',
+            'sdt'=>'min:10',
+            'namsinh'=>'date_format:d/m/Y|min:10',
+            'vaonam'=>'date_format:d/m/Y|min:10',
+            'congancapngay'=>'date_format:d/m/Y|min:10', //01/01/2023
+            'tenkhaisinh'=>'unique:tuoi17s',
 
 
         ], $messages);

@@ -425,13 +425,13 @@
                     show: true
 
                 },
-                targets: [ 1 , 2,5 ]
+                targets: [ 3 ]
             },
             {
                 searchPanes: {
                     show: false
                 },
-                targets: [0,3,4]
+                targets: [0,1,2,4]
             }
             ]
         });

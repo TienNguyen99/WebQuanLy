@@ -30,9 +30,9 @@ role="document">
                 <div class="card-body">
                   {!! Form::open(['route'=>'tuoi17.store','method'=>'POST','enctype'=>'multipart/form-data']) !!}
                   <div class="row">
-                    <div class="col-sm-4"><img src="{{asset('public/backend/images/faces/2.jpg')}}" width="100px" height="100px" alt="...">
+                   {{--  <div class="col-sm-4"><img src="{{asset('public/backend/images/faces/2.jpg')}}" width="100px" height="100px" alt="...">
 
-                    </div>
+                    </div> --}}
                     <div class="col-sm-4">
                         <button id="qrtest" class="btn btn-info"><i class="fa fa-qrcode" aria-hidden="true"></i></span> QR code</button>
                         {{-- chụp --}}
@@ -69,6 +69,7 @@ role="document">
            <div class="form-group">
              {!! Form::label('tenkhaisinh', 'Tên khai sinh', []) !!}
              {!! Form::text('tenkhaisinh',null, ['class'=>'form-control','placeholder'=>'Nhập tên khai sinh','id'=>'tenkhaisinh','required']) !!}
+             <p class="text-danger">{{ $errors->first('tenkhaisinh') }}</p>
          </div>
      </div>
      <div class="col-sm-2">

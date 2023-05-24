@@ -15,7 +15,7 @@
             <table class="table table-striped" id="table2">
                 <thead>
                     <tr>
-                        {{-- <th>Thứ tự</th> --}}
+                        <th>Thứ tự</th>
                         <th>Tên</th>
                         <th>Năm sinh</th>
                         <th>Khu phố</th>
@@ -23,7 +23,7 @@
                         <th>Số điện thoại</th>
                         <th>Ngày đăng ký tuổi 17</th>
                         <th>Quê quán</th>
-                        <th>Ảnh</th>
+                        {{-- <th>Ảnh</th> --}}
                         <th>Chỉnh sửa</th>
                         <th>In PDF</th>
                         <th>In Word</th>
@@ -37,7 +37,7 @@
                     <?php foreach ($list as $key => $show_tongtuoi17): ?>
 
 
-                            {{-- <td>{{$key}}</td> --}}
+                            <td>{{$key}}</td>
                             <td>{{$show_tongtuoi17->tenkhaisinh}}</td>
                             <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->namsinh)->format('d/m/Y')}}</td>
                             <td>{{$show_tongtuoi17->khupho}}</td>
@@ -51,7 +51,7 @@
 
                             <td>{{ \Carbon\Carbon::parse($show_tongtuoi17->vaonam)->format('d/m/Y')}}</td>
                             <td>{{$show_tongtuoi17->quequan}}</td>
-                            <td><img src="{{asset('public/backend/images/'.$show_tongtuoi17->anh34)}}" width="100px" height="100%" alt="..."></td>
+                            {{-- <td><img src="{{asset('public/backend/images/'.$show_tongtuoi17->anh34)}}" width="100px" height="100%" alt="..."></td> --}}
                             <td>
                              <button type="button" data-bs-toggle="modal"
                              data-bs-target="#tuoi17modal{{$show_tongtuoi17->id}}" class="btn btn-default" >
