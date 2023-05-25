@@ -317,9 +317,9 @@ role="document">
 <div class="col-sm-6">
    <div class="form-group">
      {!! Form::label('tinhhinhgiadinh', 'TÌNH HÌNH KINH TẾ, CHÍNH TRỊ CỦA GIA ĐÌNH ( Anh, Chị, Em )', []) !!}
-     {!! Form::textarea('tinhhinhgiadinh','*Anh:                                                                Sinh năm:                                                   Nghề nghiệp
-*Chị:                                                                 Sinh năm:                                                   Nghề nghiệp
-*Em:                                                                 Sinh năm:                                                    Nghề nghiệp', ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
+     {!! Form::textarea('tinhhinhgiadinh','*Anh:                                                                Sinh năm:                                                   Nghề nghiệp:
+*Chị:                                                                 Sinh năm:                                                   Nghề nghiệp:
+*Em:                                                                 Sinh năm:                                                    Nghề nghiệp:', ['class'=>'form-control','id'=>'tinhhinhgiadinh']) !!}
  </div>
 </div>
 <div class="col-sm-6">
@@ -328,7 +328,7 @@ role="document">
      {!! Form::textarea('tinhhinhbanthan','Từ 2006- 2012: còn nhỏ ở nhà tại  phường Bình An, thành phố Dĩ An, tỉnh Bình Dương
 Từ 2012 -2017:                                tại  phường Bình An, thành phố Dĩ An, tỉnh Bình Dương
 Từ 2017 - 2021:                               tại  phường Bình An, thành phố Dĩ An, tỉnh Bình Dương
-Từ 2021 - 2024:                               tại  phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'tinhhinhbanthan']) !!}
+Từ 2021 - nay:                               tại  phường Bình An, thành phố Dĩ An, tỉnh Bình Dương', ['class'=>'form-control','id'=>'tinhhinhbanthan']) !!}
     </div>
 </div>
 
