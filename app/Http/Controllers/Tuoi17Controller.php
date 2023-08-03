@@ -137,7 +137,8 @@ class Tuoi17Controller extends Controller
             'namsinh.date_format' => 'Nhập đúng định dạng ngày/tháng/năm',
             'vaonam.date_format' => 'Nhập đúng định dạng ngày/tháng/năm',
             'congancapngay.date_format' => 'Nhập đúng định dạng ngày/tháng/năm',
-            'tenkhaisinh.unique' => 'Tên đã trùng',
+            // 'tenkhaisinh.unique' => 'Tên đã trùng',
+            'cancuoc.unique' => 'Trùng căn cước',
             'namsinh.required' => 'Không được để trống',
             'vaonam.required' => 'Không được để trống',
             'congancapngay.required' => 'Không được để trống',
@@ -150,7 +151,8 @@ class Tuoi17Controller extends Controller
             'namsinh'=>'required|date_format:d/m/Y|min:10',
             'vaonam'=>'required|date_format:d/m/Y|min:10',
             'congancapngay'=>'required|date_format:d/m/Y|min:10', //01/01/2023
-            'tenkhaisinh'=>'unique:tuoi17s',
+            'cancuoc'=>'unique:tuoi17s',
+            // 'tenkhaisinh,cancuoc'=>'unique:tuoi17s,tenkhaisinh,cancuoc',
 
 
         ], $messages);

@@ -109,6 +109,7 @@ role="document">
  <div class="form-group">
    {!! Form::label('cancuoc', 'CMND / CCCD', []) !!}
    {!! Form::text('cancuoc',null, ['class'=>'form-control','placeholder'=>'Nhập số căn cước','id'=>'cancuoc']) !!}
+   <p class="text-danger">{{ $errors->first('cancuoc') }}</p>
 </div>
 </div>
 <div class="col-sm-2">
